@@ -1,21 +1,16 @@
 # Grupo_5_Valpez
 Proyecto integrador Valpez
 
-Integrantes:
+##Integrantes:
+- Edwin Saboya
+- aria Camila Caicedo
+- Sebastian Vallejo
+- Lorena Escobar
 
-Edwin Saboya
-Maria Camila Caicedo
-Sebastian Vallejo
-Lorena Escobar
+##Temática del sitio: 
 
-Temática del sitio: 
+##Público objetivo:
 
-
-
-Público objetivo:
-
-
-
-Sitios de referencia:
+##Sitios de referencia:
 
 
