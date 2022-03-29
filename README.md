@@ -12,5 +12,9 @@ Proyecto integrador Valpez
 ## Público objetivo:
 
 ## Sitios de referencia:
+- Importaexpertos: Esta página se toma como referencia debido al tipo y variedad de productos que ofrece.
+https://importaexpertos.com/compras/
 
+- Bass Pro Shop: 
+https://www.basspro.com/shop/en
 
