@@ -17,6 +17,14 @@ El consumidor principal son todas aquellas personas amantes a la pesca y a la vi
 - Importaexpertos: Esta página se toma como referencia debido al tipo y variedad de productos que ofrece.
 https://importaexpertos.com/compras/
 
-- Bass Pro Shop: 
+- Bass Pro Shop: Tomamos esta página de referencia ya que es uno de los mas grandes distribuidores en Estados Unidos de artículos de pesca, accesorios para camping e indumentaria deportiva.
 https://www.basspro.com/shop/en
 
+- Walmart: Es uno de los E-commerce que cuenta con una visualización muy organizada para todos sus usarios, haciendo más amigable la categorización de los productos.
+ https://www.walmart.com/
+
+ - Coleman: Considerado uno de los mejores fabricantes de articulos para la vida outdoor, el diseño y presentación de su plataforma en versión móvil es facíl de manejar y permite familiarizarse rapidamente con ella.
+ https://www.coleman.com/
+
+ - Amazon: Seleccionamos esta página como referente gracias a su carrito de compras, ya que cuenta con varias funcionalidades como lo son: Título del producto, cantidad disponible, características, artículos seleccionados para después, valor individual y total,  alertas en modificaciones y facilidad de acceso nuevamente al producto.
+ https://www.amazon.com/
