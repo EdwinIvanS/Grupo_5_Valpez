@@ -1,7 +1,7 @@
 # Grupo_5_Valpez
 Proyecto integrador Valpez
 
-##Integrantes:
+## Integrantes:
 - Edwin Saboya
 - aria Camila Caicedo
 - Sebastian Vallejo
