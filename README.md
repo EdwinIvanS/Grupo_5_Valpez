@@ -28,3 +28,8 @@ https://www.basspro.com/shop/en
 
  - Amazon: Seleccionamos esta página como referente gracias a su carrito de compras, ya que cuenta con varias funcionalidades como lo son: Título del producto, cantidad disponible, características, artículos seleccionados para después, valor individual y total,  alertas en modificaciones y facilidad de acceso nuevamente al producto.
  https://www.amazon.com/
+
+ ## Tablero de trabajo:
+ - Sprint 1: https://trello.com/b/mfpoQ7cq/sprint-1
+ - Sprint 2: https://trello.com/b/PsE9r72U/sprint-2
+ 
