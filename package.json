@@ -1,0 +1,22 @@
+{
+  "name": "grupo_5_valpez",
+  "version": "1.0.0",
+  "description": "Proyecto Digital House",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdwinIvanS/Grupo_5_Valpez.git"
+  },
+  "author": "EdwinIvanS, LoreEsc, mcamimejia, ValPerSeb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdwinIvanS/Grupo_5_Valpez/issues"
+  },
+  "homepage": "https://github.com/EdwinIvanS/Grupo_5_Valpez#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
