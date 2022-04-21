@@ -19,20 +19,34 @@ Verde: #39b54a;
     margin: 0px;
 }
 
-.redes-sociales{
+.header-comunicaciones-ventas{
     align-items: center;
     background-color: rgb(77, 75, 75);
     color: rgb(194, 202, 202);
     display: flex;
     height: 60px;
+    justify-content: flex-end;
+}
+
+.redes-sociales{
+    display: flex;
     justify-content: space-evenly;
-    width: 100%;
+    width: 30%;
     
 }
 .redes-sociales img{
     height: 20px;
     width: 20px;
 }
+
+.header-sesion-compras{
+    align-items: baseline;
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 10%;
+    width: 30%;
+}
+
 
 .header-logo{
     border: 1px solid red;
@@ -142,3 +156,68 @@ body{
 }
 
 /*******************/
+
+
+
+/*********MEDIA QUERYS*******/
+
+@media (max-width:361px) {
+
+    /*menores a 361*/
+    .main-productos {
+        text-align: -webkit-center;
+    }
+    .productos-destacados {
+        width: 80%;
+        margin: 20px 5px 20px 5px;
+    }
+    
+}
+
+
+@media (min-width:361px) {
+    /*mayores a 361*/
+    /* MOBILE*/
+    .main-productos {
+        border: 1px solid green;
+        text-align: -webkit-center;
+    }
+
+    .productos-destacados {
+        width: 80%;
+        margin: 20px 5px 20px 5px;
+    }
+}
+
+/*TABLES AND LARGER SMARTPHONES  481-768*/
+
+@media (min-width:481px) {
+    .main-productos {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        border: 1px solid blue;
+    }
+
+    .productos-destacados {
+        width: 35%;
+        margin: 20px 25px 20px 25px;
+    }
+}
+
+/*LAPTOPS, TABLES AND SMALL DESKTOPS  769-1279*/
+
+@media (min-width:769px) {
+    .main-productos{
+        display: flex;
+        flex-direction: row;
+        border: 1px solid red;
+    }
+
+    .productos-destacados{
+        width: 20%;
+        margin: 15px;
+    }
+
+}
