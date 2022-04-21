@@ -54,12 +54,23 @@ Verde: #39b54a;
     height: 30px;
     text-align: center;
 }
+.lista{
+    background-color: white;
+    height: 40px;
+}
 
 .lista ul{
-    text-decoration: none;
     display: flex;
     justify-content: space-evenly;
     list-style: none;
+    padding: 0px;
+    margin: 0px;
+    
+}
+
+li a{
+    text-decoration: none;
+    color: black;
 }
 
 img{
