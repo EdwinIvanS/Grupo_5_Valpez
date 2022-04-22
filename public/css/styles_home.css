@@ -15,9 +15,20 @@ Verde: #39b54a;
     --var-color-letter-button : black;
 }
 /********** Header **********/
+
+/*
+header{
+    position: fixed;
+    top:0;
+    width: 100%;
+}
+*/
+
 .header-msn{
     background-color: aqua;    /*AJUSTAR EL COLOR*/
-    padding: 10px;
+    display: none;
+    font-size: 12px;;
+    padding: 5px;
     text-align: center;
 }
 
@@ -29,7 +40,7 @@ Verde: #39b54a;
     align-items: center;
     background-color: rgb(77, 75, 75);
     color: rgb(194, 202, 202);
-    display: flex;
+    display: none;
     height: 60px;
     justify-content: flex-end;
 }
@@ -41,6 +52,7 @@ Verde: #39b54a;
     
 }
 .redes-sociales img{
+    cursor: pointer;
     height: 20px;
     width: 20px;
 }
@@ -53,6 +65,13 @@ Verde: #39b54a;
     width: 30%;
 }
 
+.header-sesion-compras p {
+    cursor: pointer;
+}
+
+.header-sesion-compras i {
+    cursor: pointer;
+}
 
 .header-logo{
     border: 1px solid red;
@@ -60,13 +79,19 @@ Verde: #39b54a;
     height: 30px;
     text-align: center;
 }
+
 .lista{
     background-color: white;
+    border: 1px solid red;
+    display: none;
     height: 40px;
+    padding-top: 18px;
+    font-size: 18px;
 }
 
 .lista ul{
     display: flex;
+    cursor: pointer;
     justify-content: space-evenly;
     list-style: none;
     padding: 0px;
@@ -74,10 +99,44 @@ Verde: #39b54a;
     
 }
 
+.barras-busqueda{
+    align-items: center;
+    display: flex;
+    display: none;
+    justify-content: space-around;
+    margin: 10px 15px 10px 15px;
+}
+
+.barras-busqueda input{
+    border: 1px solid var(--var-linea-solida);
+    border-radius: 4px;
+    height: 25px;
+    padding-left: 15px;
+    width: 100%;
+}
+
+.barras-busqueda i{
+    align-items: center;
+    border: 1px solid var(--var-linea-solida);
+    border-radius: 4px;
+    background-color: white;
+    display: flex;
+    height: 27px;
+    justify-content: center;
+    margin-left: -15px;
+    width: 30px;
+}
+
 li a{
     text-decoration: none;
     color: black;
 }
+
+/*
+.header-carrusel article{     
+    margin-top: 177px;
+}
+*/
 
 img{
     width: 100%;
@@ -86,12 +145,13 @@ img{
 .category{
     display: flex;
     justify-content: space-evenly;
-    margin: 15px 0px 0px 0px;
-    padding: 0px 20px 0px 20px;
+    margin: 0px 0px -16px 0px;
+    padding: 0px 50px 0px 50px;
 }
 
 .category-pesca {
     display: flex;
+    cursor: pointer;
     justify-content: center;
     width: 60%;
     height: 90%;
@@ -106,6 +166,7 @@ img{
     background-color: white;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
     border: 1px solid var(--var-linea-solida);
+    cursor: pointer;
     margin: 70px;
 }
 
@@ -117,8 +178,11 @@ img{
 }
 
 .productos-descripciones{
-    border: 1px solid var(--var-linea-solida);
     padding: 20px 10px 10px 10px;
+}
+
+.modulo-detalle{
+    border-top: 1px solid var(--var-linea-solida);
 }
 
 .desplegar-lista{
@@ -139,6 +203,7 @@ img{
 .productos-añadir{
     display: flex;
     justify-content: space-around;
+    padding: 5px;
 }
 
 .productos-añadir input{
@@ -167,6 +232,8 @@ body{
 }
 
 /*********MAIN**********/
+
+
 .destacados{
 
     border: 1px solid var(--var-linea-solida);
@@ -221,6 +288,10 @@ body{
         margin: 20px 5px 20px 5px;
     }
 
+    .productos-destacados:hover {
+        box-shadow: 0px 0px 10px rgb(26, 24, 24);
+    }
+
     .blog-pesca {
         display: flex;
         flex-wrap: wrap;
@@ -234,6 +305,8 @@ body{
     .consejo1 button {
         width: 40%;
     }
+    
+    
     
 }
 
@@ -251,6 +324,10 @@ body{
         margin: 20px 5px 20px 5px;
     }
 
+    .productos-destacados:hover {
+        box-shadow: 0px 0px 10px rgb(26, 24, 24);
+    }
+
     .blog-pesca {
         display: flex;
         flex-wrap: wrap;
@@ -265,6 +342,14 @@ body{
         width: 40%;
     }
 
+    .category{
+        flex-wrap: wrap;
+        padding: 0px;
+    }
+
+    .barras-busqueda {
+        display: flex;
+    }
 }
 
 /*TABLES AND LARGER SMARTPHONES  481-768*/
@@ -283,18 +368,46 @@ body{
         margin: 20px 25px 20px 25px;
     }
 
+    .productos-destacados:hover {
+        box-shadow: 0px 0px 10px rgb(26, 24, 24);
+    }
+
     .blog-pesca {
         display: flex;
         flex-wrap: nowrap;
         margin: 0px 25px 10px 25px;
     }
 
-    .consejo1 {
-        margin-right: 30px;
+    .consejo1 button{
+        width: 30%;
     }
     
-    .consejo1 button {
-        width: 20%;
+    .consejo2 button {
+        width: 60%;
+    }
+
+    .category {
+        flex-wrap: nowrap;        
+    }
+
+    .category-pesca{
+        padding: 20px 30px 20px 30px;
+    }
+
+    .header-comunicaciones-ventas {
+        display: flex;
+    }
+
+    .lista {
+        display: block;
+    }
+
+    .header-msn {
+        display: block;
+    }
+
+    .barras-busqueda {
+        display: none;
     }
 }
 
@@ -312,4 +425,15 @@ body{
         margin: 15px;
     }
 
+    .productos-destacados:hover{
+        box-shadow: 0px 0px 10px rgb(26, 24, 24);
+    }
+
+    .consejo1 button {
+        width: 20%;
+    }
+
+    .consejo2 button {
+        width: 40%;
+    }
 }
