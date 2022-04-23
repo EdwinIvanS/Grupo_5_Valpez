@@ -89,12 +89,21 @@ button{
     justify-content: space-between;    
 }
 
-header a, header ul, header li{
+header a{
     color: var(--black);
+    text-decoration: none;   
+}
+header ul{
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+    margin-left: 300px;
+}
+
+header li{
     list-style-type: none;
-    margin: 15px;
+    margin: 50px;
     text-align: center;
-    text-decoration: none;    
 }
 
 .parte-2 ul{
