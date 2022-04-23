@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link href="/css/styles_productCart.css" rel="stylesheet">
     <title>.:Carrito de Compras:.</title>
 </head>
@@ -23,7 +26,7 @@
                 <img src="/img/icon-youtube.svg" alt="">
             </div>
             
-            <div>
+            <div class="ejecutables">
                 <form class="Barra-de-busqueda" action="#" method="get">
                     <input type="search" name="Barradebusqueda" placeholder="Buscar artículos">
                     <button type="submit"><i class="fas fa-search"></i></button>
@@ -31,7 +34,7 @@
 
                 <a class="login" href="/login">Iniciar sesión</a>
                 
-                <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+                <a class="Carrito" href="/productCart"><i class="fas fa-shopping-cart"></i></a>
             </div>
         </div>
 
@@ -162,15 +165,10 @@
         </div>
     </main>
 
-    <footer>
-        <div class="parte-7">
-            <div class="contacto">
-                <a href="/home">Ir al Inicio</a>
-                <p><i class="fas fa-map-marker-alt"></i> Calle falsa No. 123 - 45, Medellín, Colombia</p>
-                <p><i class="fas fa-phone-alt"></i> 57-4-5556677</p>
-                <p><i class="fas fa-envelope"></i> info@valpez.com</p>
-            </div>
-            
+    <a class="Go-home" href="/home">Ir al Inicio</a>
+
+    <footer>        
+        <div class="parte-7">            
             <div class="links">
                 <h3>Información</h3>
                 <ul>
@@ -187,7 +185,7 @@
                     <ul>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Pesca deportiva y artesanal</a></li>
-                        <li><a href="#">Comping</a></li>
+                        <li><a href="#">Camping</a></li>
                     </ul>
             </div>
 
@@ -199,9 +197,17 @@
                         <li><a href="#">Pedidos</a></li>
                     </ul>
             </div>
+
+            
+            <div class="contacto">
+                <img class="Logo-inferior" src="/img/logo 2.0.png" alt="Logo">                             
+                <p><i class="fas fa-map-marker-alt"></i> Calle falsa No. 123 - 45, Medellín, Colombia</p>
+                <p><i class="fas fa-phone-alt"></i> 57-4-5556677</p>
+                <p><i class="fas fa-envelope"></i> info@valpez.com</p>
+            </div>
         </div>
 
-        <p><i class="far fa-copyright"></i> 2022 - Sitio Ecommerce implementado por Valpez</p>
+        <p class="copy"><i class="far fa-copyright"></i> 2022 - Sitio Ecommerce implementado por Valpez</p>
         
     </footer>
 </body>
