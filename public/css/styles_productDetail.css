@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+:root{
+    --green:#C7D97A;
+    --brown:#82572A;
+    --purple:#411F4B;
+    --orange: #D46509;
+    --black: #000000;
+    --gray: #AAB7B8;
+    --white: #FFFFFF;
+}
+
+.infoPromo{
+    text-align: center;
+    font-size: 16px;
+    background-color: var(--purple);
+    color: var(--white);
+    padding: 8px;
+}
+.header1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--green);
+    height: 150px;
+}
+.logo{
+    position: relative;
+    top: 30px;
+    width: 300px;
+    height: 300px;
+}
+.redesSociales{
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+    
+}
+.redesSociales img{
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+}
+.actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search{
+    margin: 15px;
+}
+.search input, .search button{
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+}
+button{
+    cursor: pointer;
+}
+.login{
+    color: var(--black);
+    margin: 15px;
+    font-weight: bold;
+}
+.cart{
+    margin: 15px;
+    color: var(--black);
+    font-size: 40px;
+}
+.header2{
+    background-color: var(--gray);
+}
+a, ul, li{
+    text-decoration: none;
+    list-style-type: none;
+    color: var(--black);
+}
+.header2 ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
