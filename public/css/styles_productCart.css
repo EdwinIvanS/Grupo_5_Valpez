@@ -130,19 +130,6 @@ footer{
     background-color: var(--purple);
 }
 
-.Go-home{
-    background-color: var(--green);
-    border-bottom: var(--black) 1px solid;
-    border-top: var(--black) 1px solid;
-    color: var(--black);    
-    display: block;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 8px;    
-    text-align: center;
-    text-decoration: none;    
-}
-
 .parte-7{
     color: var(--white);
     display: flex;
