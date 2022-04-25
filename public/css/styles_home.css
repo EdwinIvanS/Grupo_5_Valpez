@@ -50,6 +50,7 @@ button {
 
 .logo1 {
     position: relative;
+    z-index: 10;
     top: 70px;
     width: 20rem;
     height: 20rem;
@@ -130,9 +131,90 @@ button {
 
 /*----------- Main ----------------*/
 
+.carrusel {
+    position: relative;
+}
+
+.slide2 img, .slide3 img{
+    position: absolute;
+    top: 0;
+}
+
 .carrusel img {
-    width: 20rem;
-    height: 10rem;
+    width: 100%;
+    height: 25rem;
+}
+
+@keyframes slide1 {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+@keyframes slide2 {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes slide3 {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.slide1 img{
+    animation: slide1 20s infinite alternate;
+}
+.slide2 img{
+    animation: slide2 20s infinite alternate;
+}
+.slide3 img{
+    animation: slide3 20s infinite alternate;
+}
+
+.categories {
+    position: relative;
+}
+
+.categories-img{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.categories img {
+    width: 50%;
+    height: 20rem;
+    margin: 4rem;
+    border-radius: 50%;
+}
+
+.categories-letra{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    width: 100%;
+}
+
+.categories h3 {
+    width: 50%;
+    height: 20rem;
+    margin: 4rem;
+    border-radius: 50%;
+    background-color: var(--principal);
+    opacity: 0;
+    text-align: center;
+    padding: 10rem;
+    color: var(--third);
+    font-weight: bolder;
+    transition: all 500ms;
+}
+
+.categories h3:hover {
+    cursor: pointer;
+    opacity: 0.5;
 }
 
 .related {
@@ -422,13 +504,6 @@ footer li {
         width: 60%;
     }
 
-    .category {
-        flex-wrap: nowrap;        
-    }
-
-    .category-pesca{
-        padding: 20px 30px 20px 30px;
-    }
 
     .header-comunicaciones-ventas {
         display: flex;
