@@ -125,160 +125,66 @@ button {
     margin-left: 300px;    
 }
 /*----------- Fin Header -----------*/
-/*----------- Main ----------*/
-main{
-    margin-top: 7rem;
-}
-.bloque-1{    
-    display: flex;
-    justify-content: space-between;    
-}
-
-.parte-3{    
-    background-color: var(--principal);
-    border-radius: 5px;  
-    color: black;
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    font-size: 14px;
-    justify-content: center;
-    padding-bottom: 10px;    
-}
-
-.parte-3 i{
-    font-size: 18px;
-    margin: 8px;
-    margin-left: 25px;
-}
-
-.parte-3 h2, .parte-4 h2{
-    font-size: 22px;
-    margin: 5px 0px 5px 25px; 
-}
-
-.parte-4{
-    border: 1px solid var(--fourth);
-    border-radius: 5px;
-    display:block;
-    padding-bottom: 10px;
-}
-
-.parte-4 h4{
-    color: var(--fifth);
-    margin: 3px 25px 8px 25px;
-}
-
-.parte-4 label{
-    color: black;
+/*------------ Main-----------------*/
+.form-register{
+    background-color: rgba(57,69,93,0.4);
+    border-radius: 20px;
     display: block;
-    margin: 3px 25px 8px 25px;
-}
-.parte-4 input{
-    font-size: 18px;
-    margin: 0px 8px 0px 0px;
+    margin: 7rem auto;
+    padding: 30px 10px;    
+    text-align: center;
+    width: 60%;
 }
 
-.parte-4 button{    
-    border: 1px solid var(--second);
+.formularios div{
+    margin: 14px;
+}
+
+.formulario-registro{
+    border: none;
     border-radius: 5px;
-    color: black;
+    padding: 7px;
+    width: 50%;
+}
+
+.titulos-formulario{
+    display: block;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.terminos-condiciones{
+    align-items: center;    
+    display: flex;
+    justify-content: center;
+}
+
+.terminos-condiciones input{
+    margin: 5px;
+}
+
+.form-register button{
+    background-color: var(--principal);
+    border: none;
+    border-radius: 5px;
+    color: var(--third);
+    font-weight: bold;
     margin-left: 25px;
     margin-right: 25px;
-    padding: 5px 9px;
+    padding: 8px 20px;
     transition: all 450ms;
 }
 
-.parte-4 button:hover{
+.formularios button:hover{
     background-color: var(--fourth);
     color: var(--white);
 }
 
-article{
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+input:invalid{
+    border: 1px solid red;
 }
 
-article input{
-    margin-left: 25px;
-}
-
-.Productos{
-    height: 20%;
-    flex-grow: 0.1;
-    margin: 0px 20px;
-    width: 20%;
-}
-
-.descproduct{
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    margin: 0px 50px 0px 0px;
-    width: 35%;    
-}
-
-.descproduct select{
-    margin: 5px;
-    width: 15%;
-}
-
-.producto{
-    font-size: 22px;
-    margin: 5px 0px 5px 0px;
-}
-
-.precio{
-    font-size: 18px;
-    margin: 0px 0px 5px 0px;
-}
-
-article .detalles-producto, article .detalles{
-    color: black;
-    font-size: 16px;
-    margin: 10px 0px 15px 0px;
-    text-align: justify;
-    width: 90%;    
-}
-
-article button{    
-    border: 1px solid var(--second);
-    border-radius: 5px;
-    color: black;
-    flex-grow: 0.1;
-    margin: 0px 30px;
-    padding: 5px 9px;
-    transition: all 450ms;
-}
-
-article button:hover{
-    background-color: var(--fourth);
-    color: var(--white);
-}
-
-.parte-6{    
-    display: block;
-    margin: 50px 0px 50px 0px;
-    text-align: center;
-}
-
-.parte-6 button{
-    border: 1px solid var(--second);
-    border-radius: 5px;
-    color: black;
-    font-size: 22px;
-    padding: 5px 18px;
-    transition: all 450ms;
-}
-
-.parte-6 button:hover{
-    background-color: var(--fourth);
-    color: var(--white);
-}
-
-/*---------- Fin Main -------------*/
+/*----------Fin Main---------------*/
 /*---------- Footer ---------------*/
 .Go-home {
     background-color: var(--principal);

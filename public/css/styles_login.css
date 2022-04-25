@@ -128,224 +128,55 @@ button {
 
 /*----------- Fin Header -----------*/
 
-/*----------- main --------------*/
-main {
-    margin: 15px;
-}
+/*------------ Main -----------------*/
 
-.route ul {
-    display: flex;
-    justify-content: end;
-    padding: 0;
-}
-
-.route a {
-    margin: 0 3px;
-    transition: all 500ms;
-}
-
-.route a:hover {
-    color: var(--fourth);
-    font-weight: bold;
-}
-
-.productSelected {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 6rem;
-}
-
-.preview {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.preview i{
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all 500ms;
-}
-
-.preview i:hover {
-    color: var(--fifth);
-}
-
-.preview img {
-    width: 8rem;
-    height: 8rem;
-    margin: 10px;
-}
-
-.photo {
-    width: 30rem;
-    height: 30rem;
-}
-
-.details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 20rem;
-}
-
-.details a {
-    transition: all 500ms;
-}
-
-.details .available {
-    color: var(--fifth);
-}
-
-.selection {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.details a:hover{
-    color: var(--fourth);
-    font-weight: bold;
-}
-
-.selection button {
-    border-radius: 5px;
+.form-login {
+    display: block;
+    margin: 5rem auto;
+    text-align: center;
+    background-color: rgba(57,69,93,0.4);
+    border-radius: 20px;
     border: none;
-    padding: 1rem 1.5rem;
-    background-color: var(--principal);
-    transition: all 500ms;
-    font-size: 1rem;
+    padding: 30px 10px;
+    width: 40rem;
 }
 
-.selection button:hover {
-    color: var(--fifth);
+h2 {
+    margin: 2rem 0;
+    color: var(--fourth);
 }
 
-.selection button i{
-    font-size: 1.5rem;
-}
-
-.moreDetails {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 6rem;
-}
-
-.description, .factSheet {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    width: 50%;
-    transition: all 500ms;
-}
-
-.description:hover, .factSheet:hover {
-    background-color: var(--principal);
-    border: none;
-    border-radius: 10px;
-}
-
-.moreDetails h2 {
-    margin-bottom: 2rem;
-}
-
-.description ul {
-    padding: 20px;
-    margin-bottom: 2rem;
-}
-.description li {
-    list-style-type:circle
-}
-
-.description iframe {
-    margin-bottom: 2rem;
-}
-
-.features {
-    display: flex;
-    justify-content: space-between;
-}
-
-.features div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50%;
-}
-
-.features span {
-    width: 95%;
-    background-color: rgba(57,69,93,0.2);
-    padding: 5px;
+.form-login input, .form-login button {
     border: none;
     border-radius: 5px;
-    margin: 15px;
+    padding: 8px 10px;
+    width: 20rem;
+    margin: 10px 0;
+    color: var(--third);
+    transition: all 500ms;
 }
-.related {
+
+.form-login button {
+    background-color: var(--principal);
+    font-weight: bold;
     margin: 2rem;
 }
 
-.relatedProducts {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 4rem;
+.form-login button:hover {
+    background-color: var(--fourth);
+    color: var(--white);
 }
 
-.related h2 {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-}
-
-.related img {
-    width: 15rem;
-    height: 15rem;
-}
-
-.product {
-    padding: 15px;
-    border-radius: 8px;
+.form-login a {
+    margin: 4rem 2rem;
     transition: all 500ms;
-    
+    padding: 5px;
 }
 
-.product:hover {
-    box-shadow: 0px 0px 10px rgba(169,156,104,0.7);
-}
-
-.product h3, .product p, .product .selection1{
-    margin: 10px 0;
-}
-
-.relatedProducts i {
-    cursor: pointer;
-    transition: all 500ms;
-    font-size: 1.5rem;
-}
-
-.relatedProducts i:hover {
+.form-login a:hover {
     color: var(--fifth);
 }
 
-.selection1 button {
-    border: none;
-    background-color: var(--principal);
-    border-radius: 5px;
-    padding: 5px 8px;
-    width: 5rem;
-}
-
-.selection1 div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5px;
-}
-
-.selection1 select {
-    flex-grow: 0.4;
-}
 
 /*---------- Footer ---------------*/
 .Go-home {

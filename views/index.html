@@ -1,85 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/styles_home.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto&display=swap">
+    <link href="/css/styles_home.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <title>Home</title>
 </head>
 <body>
     <!-- Seccion de la cabecera-->
     <header>
-        <!--
-        <div class="header-msn">
-            <p>ENVÍO GRATIS DESDE $150.000 - SE EXCLUYE DESTINOS ESPECIALES. NO APLICA A CLIENTES AL POR MAYOR</p>
-        </div>
-        <section>
-            <div class="header-comunicaciones-ventas">
-                <div class="redes-sociales">
-                    <img src="/img/icon-facebook.svg" alt="">
-                    <img src="/img/icon-instagram.svg" alt="">
-                    <img src="/img/icon-twitter.svg" alt="">
-                    <img src="/img/icon-youtube.svg" alt="">
-                </div>
-                <div class="header-sesion-compras">
-                    <p>
-                        Iniciar sesión
-                    </p>
-                    <i class="fas fa-search"></i>
-                    <i class="fas fa-shopping-cart" ></i>
-                </div>
-            </div>
-        </section>
-        
-
-        <nav>   
-            <div class="menu-movil">
-                <div class="menu-haburguesa">
-                    <i class="fas fa-bars fa-2x" style="color: rgb(1, 21, 24);"></i>
-                </div>
-                <div class="header-logo">
-                    <p>Implementar empresa</p>
-                </div>
-                <div class="menu-carrocompras">
-                    <i class="fas fa-shopping-cart fa-2x" style="color: rgb(1, 21, 24);"></i>
-                </div>
-            </div>            
-
-            <div class="lista">
-                <ul>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Foro</a></li>
-                    <li><a href="#">Quienes Somos</a></li>
-                    <li><a href="#">Articulos</a></li>
-                    <li><a href="#">Promociones</a></li>
-                </ul>
-            </div>
-            <div class="barras-busqueda">
-                <input type="text" placeholder="Buscar">
-                <i class="fas fa-search"></i>                
-            </div>
-        </nav>
-        -->
         <p class="infoPromo">Envío gratis desde $150.000 - Aplica términos y condiciones.</p>
         <div class="header1">
             <a href="/home"><img class="logo1" src="/img/logo 2.0.png" alt="logo"></a>
-            <div class="redesSociales">
-                <img src="/img/icon-facebook.svg" alt="">
-                <img src="/img/icon-instagram.svg" alt="">
-                <img src="/img/icon-twitter.svg" alt="">
-                <img src="/img/icon-youtube.svg" alt="">
-            </div>
             <div class="actions">
                 <form class="search" action="#" method="get">
                     <input type="search" name="searchBar" placeholder="Buscar artículos">
-                    <button type="submit"><i class="fas fa-search"></i></button>
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
                 <a class="login" href="/login">Iniciar sesión</a>
-                <a class="cart" href="/productCart"><i class="fas fa-shopping-cart";"></i></a>
+                <a class="cart" href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>
         </div>
         <nav class="header2">
@@ -88,21 +33,14 @@
                 <li><a href="#">Foro</a></li>
                 <li><a href="#">Quienes somos</a></li>
                 <li><a href="#">Artículos</a></li>
-                <li><a href="#">Pomociones</a></li>
+                <li><a href="#">Promociones</a></li>
             </ul>
         </nav>
-    
+        -->
+       
     </header>
 
     <!-- Seccion del cuerpo-->
-    <section class="header-carrusel">
-        <!-- carrucel -->
-        <article>
-            <img src="/img/remas-carrusel.jpg" alt="img-carrusel-1" width="360">
-            <!-- titulo h3-->
-            <!-- Subtitulo p-->
-        </article>
-    </section>
 
     <!-- categorias -->
     <section class="category">
@@ -359,6 +297,7 @@
     </section>
 
     <!-- Seccion del pie de pagina-->
+    <a class="Go-home" href="/home">Ir al Inicio</a>
     <footer>
         <div class="parte-7">
             <div class="links">
@@ -394,7 +333,16 @@
                 <p><i class="fas fa-envelope"></i> info@valpez.com</p>
             </div>
         </div>
-        <p class="copy"><i class="far fa-copyright"></i> 2022 - Sitio Ecommerce implementado por Valpez</p>
+        <div class="logos-container">
+            <div class="redesSociales">
+                <a><i class="fa-brands fa-facebook social-icon"></i></a>
+                <a><i class="fa-brands fa-instagram social-icon"></i></a>
+                <a><i class="fa-brands fa-twitter social-icon"></i></a>
+                <a><i class="fa-brands fa-youtube social-icon"></i></a>
+            </div>
+            <p class="copy"><i class="far fa-copyright"></i> 2022 - Sitio Ecommerce implementado por Valpez</p>
+        </div>
+    
     </footer>
 
 </body>
