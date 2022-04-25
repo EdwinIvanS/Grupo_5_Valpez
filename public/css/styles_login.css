@@ -142,7 +142,7 @@ button {
 }
 
 h2 {
-    margin: 10px 0;
+    margin: 2rem 0;
     color: var(--fourth);
 }
 
@@ -152,13 +152,29 @@ h2 {
     padding: 8px 10px;
     width: 20rem;
     margin: 10px 0;
-    color: var(--fourth);
+    color: var(--third);
     transition: all 500ms;
+}
+
+.form-login button {
+    background-color: var(--principal);
+    font-weight: bold;
+    margin: 2rem;
 }
 
 .form-login button:hover {
     background-color: var(--fourth);
     color: var(--white);
+}
+
+.form-login a {
+    margin: 4rem 2rem;
+    transition: all 500ms;
+    padding: 5px;
+}
+
+.form-login a:hover {
+    color: var(--fifth);
 }
 
 
