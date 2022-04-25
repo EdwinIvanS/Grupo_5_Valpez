@@ -13,16 +13,110 @@ Verde: #39b54a;
     --var-linea-solida:#ebebeb;
     --var-color-button : rgb(100, 218, 218);
     --var-color-letter-button : black;
+    --green: #C7D97A;
+    --brown: #82572A;
+    --purple: #411F4B;
+    --orange: #D46509;
+    --black: #000000;
+    --gray: #AAB7B8;
+    --white: #FFFFFF;
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
 /********** Header **********/
 
-/*
-header{
-    position: fixed;
-    top:0;
-    width: 100%;
+/*---------- header -------------*/
+.infoPromo {
+    text-align: center;
+    font-size: 16px;
+    background-color: var(--purple);
+    color: var(--white);
+    padding: 8px;
 }
-*/
+
+.header1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--green);
+    height: 100px;
+}
+
+.logo1 {
+    position: relative;
+    top: 50px;
+    width: 300px;
+    height: 300px;
+}
+
+.redesSociales {
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+
+}
+
+.redesSociales img {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search {
+    margin: 15px;
+}
+
+.search input,
+.search button {
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+}
+
+.login {
+    color: var(--black);
+    margin: 15px;
+    font-weight: bold;
+}
+
+.cart {
+    margin: 15px;
+    color: var(--black);
+    font-size: 40px;
+}
+
+.header2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--gray);
+    height: 50px;
+}
+
+.header2 li {
+    margin: 50px;
+    text-align: center;
+}
+
+.header2 ul {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 300px;
+    font-weight: bold;
+}
+
+/*----------- Fin Header -----------*/
 
 .header-msn{
     background-color: aqua;    /*AJUSTAR EL COLOR*/
@@ -286,7 +380,69 @@ body{
 }
 
 /*******************/
+/*---------- Footer ---------------*/
+.Go-home {
+    background-color: var(--green);
+    border-bottom: var(--black) 1px solid;
+    border-top: var(--black) 1px solid;
+    color: var(--black);
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+}
 
+footer {
+    background-color: var(--purple);
+}
+
+.parte-7 {
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.parte-7 h3 {
+    margin-bottom: 10px;
+    margin-left: 3px;
+    margin-top: 10px;
+}
+
+footer a,
+footer ul,
+footer li {
+    color: var(--white);
+    list-style: none;
+    margin: 1px;
+    padding: 3px 0px 3px 0px;
+    text-decoration: none;
+}
+
+.Logo-inferior {
+    height: 150px;
+    width: 150px;
+}
+
+.contacto {
+    text-align: center;
+    position: relative;
+}
+
+.contacto p {
+    padding: 3px 0px 3px 0px;
+}
+
+.copy {
+    color: var(--white);
+    padding: 8px;
+    size: 12px;
+    text-align: center;
+}
+
+/*------------ Fin footer ------------*/
 
 
 /*********MEDIA QUERYS*******/
