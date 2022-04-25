@@ -153,6 +153,7 @@ h2 {
     width: 20rem;
     margin: 10px 0;
     color: var(--fourth);
+    transition: all 500ms;
 }
 
 .form-login button:hover {
