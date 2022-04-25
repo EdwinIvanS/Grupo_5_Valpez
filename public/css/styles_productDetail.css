@@ -2,191 +2,303 @@
     box-sizing: border-box;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-  }
+}
 
-:root{
-    --green:#C7D97A;
-    --brown:#82572A;
-    --purple:#411F4B;
-    --orange: #D46509;
-    --black: #000000;
-    --gray: #AAB7B8;
+:root {
+    --principal:#eadc98;
+    --second: #4c2837;
+    --third: #170f11;
+    --fourth:#394c5d;
+    --fifth: #e18340;
+    --sixth: #a99c68;
     --white: #FFFFFF;
 }
-li{
+
+li {
     list-style-type: none;
 }
-a{
+
+a {
     text-decoration: none;
-    color: var(--black);
+    color: var(--third);
 }
-button{
+
+button {
     cursor: pointer;
 }
+
 /*---------- header -------------*/
-.infoPromo{
+.header {
+    width: 100%;
+}
+
+.infoPromo {
     text-align: center;
-    font-size: 16px;
-    background-color: var(--purple);
-    color: var(--white);
-    padding: 8px;
+    font-size: 1rem;
+    background-color: var(--second);
+    color: white;
+    padding: 4px;
 }
-.header1{
+
+.header1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--green);
-    height: 100px;
+    background-color: var(--principal);
+    height: 3rem;
 }
-.logo1{
+
+.logo1 {
     position: relative;
-    top: 50px;
-    width: 300px;
-    height: 300px;
+    top: 70px;
+    width: 20rem;
+    height: 20rem;
 }
-.redesSociales{
-    display: flex;
-    justify-content: space-between;
-    width: 15%;
-    
-}
-.redesSociales img{
-    cursor: pointer;
-    height: 30px;
-    width: 30px;
-}
-.actions{
+
+.actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.search{
+
+.search {
     margin: 15px;
 }
-.search input, .search button{
+
+.search input,
+.search button {
     border-radius: 5px;
     border: none;
     padding: 5px 10px;
 }
-.login{
-    color: var(--black);
+
+.search input {
+    width: 20rem;
+}
+
+.login {
+    color: var(--third);
     margin: 15px;
     font-weight: bold;
+    transition: all 500ms;
 }
-.cart{
-    margin: 15px;
-    color: var(--black);
-    font-size: 40px;
+
+.login:hover {
+    color: var(--fifth);
 }
-.header2{
+
+.cart {
+    margin: 15px 30px 15px 15px;
+    color: var(--third);
+    font-size: 30px;
+    transition: all 500ms;
+}
+
+.cart:hover {
+    color: var(--fifth);
+}
+
+.header2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--gray);
-    height: 50px;
+    background-color: var(--sixth);
+    height: 5rem;
 }
-.header2 li{
+
+.header2 li {
     margin: 50px;
     text-align: center;
 }
-.header2 ul{
+
+.header2 a {
+    transition: all 500ms;
+}
+
+.header2 a:hover {
+    color: var(--white);
+}
+
+.header2 ul {
     display: flex;
     justify-content: space-between;
     margin-left: 300px;
     font-weight: bold;
 }
+
 /*----------- Fin Header -----------*/
 
 /*----------- main --------------*/
-main{
-    margin: 30px;
+main {
+    margin: 15px;
 }
-.route ul{
-    margin: 80px 0px 0px 0px;
-    display: flex;
-    text-align: left;
-    padding: 0;
 
+.route ul {
+    display: flex;
+    justify-content: end;
+    padding: 0;
 }
-.route li{
+
+.route a {
     margin: 0 3px;
+    transition: all 500ms;
 }
-.productSelected{
+
+.route a:hover {
+    color: var(--fourth);
+    font-weight: bold;
+}
+
+.productSelected {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 6rem;
 }
-.preview{
+
+.preview {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.preview img{
-    width: 130px;
-    height: 130px;
+
+.preview img {
+    width: 8rem;
+    height: 8rem;
     margin: 10px;
 }
-.photo{
-    width: 600px;
-    height: 600px;
+
+.photo {
+    width: 30rem;
+    height: 30rem;
 }
 
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20rem;
+}
+
+.details a {
+    transition: all 500ms;
+}
+
+.details .available {
+    color: var(--fifth);
+}
+
+.selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.details a:hover{
+    color: var(--fourth);
+    font-weight: bold;
+}
+
+.selection button {
+    border-radius: 5px;
+    border: none;
+    padding: 1rem 1.5rem;
+    background-color: var(--principal);
+    transition: all 500ms;
+    font-size: 1rem;
+}
+
+.selection button:hover {
+    color: var(--fifth);
+}
+
+.selection button i{
+    font-size: 1.5rem;
+}
 
 /*---------- Footer ---------------*/
-.Go-home{
-    background-color: var(--green);
-    border-bottom: var(--black) 1px solid;
-    border-top: var(--black) 1px solid;
-    color: var(--black);    
+.Go-home {
+    background-color: var(--principal);
+    color: var(--third);
     display: block;
     font-weight: bold;
     font-size: 16px;
-    padding: 8px;    
+    padding: 8px;
     text-align: center;
-    text-decoration: none;    
+    text-decoration: none;
+    transition: 500ms;
 }
 
-footer{
-    background-color: var(--purple);
+.Go-home:hover {
+    color: var(--fifth);
 }
 
-.parte-7{
+footer {
+    background-color: var(--second);
+}
+
+.parte-7 {
     color: var(--white);
     display: flex;
     justify-content: space-between;
     padding: 8px;
 }
 
-.parte-7 h3{
+.parte-7 h3 {
     margin-bottom: 10px;
     margin-left: 3px;
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
-footer a, footer ul, footer li{
+footer a,
+footer ul,
+footer li {
     color: var(--white);
     list-style: none;
     margin: 1px;
-    padding: 3px 0px 3px 0px;    
+    padding: 3px 0px 3px 0px;
     text-decoration: none;
 }
 
-.Logo-inferior{
-    height: 150px;    
+.Logo-inferior {
+    height: 150px;
     width: 150px;
 }
-.contacto{
+
+.contacto {
     text-align: center;
     position: relative;
 }
 
-.contacto p{
+.contacto p {
     padding: 3px 0px 3px 0px;
 }
-.copy{    
+
+.copy {
     color: var(--white);
     padding: 8px;
-    size: 12px;
+    size: 1rem;
     text-align: center;
 }
+
+.logos-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.redesSociales {
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+    margin: 10px;
+}
+
+.social-icon {
+    cursor: pointer;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
 /*------------ Fin footer ------------*/

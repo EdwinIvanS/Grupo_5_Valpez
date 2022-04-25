@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,17 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <title>Detalle del producto</title>
 </head>
+
 <body>
     <header>
         <p class="infoPromo">Envío gratis desde $150.000 - Aplica términos y condiciones.</p>
         <div class="header1">
             <a href="/home"><img class="logo1" src="/img/logo 2.0.png" alt="logo"></a>
-            <div class="redesSociales">
-                <img src="/img/icon-facebook.svg" alt="">
-                <img src="/img/icon-instagram.svg" alt="">
-                <img src="/img/icon-twitter.svg" alt="">
-                <img src="/img/icon-youtube.svg" alt="">
-            </div>
             <div class="actions">
                 <form class="search" action="#" method="get">
                     <input type="search" name="searchBar" placeholder="Buscar artículos">
@@ -60,36 +56,43 @@
             </div>
             <img class="photo" src="/img/carrete-okuma-alaris.jpg" alt="photo">
             <div class="details">
-                <h1>Carrete Okuma</h1>
+                <h1>Carrete Okuma Alaris</h1>
                 <h2>$ 150.000</h2>
                 <p>Con un marco resistente a la corrosión, placas laterales y un diseño de rotor de flujo ciclónico, así como una bobina de aluminio mecanizado en dos tonos y un mango de metal rígido para mayor resistencia y durabilidad.</p>
                 <a href="#">Ver más detalles</a>
-                <p>Disponible</p>
+                <p class="available">Disponible</p>
                 <form class="selection" action="#" method="get">
-                    <label for="quantity">Cantidad</label>
-                    <select name="quantity" id="quantity">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
+                    <div>
+                       <label>Cantidad</label>
+                        <select name="quantity" id="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select> 
+                    </div>
 
-                    <label for="color">Color</label>
-                    <select name="color" id="color">
-                        <option value="#FF0000">Rojo</option>
-                        <option value="#008000">Verde</option>
-                        <option value="#0000FF">Azul</option>
-                    </select>
+                    <div>
+                       <label>Color</label>
+                        <select name="color" id="color">
+                            <option value="#FF0000">Rojo</option>
+                            <option value="#008000">Verde</option>
+                            <option value="#0000FF">Azul</option>
+                        </select> 
+                    </div>
 
-                    <label for="size">Tamaño</label>
-                    <select name="size" id="size">
-                        <option value="3000">3000</option>
-                        <option value="4000">4000</option>
-                        <option value="4500">4500</option>
-                        <option value="5500">5500</option>
-                        <option value="6500">6500</option>
-                    </select>
+                    <div>
+                       <label for="size">Tamaño</label>
+                        <select name="size" id="size">
+                            <option value="3000">3000</option>
+                            <option value="4000">4000</option>
+                            <option value="4500">4500</option>
+                            <option value="5500">5500</option>
+                            <option value="6500">6500</option>
+                        </select> 
+                    </div>
+                    
                     <button type="submit"><i class="fa-solid fa-cart-plus"></i> Añadir al carrito</button>
                 </form>
             </div>
@@ -97,7 +100,8 @@
         <div class="moreDetails">
             <article class="description">
                 <h2>Descripción</h2>
-                <p>El Alaris funciona sin problemas en la salida de la línea y la recuperación. Gran carrete para agua dulce y acción costera ligera.</p>
+                <p>El Alaris funciona sin problemas en la salida de la línea y la recuperación. Gran carrete para agua
+                    dulce y acción costera ligera.</p>
                 <ul>
                     <li>Sistema de frenos multidisco, lubricado con aceite japonés. o 3BB + 1 RB Balineras.</li>
                     <li>Rodamientos con sistema Quick-set para anti-reverse continuo.</li>
@@ -108,7 +112,10 @@
                     <li>Rodillos de acero inoxidables anti corrosión.</li>
                     <li>RESII: Rotor balanceado por computadora.</li>
                 </ul>
-                <iframe width="420" height="250" src="https://www.youtube.com/embed/QeRVtNfF864" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="420" height="250" src="https://www.youtube.com/embed/QeRVtNfF864"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </article>
             <article class="factSheet">
                 <h2>Ficha Técnica</h2>
@@ -207,8 +214,8 @@
         </div>
     </main>
     <a class="Go-home" href="/home">Ir al Inicio</a>
-    <footer>        
-        <div class="parte-7">            
+    <footer>
+        <div class="parte-7">
             <div class="links">
                 <h3>Información</h3>
                 <ul>
@@ -219,30 +226,40 @@
                     <li><a href="#">Contáctenos</a></li>
                 </ul>
             </div>
-            <div class="links">                
+            <div class="links">
                 <h3>Enlaces de interés</h3>
-                    <ul>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Pesca deportiva y artesanal</a></li>
-                        <li><a href="#">Camping</a></li>
-                    </ul>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Pesca deportiva y artesanal</a></li>
+                    <li><a href="#">Camping</a></li>
+                </ul>
             </div>
-            <div class="links">                
+            <div class="links">
                 <h3>Cuenta</h3>
-                    <ul>
-                        <li><a href="#">Detalles de la cuenta</a></li>
-                        <li><a href="#">Carrito de compras</a></li>
-                        <li><a href="#">Pedidos</a></li>
-                    </ul>
+                <ul>
+                    <li><a href="#">Detalles de la cuenta</a></li>
+                    <li><a href="#">Carrito de compras</a></li>
+                    <li><a href="#">Pedidos</a></li>
+                </ul>
             </div>
             <div class="contacto">
-                <img class="Logo-inferior" src="/img/logo 2.0.png" alt="Logo">                             
+                <img class="Logo-inferior" src="/img/logo 2.0.png" alt="Logo">
                 <p><i class="fas fa-map-marker-alt"></i> Calle falsa No. 123 - 45, Medellín, Colombia</p>
                 <p><i class="fas fa-phone-alt"></i> 57-4-5556677</p>
                 <p><i class="fas fa-envelope"></i> info@valpez.com</p>
             </div>
         </div>
-        <p class="copy"><i class="far fa-copyright"></i> 2022 - Sitio Ecommerce implementado por Valpez</p> 
+        <div class="logos-container">
+            <div class="redesSociales">
+                <a><i class="fa-brands fa-facebook social-icon"></i></a>
+                <a><i class="fa-brands fa-instagram social-icon"></i></a>
+                <a><i class="fa-brands fa-twitter social-icon"></i></a>
+                <a><i class="fa-brands fa-youtube social-icon"></i></a>
+            </div>
+            <p class="copy"><i class="far fa-copyright"></i> 2022 - Sitio Ecommerce implementado por Valpez</p>
+        </div>
+
     </footer>
 </body>
+
 </html>
