@@ -128,138 +128,79 @@ button {
 
 /*----------- Fin Header -----------*/
 
-img{
-    width: 100%;
+/*----------- Main ----------------*/
+
+.carrusel img {
+    width: 20rem;
+    height: 10rem;
 }
 
-.category{
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0px 0px -16px 0px;
-    padding: 0px 50px 0px 50px;
+.related {
+    margin: 2rem;
 }
 
-.category-pesca {
+.relatedProducts {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.related h2 {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.relatedProducts img {
+    width: 15rem;
+    height: 15rem;
+}
+
+.product {
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 500ms;
+    
+}
+
+.product:hover {
+    box-shadow: 0px 0px 10px rgba(169,156,104,0.7);
+}
+
+.product h3, .product p, .product .selection1{
+    margin: 10px 0;
+}
+
+.relatedProducts i {
     cursor: pointer;
-    justify-content: center;
-    width: 60%;
-    height: 90%;
-    padding: 10px;
+    transition: all 500ms;
+    font-size: 1.5rem;
 }
 
-.category-pesca img{
-    height: 80%;
+.relatedProducts i:hover {
+    color: var(--fifth);
 }
 
-.productos-destacados{
-    background-color: white;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    border: 1px solid var(--var-linea-solida);
-    cursor: pointer;
-    margin: 70px;
-}
-
-.productos-descripciones p{
-    text-align: center;
-    padding: 5px 15px 5px 15px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-}
-
-.productos-descripciones{
-    padding: 20px 10px 10px 10px;
-}
-
-.modulo-detalle{
-    border-top: 1px solid var(--var-linea-solida);
-}
-
-.desplegar-lista{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.desplegar-lista select {
-    border: 1px solid var(--var-linea-solida);
+.selection1 button {
+    border: none;
+    background-color: var(--principal);
     border-radius: 5px;
+    padding: 5px 8px;
+    width: 5rem;
+}
+
+.selection1 div {
     display: flex;
-    height: 25px;
-    margin: 7px 0px 7px 0px;
-    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
 }
 
-.productos-añadir{
-    display: flex;
-    justify-content: space-around;
-    padding: 5px;
+.selection1 select {
+    flex-grow: 0.4;
 }
 
-.productos-añadir input{
-    border: 1px solid var(--var-linea-solida);
-    border-radius: 3px;
-    height: 20px;
-    width: 30px;
-}
-
-.productos-añadir button{
-    border: 1px solid var(--var-linea-solida);
-    color: var(--var-color-letter-button);
-    border-radius: 3px;
-    width: 70%;
-    background-color: var(--var-color-button);
-}
-
-body{
-    margin: 0px;
-    background-color: var(--var-linea-solida);
-}
-
-.modulo{
-    padding-bottom: 20px;
-    width: 100%;
-}
-
-/*********MAIN**********/
-
-
-.destacados{
-
-    border: 1px solid var(--var-linea-solida);
-    background-color: white;
-    text-align: center;
-}
-
-.blog-pesca{
-    display: flex;
-    margin: 0px 25px 10px 25px;
-}
-
-.consejo1{
-    text-align: center;
-}
-
-.consejo1 button{
-    background-color: var(--var-color-button);
-    border: 1px solid var(--var-linea-solida);
-    border-radius: 3px;
-    color: var(--var-color-letter-button);
-    height: 30px;
-}
-
-.consejo2 {
-    text-align: center;
-}
-
-.consejo2 button{
-    background-color: var(--var-color-button);
-    border: 1px solid var(--var-linea-solida);
-    border-radius: 3px;
-    color: var(--var-color-letter-button);
-    height: 30px;
-    width: 50%;
-}
+/*-------- Fin main -----------------*/
 
 /*---------- Footer ---------------*/
 .Go-home {
