@@ -19,8 +19,8 @@ li {
 }
 
 a {
-    text-decoration: none;
     color: var(--third);
+    text-decoration: none;    
 }
 
 button {
@@ -33,42 +33,41 @@ button {
 }
 
 .infoPromo {
-    text-align: center;
-    font-size: 1rem;
     background-color: var(--second);
     color: white;
+    font-size: 1rem;    
     padding: 4px;
+    text-align: center;
 }
 
 .header1 {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
     background-color: var(--principal);
+    display: flex;
     height: 3rem;
+    justify-content: space-between;    
 }
 
 .logo1 {
+    height: 20rem;
     position: relative;
     top: 70px;
-    width: 20rem;
-    height: 20rem;
+    width: 20rem;    
 }
 
 .actions {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
+    display: flex;
+    justify-content: space-between;    
 }
 
 .search {
     margin: 15px;
 }
 
-.search input,
-.search button {
-    border-radius: 5px;
+.search input, .search button {
     border: none;
+    border-radius: 5px;    
     padding: 5px 10px;
 }
 
@@ -78,8 +77,8 @@ button {
 
 .login {
     color: var(--third);
-    margin: 15px;
     font-weight: bold;
+    margin: 15px;    
     transition: all 500ms;
 }
 
@@ -88,9 +87,9 @@ button {
 }
 
 .cart {
-    margin: 15px 30px 15px 15px;
     color: var(--third);
     font-size: 30px;
+    margin: 15px 30px 15px 15px;
     transition: all 500ms;
 }
 
@@ -101,9 +100,9 @@ button {
 .header2 {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     background-color: var(--sixth);
     height: 5rem;
+    justify-content: space-between;    
 }
 
 .header2 li {
@@ -121,112 +120,166 @@ button {
 
 .header2 ul {
     display: flex;
-    justify-content: space-between;
-    margin-left: 300px;
-    font-weight: bold;
-}
-
-/*----------- Fin Header -----------*/
-
-.informativo{
-    background-color: var(--second);
-    color: var(--white);
-    font-size: 16px;
-    padding: 8px;
-    text-align: center;
-}
-
-.parte-1{
-    align-items: center;
-    background-color: var(--principal);
-    display: flex;
-    height: 100px;    
-    justify-content: space-between;    
-}
-
-.Logo{
-    height: 300px;
-    position: relative;
-    top: 50px;
-    width: 300px;   
-}
-
-.redes-sociales{
-    display: flex;
-    justify-content: space-between;
-    width: 15%;
-}
-
-.redes-sociales img{
-    cursor: pointer;
-    height: 30px;
-    width: 30px;
-}
-
-.ejecutables{
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-}
-
-.Barra-de-busqueda{
-    margin: 15px;
-}
-
-.Barra-de-busqueda input, .Barra-de-busqueda button{
-    border: none;
-    border-radius: 5px;    
-    padding: 5px 10px;
-}
-
-button{
-    cursor: pointer;
-}
-
-.login{
-    color: var(--third);
-    font-weight: bold;
-    margin: 15px;    
-}
-
-.Carrito{
-    color: var(--third);
-    font-size: 40px;
-    margin: 15px;    
-}
-
-.parte-2{
-    align-items: center;
-    background-color: var(--sixth);
-    display: flex;
-    height: 50px;    
-    justify-content: space-between;    
-}
-
-header a{
-    color: var(--third);
-    text-decoration: none;   
-}
-header ul{
-    display: flex;
-    font-weight: bold;
-    justify-content: space-between;
-    margin-left: 300px;
-}
-
-header li{
-    list-style-type: none;
-    margin: 50px;
-    text-align: center;
-}
-
-.parte-2 ul{
-    display: flex;
     font-weight: bold;
     justify-content: space-between;
     margin-left: 300px;    
 }
+/*----------- Fin Header -----------*/
+/*----------- Inicio Main ----------*/
+main{
+    margin-top: 7rem;
+}
+.bloque-1{    
+    display: flex;
+    justify-content: space-between;    
+}
 
+.parte-3{    
+    background-color: var(--principal);
+    border-radius: 5px;  
+    color: black;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    font-size: 14px;
+    justify-content: center;
+    padding-bottom: 10px;    
+}
+
+.parte-3 i{
+    font-size: 18px;
+    margin: 8px;
+    margin-left: 25px;
+}
+
+.parte-3 h2, .parte-4 h2{
+    font-size: 22px;
+    margin: 5px 0px 5px 25px; 
+}
+
+.parte-4{
+    border: 1px solid var(--fourth);
+    border-radius: 5px;
+    display:block;
+    padding-bottom: 10px;
+}
+
+.parte-4 h4{
+    color: var(--fifth);
+    margin: 3px 25px 8px 25px;
+}
+
+.parte-4 label{
+    color: black;
+    display: block;
+    margin: 3px 25px 8px 25px;
+}
+.parte-4 input{
+    font-size: 18px;
+    margin: 0px 8px 0px 0px;
+}
+
+.parte-4 button{    
+    border: 1px solid var(--second);
+    border-radius: 5px;
+    color: black;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 5px 9px;
+    transition: all 450ms;
+}
+
+.parte-4 button:hover{
+    background-color: var(--fourth);
+    color: var(--white);
+}
+
+article{
+    align-items: center;
+    border: 1px dotted var(--fourth);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+article input{
+    margin-left: 25px;
+}
+
+.Productos{
+    height: 20%;
+    flex-grow: 0.1;
+    margin: 0px 20px;
+    width: 20%;
+}
+
+.descproduct{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    margin: 0px 50px 0px 0px;
+    width: 35%;    
+}
+
+.descproduct select{
+    margin: 5px;
+    width: 15%;
+}
+
+.producto{
+    font-size: 22px;
+    margin: 5px 0px 5px 0px;
+}
+
+.precio{
+    font-size: 18px;
+    margin: 0px 0px 5px 0px;
+}
+
+article .detalles-producto, article .detalles{
+    color: black;
+    font-size: 16px;
+    margin: 10px 0px 15px 0px;
+    text-align: justify;
+    width: 90%;    
+}
+
+article button{    
+    border: 1px solid var(--second);
+    border-radius: 5px;
+    color: black;
+    flex-grow: 0.1;
+    margin: 0px 30px;
+    padding: 5px 9px;
+    transition: all 450ms;
+}
+
+article button:hover{
+    background-color: var(--fourth);
+    color: var(--white);
+}
+
+.parte-6{    
+    display: block;
+    margin: 50px 0px 50px 0px;
+    text-align: center;
+}
+
+.parte-6 button{
+    border: 1px solid var(--second);
+    border-radius: 5px;
+    color: black;
+    font-size: 22px;
+    padding: 5px 18px;
+    transition: all 450ms;
+}
+
+.parte-6 button:hover{
+    background-color: var(--fourth);
+    color: var(--white);
+}
+
+/*---------- Fin Main -------------*/
 /*---------- Footer ---------------*/
 .Go-home {
     background-color: var(--principal);
@@ -261,9 +314,7 @@ footer {
     margin-top: 10px;
 }
 
-footer a,
-footer ul,
-footer li {
+footer a, footer ul, footer li {
     color: var(--white);
     list-style: none;
     margin: 1px;
@@ -295,21 +346,20 @@ footer li {
 .logos-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-direction: column;
+    justify-content: space-between;    
 }
 
 .redesSociales {
     display: flex;
     justify-content: space-between;
-    width: 15%;
     margin: 10px;
+    width: 15%;
 }
 
 .social-icon {
-    cursor: pointer;
     color: var(--white);
+    cursor: pointer;
     font-size: 1.5rem;
 }
-
 /*------------ Fin footer ------------*/
