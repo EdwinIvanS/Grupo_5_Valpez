@@ -108,7 +108,7 @@ button {
 }
 
 .header2 li {
-    margin: 50px;
+    margin: 30px;
     text-align: center;
 }
 
@@ -553,5 +553,10 @@ footer li {
 @media (min-width:769px) {
     body {
         border: 1px solid blue;
+    }
+
+    .header2 li {
+        margin: 30px;
+        text-align: center;
     }
 }
