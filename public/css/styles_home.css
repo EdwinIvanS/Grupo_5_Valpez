@@ -473,139 +473,66 @@ footer li {
     
 }
 
-
+/*dispositivos moviles que se encuentren en la medida  361-481*/
 @media (min-width:361px) {
     /*mayores a 361*/
-    /* MOBILE*/
-    .main-productos {
+    .relatedProducts{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .relatedProducts a{
+        padding-top: 10px;
+    }
+
+    .categories-img{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    body {
         border: 1px solid green;
-        text-align: -webkit-center;
     }
 
-    .productos-destacados {
-        width: 80%;
-        margin: 20px 5px 20px 5px;
-    }
-
-    .productos-destacados:hover {
-        box-shadow: 0px 0px 10px rgb(26, 24, 24);
-    }
-
-    .blog-pesca {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0px 25px 10px 25px;
-    }
-
-    .consejo1 {
-        margin: 0px 0px 20px 0px;
-    }
-
-    .consejo1 button {
-        width: 40%;
-    }
-
-    .category{
-        flex-wrap: wrap;
-        padding: 0px;
-    }
-
-    .barras-busqueda {
-        display: flex;
-    }
-
-    .menu-movil .menu-haburguesa {
-        display: block;
-    }
-    
-    .menu-movil .menu-carrocompras {
-        display: block;
+    .header2{
+        display: none;
     }
 }
+
 
 /*TABLES AND LARGER SMARTPHONES  481-768*/
 
 @media (min-width:481px) {
-    .main-productos {
+
+    .relatedProducts {
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around;
-        border: 1px solid blue;
     }
 
-    .productos-destacados {
-        width: 35%;
-        margin: 20px 25px 20px 25px;
-    }
-
-    .productos-destacados:hover {
-        box-shadow: 0px 0px 10px rgb(26, 24, 24);
-    }
-
-    .blog-pesca {
+    .categories-img {
         display: flex;
-        flex-wrap: nowrap;
-        margin: 0px 25px 10px 25px;
+        width: 70%;
     }
 
-    .consejo1 button{
-        width: 30%;
-    }
-    
-    .consejo2 button {
-        width: 60%;
+    .categories .categories-img img{
+        margin: 0px;
     }
 
-
-    .header-comunicaciones-ventas {
-        display: flex;
+    body {
+        border: 1px solid red;
     }
 
-    .lista {
+    .header2 {
         display: block;
-    }
-
-    .header-msn {
-        display: block;
-    }
-
-    .barras-busqueda {
-        display: none;
-    }
-
-    .menu-movil .menu-haburguesa {
-        display: none;
-    }
-    
-    .menu-movil .menu-carrocompras {
-        display: none;
     }
 }
 
 /*LAPTOPS, TABLES AND SMALL DESKTOPS  769-1279*/
 
 @media (min-width:769px) {
-    .main-productos{
-        display: flex;
-        flex-direction: row;
-        border: 1px solid red;
-    }
-
-    .productos-destacados{
-        width: 20%;
-        margin: 15px;
-    }
-
-    .productos-destacados:hover{
-        box-shadow: 0px 0px 10px rgb(26, 24, 24);
-    }
-
-    .consejo1 button {
-        width: 20%;
-    }
-
-    .consejo2 button {
-        width: 40%;
+    body {
+        border: 1px solid blue;
     }
 }
