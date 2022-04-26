@@ -38,6 +38,7 @@ button {
     background-color: var(--second);
     color: white;
     padding: 4px;
+    width: 100%;
 }
 
 .header1 {
@@ -46,6 +47,7 @@ button {
     justify-content: space-between;
     background-color: var(--principal);
     height: 3rem;
+    width: 100%;
 }
 
 .logo1 {
@@ -126,6 +128,10 @@ button {
     font-weight: bold;
 }
 
+.burguer-menu {
+    display: none;
+}
+
 /*----------- Fin Header -----------*/
 
 /*----------- main --------------*/
@@ -173,6 +179,7 @@ main {
 }
 
 .preview img {
+    cursor: pointer;
     width: 8rem;
     height: 8rem;
     margin: 10px;
@@ -433,3 +440,21 @@ footer li {
 }
 
 /*------------ Fin footer ------------*/
+
+/*------ Vista Mobile ----------*/
+
+@media (max-width:481px){
+    .burguer-menu {
+        display: block;
+    }
+    .header2 {
+        display: none;
+    }
+
+}
+
+/*------ Vista Tablet ----------*/
+
+@media (min-width:768px) and (max-width:1024px){
+
+}
