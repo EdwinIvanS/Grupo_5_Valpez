@@ -257,7 +257,7 @@ footer a, footer ul, footer li {
 
 .redesSociales {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 10px;
     width: 15%;
 }
@@ -268,3 +268,42 @@ footer a, footer ul, footer li {
     font-size: 1.5rem;
 }
 /*------------ Fin footer ------------*/
+
+/*************MEDIAS QUERYS************/
+
+/*dispositivos moviles que se encuentren en la medida  361-481*/
+@media (min-width:361px) {
+
+    body {
+        border: 1px solid green;
+    }
+
+    .parte-7 {
+        display: block;
+    }
+}
+
+
+/*TABLES AND LARGER SMARTPHONES  481-768*/
+
+@media (min-width:481px) {
+    body {
+        border: 1px solid red;
+    }
+
+    .parte-7 {
+        display: flex;
+    }
+}
+
+/*LAPTOPS, TABLES AND SMALL DESKTOPS  769-1279*/
+
+@media (min-width:769px) {
+    body {
+        border: 1px solid blue;
+    }
+
+    .parte-7 {
+        display: flex;
+    }
+}
