@@ -193,6 +193,8 @@ button {
     position: absolute;
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     top: 0;
     width: 100%;
@@ -411,7 +413,7 @@ footer li {
 
 .redesSociales {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 15%;
     margin: 10px;
 }
@@ -499,6 +501,14 @@ footer li {
     .header2{
         display: none;
     }
+
+    .parte-7{
+        display: block;
+    }
+
+    .redesSociales a{
+        padding-left: 5px;
+    }
 }
 
 
@@ -513,7 +523,11 @@ footer li {
 
     .categories-img {
         display: flex;
-        width: 70%;
+        width: 100%;
+    }
+
+    .categories h3{
+        margin: 0px;
     }
 
     .categories .categories-img img{
@@ -527,6 +541,11 @@ footer li {
     .header2 {
         display: block;
     }
+
+    .parte-7 {
+        display: flex;
+    }
+    
 }
 
 /*LAPTOPS, TABLES AND SMALL DESKTOPS  769-1279*/
