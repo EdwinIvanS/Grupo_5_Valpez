@@ -227,6 +227,7 @@ main {
     background-color: var(--principal);
     transition: all 500ms;
     font-size: 1rem;
+    color: var(--second);
 }
 
 .selection button:hover {
@@ -476,7 +477,8 @@ footer li {
         position: relative;
         text-align: center;
         margin: auto;
-        max-width: 450px;
+        max-width: 400px;
+        background-color: var(--principal);
     }
 
     .actions {
@@ -486,6 +488,7 @@ footer li {
     }
     
     .search {
+        display: inline-block;
         position: absolute;
         bottom: -2rem;
         width: 100%;
@@ -513,12 +516,13 @@ footer li {
     .cart {
         position: absolute;
         right: 0;
-        margin: 1rem;
+        margin: 3rem;
         font-size: 2rem;
+        color: var(--second);
     }
 
     header {
-        background-color: var(--principal);
+        background-color: var(--second);
     }
 
     .burguer-menu {
@@ -530,14 +534,165 @@ footer li {
         font-size: 2rem;
         cursor: pointer;
         transition: all 500ms;
-        margin: 1rem;
-    }
-
-    main {
-        margin-top: 3rem;
+        margin: 3rem;
     }
 
     /*------- fin header --------*/
+
+    /*------- main ----------*/
+
+    main {
+        margin: 3rem 0 0 0;
+    }
+    
+    .route ul {
+        justify-content: flex-start;
+        font-size: 0.8rem;
+        margin: 1rem;
+    }
+    
+    .productSelected {
+        flex-direction: column;
+        margin: 1.2rem 1rem 1rem 1rem;
+    }
+    
+    .preview {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+    
+    .preview i{
+        font-size: 1rem;
+        transform: rotate(-90deg);
+    }
+    
+    
+    .preview img {
+        width: 2rem;
+        height: 2rem;
+        margin: 5px;
+        border-radius: 50%;
+        box-shadow: 0px 0px 5px var(--fourth);
+    }
+    
+    .photo {
+        width: 12rem;
+        height: 12rem;
+    }
+    
+    .details {
+        height: auto;
+    }
+    
+    .details h1 {
+        font-size: 1.5rem;
+        margin: 3px;
+    }
+
+    .details h2 {
+        font-size: 1.2rem;
+        margin: 3px;
+    }
+
+    .details p {
+        font-size: 1rem;
+        margin: 3px;
+    }
+
+    .details .available {
+        display: none;
+    }
+    
+    .selection label {
+        display: none;
+    }
+
+    .selection {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        z-index: 99;
+        width: 100%;
+        background-color: var(--second);
+        justify-content: center;
+    }
+    
+    .details a{
+        display: none;
+    }
+    
+    .selection button {
+        border-radius: 5px;
+        border: none;
+        padding: 0.5rem;
+        margin: 8px;
+    }
+
+    .selection select {
+        margin: 8px;
+        width: 4rem;
+    }
+    
+    .moreDetails {
+        flex-direction: column;
+        margin-top: 2rem;
+        width: 100%;
+    }
+    
+    .description, .factSheet {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .moreDetails p, .moreDetails ul, .moreDetails iframe {
+        display: none;
+    }
+    
+    .features {
+        display: none;
+    }
+    
+    .related {
+        margin: 1rem;
+        width: 100%;
+    }
+    
+    .relatedProducts {
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+    
+    .related h2 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .related img {
+        width: 6rem;
+        height: 6rem;
+    }
+    
+    .product {
+        padding: 1rem;
+        width: 300px;
+    }
+    
+    .product h3, .product p {
+        margin: 2px;
+    }
+
+    .selection1 {
+        display: none;
+    }
+    
+    .relatedProducts i {
+        display: none;
+    }
+
+    /*---------- fin main ------ */
+
 
 
 }
