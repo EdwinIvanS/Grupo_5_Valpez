@@ -3,6 +3,9 @@
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
+body {
+    width: 100%;
+}
 
 :root {
     --principal:#eadc98;
@@ -63,15 +66,11 @@ button {
     align-items: center;
 }
 
-.search {
-    margin: 15px;
-}
-
 .search input,
 .search button {
     border-radius: 5px;
     border: none;
-    padding: 5px 10px;
+    padding: 0.5rem 1rem;
 }
 
 .search input {
@@ -80,7 +79,7 @@ button {
 
 .login {
     color: var(--third);
-    margin: 15px;
+    padding: 1rem;
     font-weight: bold;
     transition: all 500ms;
 }
@@ -90,9 +89,9 @@ button {
 }
 
 .cart {
-    margin: 15px 30px 15px 15px;
+    padding: 1rem;
     color: var(--second);
-    font-size: 30px;
+    font-size: 2rem;
     transition: all 500ms;
 }
 
@@ -106,10 +105,11 @@ button {
     justify-content: space-between;
     background-color: var(--sixth);
     height: 5rem;
+    width: 100%;
 }
 
 .header2 li {
-    margin: 50px;
+    padding: 2rem;
     text-align: center;
 }
 
@@ -124,8 +124,9 @@ button {
 .header2 ul {
     display: flex;
     justify-content: space-between;
-    margin-left: 300px;
+    padding-left: 18rem;
     font-weight: bold;
+    width: 100%;
 }
 
 .burguer-menu {
@@ -140,17 +141,17 @@ button {
 
 /*----------- main --------------*/
 main {
-    margin: 15px;
+    width: 100%;
 }
 
 .route ul {
     display: flex;
     justify-content: end;
-    padding: 0;
+    padding: 1rem;
 }
 
 .route a {
-    margin: 0 3px;
+    padding: 0 3px;
     transition: all 500ms;
 }
 
@@ -163,7 +164,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 6rem;
+    padding: 4rem 1rem;
 }
 
 .preview {
@@ -184,9 +185,9 @@ main {
 
 .preview img {
     cursor: pointer;
-    width: 8rem;
-    height: 8rem;
-    margin: 10px;
+    width: 6rem;
+    height: 6rem;
+    margin: 1rem;
 }
 
 .photo {
@@ -198,7 +199,10 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 20rem;
+}
+
+.details h1, .details h2, .details p, .details a, .selection {
+    padding: 1rem;
 }
 
 .details a {
@@ -223,11 +227,15 @@ main {
 .selection button {
     border-radius: 5px;
     border: none;
-    padding: 1rem 1.5rem;
+    padding: 1rem;
     background-color: var(--principal);
     transition: all 500ms;
     font-size: 1rem;
     color: var(--second);
+}
+
+.onlyCart {
+    display: none;
 }
 
 .selection button:hover {
@@ -241,7 +249,7 @@ main {
 .moreDetails {
     display: flex;
     justify-content: space-between;
-    margin-top: 6rem;
+    padding: 1rem;
 }
 
 .description, .factSheet {
@@ -276,50 +284,48 @@ main {
 
 .features {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 
 .features div {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     width: 50%;
 }
 
 .features span {
-    width: 95%;
+    width: 90%;
     background-color: rgba(57,69,93,0.2);
-    padding: 5px;
+    padding: 1rem;
     border: none;
     border-radius: 5px;
-    margin: 15px;
+    margin: 1rem;
 }
 .related {
-    margin: 2rem;
+    padding: 1rem;
 }
 
 .relatedProducts {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    margin-bottom: 4rem;
+    padding: 1rem;
 }
 
 .related h2 {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+    padding: 1rem;
 }
 
 .related img {
-    width: 15rem;
-    height: 15rem;
+    width: 12rem;
+    height: 12rem;
 }
 
 .product {
-    padding: 15px;
+    text-align: center;
+    padding: 1rem;
     border-radius: 8px;
     transition: all 500ms;
-    
 }
 
 .product:hover {
@@ -327,7 +333,7 @@ main {
 }
 
 .product h3, .product p, .product .selection1{
-    margin: 10px 0;
+    padding: 0.5rem;
 }
 
 .relatedProducts i {
@@ -344,15 +350,14 @@ main {
     border: none;
     background-color: var(--principal);
     border-radius: 5px;
-    padding: 5px 8px;
-    width: 5rem;
+    padding: 0.5rem 1rem;
 }
 
 .selection1 div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5px;
+    padding: 0.2rem;
 }
 
 .selection1 select {
@@ -480,12 +485,6 @@ footer li {
         max-width: 400px;
         background-color: var(--principal);
     }
-
-    .actions {
-        width: 100%;
-        margin: 0;
-        padding: 1px;
-    }
     
     .search {
         display: inline-block;
@@ -493,21 +492,18 @@ footer li {
         bottom: -2rem;
         width: 100%;
         left: 0;
-        margin: 0;
     }
     
     .search input,
     .search button {
         font-size: 0.6rem;
         padding: 5px;
-        margin: 0;
         border: 1px solid var(--second);
     }
     
     .search input {
         width: 80%;
     }
-
 
     .login {
         display: none;
@@ -516,7 +512,7 @@ footer li {
     .cart {
         position: absolute;
         right: 0;
-        margin: 3rem;
+        padding: 3rem;
         font-size: 2rem;
         color: var(--second);
     }
@@ -529,31 +525,26 @@ footer li {
         position: absolute;
         left: 0;
         border: none;
-        background-color: var(--principal);
         color: var(--second);
         font-size: 2rem;
         cursor: pointer;
         transition: all 500ms;
-        margin: 3rem;
+        padding: 3rem;
     }
 
     /*------- fin header --------*/
 
     /*------- main ----------*/
-
-    main {
-        margin: 3rem 0 0 0;
-    }
     
     .route ul {
         justify-content: flex-start;
         font-size: 0.8rem;
-        margin: 1rem;
+        padding: 3rem 2rem;
     }
     
     .productSelected {
         flex-direction: column;
-        margin: 1.2rem 1rem 1rem 1rem;
+        padding: 1rem;
     }
     
     .preview {
@@ -567,11 +558,10 @@ footer li {
         transform: rotate(-90deg);
     }
     
-    
     .preview img {
-        width: 2rem;
-        height: 2rem;
-        margin: 5px;
+        width: 3rem;
+        height: 3rem;
+        padding: 0.5rem;
         border-radius: 50%;
         box-shadow: 0px 0px 5px var(--fourth);
     }
@@ -581,23 +571,19 @@ footer li {
         height: 12rem;
     }
     
-    .details {
-        height: auto;
-    }
-    
     .details h1 {
         font-size: 1.5rem;
-        margin: 3px;
+        padding: 1rem;
     }
 
     .details h2 {
         font-size: 1.2rem;
-        margin: 3px;
+        padding: 1rem;
     }
 
     .details p {
         font-size: 1rem;
-        margin: 3px;
+        padding: 1rem;
     }
 
     .details .available {
@@ -608,14 +594,19 @@ footer li {
         display: none;
     }
 
+    .onlyCart {
+        display: block;
+    }
+
     .selection {
         position: fixed;
         right: 0;
         bottom: 0;
-        z-index: 99;
+        z-index: 20;
         width: 100%;
         background-color: var(--second);
-        justify-content: center;
+        justify-content: space-around;
+        padding: 1rem 2rem;
     }
     
     .details a{
@@ -625,24 +616,24 @@ footer li {
     .selection button {
         border-radius: 5px;
         border: none;
-        padding: 0.5rem;
-        margin: 8px;
+        padding: 0.5rem 1rem;
+    }
+
+    .complete {
+        display: none;
     }
 
     .selection select {
-        margin: 8px;
-        width: 4rem;
+        padding: 0.5rem 1rem;
+        color: var(--third);
     }
     
     .moreDetails {
         flex-direction: column;
-        margin-top: 2rem;
-        width: 100%;
     }
     
     .description, .factSheet {
         width: 100%;
-        padding: 1rem;
     }
     
     .moreDetails p, .moreDetails ul, .moreDetails iframe {
@@ -653,20 +644,9 @@ footer li {
         display: none;
     }
     
-    .related {
-        margin: 1rem;
-        width: 100%;
-    }
-    
     .relatedProducts {
         flex-direction: column;
         justify-content: center;
-        margin-bottom: 2rem;
-    }
-    
-    .related h2 {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
     }
     
     .related img {
@@ -675,12 +655,7 @@ footer li {
     }
     
     .product {
-        padding: 1rem;
-        width: 300px;
-    }
-    
-    .product h3, .product p {
-        margin: 2px;
+        margin-bottom: 1rem;
     }
 
     .selection1 {
@@ -720,15 +695,74 @@ footer li {
     .header2 {
         height: 4rem;
     }
-    
-    .header2 li {
-        margin: 1rem;
-    }
-    
+
     .header2 ul {
-        margin-left: 8rem;
+        padding-left: 10rem;
     }
+    
     
     /*----------- Fin Header -----------*/
+
+    /*----------- main --------------*/
+
+    .productSelected {
+        position: relative;
+    }
+
+    .preview {
+        position:absolute;
+        flex-direction: row;
+        bottom: 0;
+    }
+
+    .preview i{
+        font-size: 1.5rem;
+        transform: rotate(-90deg);
+
+    }
+
+    .preview img {
+        width: 4rem;
+        height: 4rem;
+        padding: 0.5rem;
+        border-radius: 50%;
+        box-shadow: 0px 0px 5px var(--fourth);
+    }
+
+    .photo {
+        width: 25rem;
+        height: 25rem;
+    }
+
+    .selection {
+        justify-content: center;
+    }
+
+    .selection label {
+        display: none;
+    }
+
+    .complete {
+        display: none;
+    }
+
+    .onlyCart {
+        display: block;
+    }
+
+    .selection select {
+        margin: 0.8rem;
+    }
+
+    .description iframe {
+        width: 100%;
+    }
+
+    .related img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    /*-------- fin main ---------*/
 
 }
