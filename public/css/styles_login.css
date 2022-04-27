@@ -145,21 +145,21 @@ button {
     background-color: rgba(57,69,93,0.4);
     border-radius: 20px;
     border: none;
-    padding: 30px 10px;
-    width: 40rem;
+    padding: 2rem 1rem;
+    width: 60%;
 }
 
 h2 {
-    margin: 2rem 0;
+    padding: 1rem;
     color: var(--fourth);
 }
 
 .form-login input, .form-login button {
     border: none;
     border-radius: 5px;
-    padding: 8px 10px;
-    width: 20rem;
-    margin: 10px 0;
+    padding: 0.5rem 1rem;
+    width: 70%;
+    margin: 1rem;
     color: var(--third);
     transition: all 500ms;
 }
@@ -167,7 +167,6 @@ h2 {
 .form-login button {
     background-color: var(--principal);
     font-weight: bold;
-    margin: 2rem;
 }
 
 .form-login button:hover {
@@ -176,13 +175,17 @@ h2 {
 }
 
 .form-login a {
-    margin: 4rem 2rem;
+    display: block;
     transition: all 500ms;
-    padding: 5px;
+    padding: 0.5rem;
 }
 
 .form-login a:hover {
     color: var(--fifth);
+}
+
+input:invalid{
+    border: 1px solid red;
 }
 
 
