@@ -553,26 +553,36 @@ footer a, footer ul, footer li {
     /*------- Fin Main ----------*/
 
     /*------- Inicio Footer------*/
-    .parte-7 h3 {
-        font-size: 22px;
-        margin: 10px 4px 10px 4px;        
+    .pie-de-pagina{
+        width: 100%;
     }
-    
-    footer a, footer ul, footer li {
-       font-size: 14px;
+    .pie-de-pagina .parte-7{
+        width: 100%;
+        max-width: 768px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        padding: 10px 5px;
+        text-align: center;
     }
-    
-    .contacto {
-        font-size: 14px;
-    }
-    
-    .redesSociales a{
-        margin: 10px;
-    }
-    
-    .copy {
-        font-size: 14px;
 
+    .contacto{
+        width: 100%;
+        height: 100%;
+        display: block;
+        justify-content: center;
+        align-self: center;
+        text-align: center;
+    }
+
+    .Logo-inferior{
+        width: 150px;
+    }
+
+    .redesSociales a{
+        margin: 5px;
+    }
     /*------- Fin Footer---------*/
 
 
@@ -702,7 +712,7 @@ footer a, footer ul, footer li {
     
     .copy {
         font-size: 14px;
+    }
 
     /*------- Fin Footer---------*/
-
 }
