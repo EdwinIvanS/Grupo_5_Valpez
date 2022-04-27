@@ -466,6 +466,102 @@ footer a, footer ul, footer li {
 
     /*------- fin header --------*/
 
+    /*------- Main --------------*/
+    
+    main{
+        margin-top: 3rem;
+    }
+
+    .bloque-1{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .parte-3{    
+        align-items: center;
+        border-radius: 12px;
+        font-size: 16px;
+    }
+
+    .parte-3 i{
+        font-size: 16px;
+        margin-left: 15px;  
+    }
+    
+    .parte-3 h2, .parte-4 h2{
+        font-size: 18px;
+        margin: 5px 0px 5px 15px; 
+    }
+
+    .parte-4{
+        border: none;
+        border-radius: 12px;
+        padding-bottom: 8px;
+    }
+    
+    .parte-4 h4, .parte-4 label, .parte-4 button{
+        margin-left: 15px;
+    }
+
+    .parte-4 a{
+        display: block;
+        text-align: right;
+    }
+
+    article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;       
+    }
+
+    article input{
+        display: none;
+    }
+    
+    .Productos{
+        height: 30%;
+        width: 60%;
+    }
+    
+    .descproduct{
+        margin: 0px 20px;
+        text-align: center;
+        width: 60%;
+    }
+
+    .detalles-producto{
+        display: none;
+    }
+    
+    .caracteristicas{
+        flex-direction: row;
+        margin:5px;
+    }
+    
+    .descproduct select{
+        width: 20%;
+    }
+
+    .producto{
+        font-size: 30px;
+    }
+    
+    .precio{
+        font-size: 26px;
+    }
+    
+    article .detalles{
+        font-size: 18px;
+        text-align: center; 
+    }
+    
+    article button{
+        font-size: 16px;
+        margin: 5px
+    }
+
+    /*------- Fin Main ----------*/
+
 
 }
 
@@ -502,5 +598,78 @@ footer a, footer ul, footer li {
     }
     
     /*----------- Fin Header -----------*/
+
+    /*------- Main --------------*/
+    main{
+        margin-top: 2rem;
+    }
+
+    .parte-3{    
+        border-radius: 8px;
+        font-size: 12px;
+        padding-bottom: 8px;    
+    }
+    
+    .parte-3 i{
+        font-size: 16px;
+        margin-left: 15px;        
+    }
+    
+    .parte-3 h2, .parte-4 h2{
+        font-size: 18px;
+        margin: 5px 0px 5px 15px; 
+    }
+
+    .parte-4{
+        border-radius: 8px;
+        padding-bottom: 8px;
+    }
+    
+    .parte-4 h4, .parte-4 label, .parte-4 button{
+        margin-left: 15px;
+    }
+    
+    article input{
+        margin-left: 15px;
+    }
+    
+    .Productos{
+        height: 35%;
+        width: 35%;
+    }
+    
+    .descproduct{
+        width: 50%;
+        margin: 0
+    }
+
+    .detalles-producto{
+        display: none;
+    }
+    
+    .descproduct select{
+        display: flex;
+        flex-direction: column;
+        margin-left:80px;
+        width: 30%;    
+    }
+    
+    .producto{
+        font-size: 28px;
+    }
+    
+    .precio{
+        font-size: 24px;
+    }
+    
+    article .detalles{
+        font-size: 18px;   
+    }
+    
+    article button{
+        margin: 5px
+    }
+
+    /*------- Fin Main ----------*/
 
 }
