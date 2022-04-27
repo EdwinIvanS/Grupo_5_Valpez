@@ -552,6 +552,29 @@ footer a, footer ul, footer li {
 
     /*------- Fin Main ----------*/
 
+    /*------- Inicio Footer------*/
+    .parte-7 h3 {
+        font-size: 22px;
+        margin: 10px 4px 10px 4px;        
+    }
+    
+    footer a, footer ul, footer li {
+       font-size: 14px;
+    }
+    
+    .contacto {
+        font-size: 14px;
+    }
+    
+    .redesSociales a{
+        margin: 10px;
+    }
+    
+    .copy {
+        font-size: 14px;
+
+    /*------- Fin Footer---------*/
+
 
 }
 
@@ -658,5 +681,28 @@ footer a, footer ul, footer li {
     }
 
     /*------- Fin Main ----------*/
+
+    /*------- Inicio Footer------*/    
+    .parte-7 h3 {
+        font-size: 18px;
+        margin: 10px 4px 10px 4px;        
+    }
+    
+    footer a, footer ul, footer li {
+       font-size: 14px;
+    }
+    
+    .contacto {
+        font-size: 14px;
+    }
+    
+    .redesSociales a{
+        margin: 10px;
+    }
+    
+    .copy {
+        font-size: 14px;
+
+    /*------- Fin Footer---------*/
 
 }
