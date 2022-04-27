@@ -124,6 +124,15 @@ button {
     justify-content: space-between;
     margin-left: 300px;    
 }
+
+.burguer-menu {
+    display: none;
+}
+
+.burguer-menu:hover {
+    color: var(--white);
+}
+
 /*----------- Fin Header -----------*/
 /*----------- Main ----------*/
 main{
@@ -363,38 +372,135 @@ footer a, footer ul, footer li {
 }
 /*------------ Fin footer ------------*/
 
-/*************MEDIAS QUERYS************/
+/*------ Vista Mobile ----------*/
 
-/*dispositivos moviles que se encuentren en la medida  361-481*/
-@media (min-width:361px) {
-
-    body {
-        border: 1px solid green;
-    }
-    .parte-7 {
+@media (max-width:768px){
+    /*---- Header ----------*/
+    
+    .burguer-menu {
         display: block;
     }
+
+    .header2 {
+        display: none;
+    }
+
+    .logo1 {
+        position: absolute;
+        top: -1rem;
+        left: 33%;
+        margin: auto;
+        width: 8.125rem;
+        height: 8.125rem;
+    }
+
+    .infoPromo {
+        display: none;
+    }
+
+    .header1 {
+        height: 6rem;
+        position: relative;
+        text-align: center;
+        margin: auto;
+        max-width: 450px;
+    }
+
+    .actions {
+        width: 100%;
+        margin: 0;
+        padding: 1px;
+    }
+    
+    .search {
+        position: absolute;
+        bottom: -2rem;
+        width: 100%;
+        left: 0;
+        margin: 0;
+    }
+    
+    .search input,
+    .search button {
+        font-size: 0.6rem;
+        padding: 5px;
+        margin: 0;
+        border: 1px solid var(--second);
+    }
+    
+    .search input {
+        width: 80%;
+    }
+
+
+    .login {
+        display: none;
+    }
+    
+    .cart {
+        position: absolute;
+        right: 0;
+        margin: 1rem;
+        font-size: 2rem;
+    }
+
+    header {
+        background-color: var(--principal);
+    }
+
+    .burguer-menu {
+        position: absolute;
+        left: 0;
+        border: none;
+        background-color: var(--principal);
+        color: var(--second);
+        font-size: 2rem;
+        cursor: pointer;
+        transition: all 500ms;
+        margin: 1rem;
+    }
+
+    main {
+        margin-top: 3rem;
+    }
+
+    /*------- fin header --------*/
+
+
 }
 
+/*------ Vista Tablet ----------*/
 
-/*TABLES AND LARGER SMARTPHONES  481-768*/
+@media (min-width:769px) and (max-width:1024px){
 
-@media (min-width:481px) {
-    body {
-        border: 1px solid red;
-    }
-    .parte-7 {
-        display: flex;
-    }
-}
+    /*--------- Header -------*/
+    
+    .infoPromo {
+        position: relative;
+        z-index: 12;
+        font-size: 0.8rem;
 
-/*LAPTOPS, TABLES AND SMALL DESKTOPS  769-1279*/
+    }
+    
+    .logo1 {
+        position: absolute;
+        top: 0;
+        width: 10rem;
+        height: 10rem;
+    }
+    
+    .header2 {
+        height: 4rem;
+    }
+    
+    .header2 li {
+        margin: 1rem;
+    }
+    
+    .header2 ul {
+        margin-left: 8rem;
+    }
+    
+    /*----------- Fin Header -----------*/
 
-@media (min-width:769px) {
-    body {
-        border: 1px solid blue;
-    }
-    .parte-7 {
-        display: flex;
-    }
 }
