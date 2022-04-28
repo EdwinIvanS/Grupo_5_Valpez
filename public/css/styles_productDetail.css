@@ -635,7 +635,19 @@ footer li {
     .description, .factSheet {
         width: 100%;
     }
+
+    .description:hover p{    
+        display: block;
+    }
     
+    .description:hover ul { 
+        display: grid;
+    }
+
+    .factSheet:hover div {    
+       display: inline-grid;
+    }
+
     .moreDetails p, .moreDetails ul, .moreDetails iframe {
         display: none;
     }
