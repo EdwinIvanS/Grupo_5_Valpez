@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/EdwinIvanS/Grupo_5_Valpez#readme",
   "dependencies": {
+    "ejs": "^3.1.7",
     "express": "^4.17.3"
   }
 }
