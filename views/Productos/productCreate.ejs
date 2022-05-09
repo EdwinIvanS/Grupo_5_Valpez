@@ -2,45 +2,68 @@
 <html lang="en">
 <head>
     <%- include('../partials/head') %>
+    <link href="/css/styles_productCreate.css" rel="stylesheet">
     <title>Creación de producto</title>
 </head>
 <body>
     <%- include('../partials/header') %>
     <main>
-        <div class="form-register">
+        <div class="form-creation">
             <form class="formularios" action="./" method="get">
-                <h2>Crear una cuenta</h2>
+                <h1>Agregar Producto</h1>
                 <div>
-                    <input type="text" name="nombre" placeholder="Nombre y apellidos" class="formulario-registro" minlength="4">
-                </div>
-                <div>
-                    <input type="text" name="usuario" placeholder="Nombre de usuario" class="formulario-registro" minlength="4">
-                </div>
-                <div>
-                    <input type="email" name="correo" placeholder="Email" class="formulario-registro">
+                    <label class="titulos-formulario">Categoría: </label>
+                    <label class="formulario-creation"><input type="radio" name="category" value="Pesca" > Pesca </label>
+                    <label class="formulario-creation"><input type="radio" name="category" value="Camping" > Camping </label>
                 </div>
                 <div>
-                    <label class="titulos-formulario">Fecha de Nacimiento</label>
-                    <input type="date" name="calendario" class="formulario-registro">
+                    <label class="titulos-formulario">Titulo del Producto: </label>
+                    <input type="text" name="titulo" placeholder="Ej. Carrete Okuma Alaris" class="formulario-creation" minlength="4">
                 </div>
                 <div>
-                    <input type="text" name="dirección" placeholder="Dirección" class="formulario-registro">
+                    <label class="titulos-formulario">Precio: </label>
+                    <input type="number" name="precio" placeholder="Ej. 100.000" class="formulario-creation" minlength="4">
                 </div>
                 <div>
-                    <label class="titulos-formulario">Foto de usuario</label>
-                    <input type="file" name="foto" class="formulario-registro">
+                    <label class="titulos-formulario">Breve descripción del producto: </label>
+                    <textarea name="des1" class="formulario-creation" placeholder="Máximo 250 caracteres" maxlength="250"></textarea>
                 </div>
                 <div>
-                    <input type="password" name="contraseña" placeholder="Contraseña" class="formulario-registro" minlength="8">
+                    <label class="titulos-formulario">Descripción detallada del producto: </label>
+                    <textarea name="des2" class="formulario-creation" placeholder="Máximo 1000 caracteres" maxlength="1000"></textarea>
                 </div>
                 <div>
-                    <input type="password" name="contraseña" placeholder="Confirmar contraseña" class="formulario-registro" minlength="8">
+                    <label class="titulos-formulario">Imágenes del Producto: </label>
+                    <input type="file" name="foto" class="formulario-creation" multiple>
                 </div>
-                <div class="terminos-condiciones">
-                    <input type="checkbox" name="terminos">
-                    <p>Al continuar, aceptas las <a href="#">condiciones de uso</a> y la <a href="#">política de privacidad.</a></p>
+                <div>
+                    <label class="titulos-formulario">Link video descriptivo: </label>
+                    <input type="url" name="url" placeholder="Ej. https://www.youtube.com/embed/QeRVtNfF864" class="formulario-creation" minlength="4">
                 </div>
-                    <button type="submit">Enviar</button>
+                <div>
+                    <label class="titulos-formulario">Cantidad disponible: </label>
+                    <input type="number" name="cantidad" placeholder="Ej. 10" class="formulario-creation">
+                </div>
+                <div>
+                    <label class="titulos-formulario">Colores Disponibles: </label>
+                    <input type="color" name="color1" class="formulario-colores">
+                    <input type="color" name="color2" class="formulario-colores">
+                    <input type="color" name="color3" class="formulario-colores">
+                    <input type="color" name="color4" class="formulario-colores">
+                </div>
+                <div>
+                    <label class="titulos-formulario">Tamaño 1: </label>
+                    <input type="text" name="size" placeholder="Ej. 3000" class="formulario-creation">
+                </div>
+                <div>
+                    <label class="titulos-formulario">Tamaño 2: </label>
+                    <input type="text" name="size" placeholder="Ej. 198cm" class="formulario-creation">
+                </div>
+                <div>
+                    <label class="titulos-formulario">Tamaño 3: </label>
+                    <input type="text" name="size" placeholder="Ej. 1/0" class="formulario-creation">
+                </div>
+                <button type="submit">Enviar</button>
                 <button type="reset">Borrar</button>
             </form>
         </div>
