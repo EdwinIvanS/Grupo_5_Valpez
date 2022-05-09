@@ -7,7 +7,7 @@ const productosController = require("../controllers/productos");
 const registroController  = require("../controllers/registro");
 
 // Enrutador index
-router.get("/home", principalController.home);
+router.get("/", principalController.home);
 
 // Enrutador productos
 router.get("/productCart"  , productosController.productCart);
