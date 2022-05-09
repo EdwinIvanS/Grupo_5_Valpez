@@ -56,6 +56,10 @@ button {
     width: 100%;
 }
 
+textarea{
+    height: 10rem;
+}
+
 .formulario-colores{
     display: block;
     border: none;

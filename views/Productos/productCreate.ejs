@@ -3,13 +3,13 @@
 <head>
     <%- include('../partials/head') %>
     <link href="/css/styles_productCreate.css" rel="stylesheet">
-    <title>Creación de producto</title>
+    <title>.:Crear producto:.</title>
 </head>
 <body>
     <%- include('../partials/header') %>
     <main>
         <div class="form-creation">
-            <form class="formularios" action="./" method="get">
+            <form class="formularios" action="#" method="POST">
                 <h1>Agregar Producto</h1>
                 <div>
                     <label class="titulos-formulario">Categoría: </label>
@@ -63,7 +63,19 @@
                     <label class="titulos-formulario">Tamaño 3: </label>
                     <input type="text" name="size" placeholder="Ej. 1/0" class="formulario-creation">
                 </div>
-                <button type="submit">Enviar</button>
+                <div>
+                    <label class="titulos-formulario">Clasificación: </label>
+                    <input type="text" name="size" placeholder="Ej. Agua salada" class="formulario-creation">
+                </div>
+                <div>
+                    <label class="titulos-formulario">Balineras: </label>
+                    <input type="number" name="size" placeholder="Ej. 4" class="formulario-creation">
+                </div>
+                <div>
+                    <label class="titulos-formulario">Referencia: </label>
+                    <input type="text" name="size" placeholder="Ej. Ean13 4718947023353" class="formulario-creation">
+                </div>
+                <button type="submit">Guardar</button>
                 <button type="reset">Borrar</button>
             </form>
         </div>

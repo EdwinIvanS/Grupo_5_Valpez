@@ -10,7 +10,13 @@ const productosController={
     },
 
     productDetail: function(req,res){
-        res.render("Productos/productDetail");
+        let idProducto = req.params.id;
+        res.render("Productos/productDetail", {idProducto: idProducto});
+    },
+
+    productEdition: function(req,res){
+        let idProducto = req.params.id;
+        res.render("Productos/productEdition", {idProducto: idProducto})
     }
 }
 

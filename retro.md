@@ -1,4 +1,4 @@
- - Sprint 1:
+## Sprint 1:
 1-Comenzar a hacer:
     Generar nuevos espacios en los que logremos compartir con todo el equipo de trabajo aquellos temas o aplicaciones en las que contamos con dudas o poco conocimiento, estamos como equipo justamente para apoyarnos, existen ciertas responsabilidades a nivel personal y grupal y aunque contamos con estas también podemos aportar mucho más de lo que nos piden.
 
@@ -15,7 +15,7 @@
     Es importante compartir los inconvenientes que se nos presenten durante el desarrollo de este y otros proyectos, evitemos quedarnos callados.
 
 
- - Sprint 2:
+## Sprint 2:
 1-Comenzar a hacer:
     Crear momentos en los cuales todo el equipo se pueda reunir para debatir los temas en los que se presentan debilidades, es importante continuar con el apoyo en equipo.
 
