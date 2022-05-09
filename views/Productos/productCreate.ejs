@@ -6,11 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/styles_header.css" rel="stylesheet">
     <link href="/css/styles_footer.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Creación de producto</title>
 </head>
 <body>
     <%- include('../partials/header') %>
-
+    <main>
+        <div class="form-register">
+            <form class="formularios" action="./" method="get">
+                <h2>Crear una cuenta</h2>
+                <div>
+                    <input type="text" name="nombre" placeholder="Nombre y apellidos" class="formulario-registro" minlength="4">
+                </div>
+                <div>
+                    <input type="text" name="usuario" placeholder="Nombre de usuario" class="formulario-registro" minlength="4">
+                </div>
+                <div>
+                    <input type="email" name="correo" placeholder="Email" class="formulario-registro">
+                </div>
+                <div>
+                    <label class="titulos-formulario">Fecha de Nacimiento</label>
+                    <input type="date" name="calendario" class="formulario-registro">
+                </div>
+                <div>
+                    <input type="text" name="dirección" placeholder="Dirección" class="formulario-registro">
+                </div>
+                <div>
+                    <label class="titulos-formulario">Foto de usuario</label>
+                    <input type="file" name="foto" class="formulario-registro">
+                </div>
+                <div>
+                    <input type="password" name="contraseña" placeholder="Contraseña" class="formulario-registro" minlength="8">
+                </div>
+                <div>
+                    <input type="password" name="contraseña" placeholder="Confirmar contraseña" class="formulario-registro" minlength="8">
+                </div>
+                <div class="terminos-condiciones">
+                    <input type="checkbox" name="terminos">
+                    <p>Al continuar, aceptas las <a href="#">condiciones de uso</a> y la <a href="#">política de privacidad.</a></p>
+                </div>
+                    <button type="submit">Enviar</button>
+                <button type="reset">Borrar</button>
+            </form>
+        </div>
+    </main>
     <%- include('../partials/footer') %>
     
 </body>
