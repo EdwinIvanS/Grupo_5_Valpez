@@ -36,146 +36,50 @@
 
             <div class="relatedProducts">
                 <i class="arrow" class="fa-solid fa-angle-left"></i>
-                <a href="/productDetail/1">
-                    <article class="product">
-                        <img src="/img/carrete-okuma-alaris.jpg" alt="producto1">
-                        <h3>Carrete Okuma Alaris</h3>
-                        <p>$ 150.000</p>
-                        <form class="selection1" action="#" method="get">
-                            <div>
-                                <select name="color" id="color">
-                                    <option value="#FF0000">Rojo</option>
-                                    <option value="#008000">Verde</option>
-                                    <option value="#0000FF">Azul</option>
-                                </select>
-                                
-                                <select name="quantity" id="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select name="size" id="size">
-                                    <option value="3000">3000</option>
-                                    <option value="4000">4000</option>
-                                    <option value="4500">4500</option>
-                                    <option value="5500">5500</option>
-                                    <option value="6500">6500</option>
-                                </select>
-
-                                <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                            </div> 
-                        </form>
-                    </article>
-                </a>
-                <a href="/productDetail/1">
-                    <article class="product">
-                        <img src="/img/berkley-choppo-saltwater_2.jpg" alt="producto2">
-                        <h3>Berkley Choppo Saltwater</h3>
-                        <p>$ 50.000</p>
-                        <form class="selection1" action="#" method="get">
-                            <div>
-                                <select name="color" id="color">
-                                    <option value="#FF0000">Rojo</option>
-                                    <option value="#008000">Verde</option>
-                                    <option value="#0000FF">Azul</option>
-                                </select>
-                                
-                                <select name="quantity" id="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select name="size" id="size">
-                                    <option value="3000">3000</option>
-                                    <option value="4000">4000</option>
-                                    <option value="4500">4500</option>
-                                    <option value="5500">5500</option>
-                                    <option value="6500">6500</option>
-                                </select>
-
-                                <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                            </div> 
-                        </form>
-                    </article>
-                </a>
-                <a href="/productDetail/1">
-                    <article class="product">
-                        <img src="/img/cana-shakespeare-ugly-stik-gx2-spinning-1.jpg" alt="producto3">
-                        <h3>Caña Shakespeare Ugly Stik</h3>
-                        <p>$ 180.000</p>
-                        <form class="selection1" action="#" method="get">
-                            <div>
-                                <select name="color" id="color">
-                                    <option value="#FF0000">Rojo</option>
-                                    <option value="#008000">Verde</option>
-                                    <option value="#0000FF">Azul</option>
-                                </select>
-                                
-                                <select name="quantity" id="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select name="size" id="size">
-                                    <option value="3000">3000</option>
-                                    <option value="4000">4000</option>
-                                    <option value="4500">4500</option>
-                                    <option value="5500">5500</option>
-                                    <option value="6500">6500</option>
-                                </select>
-
-                                <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                            </div> 
-                        </form>
-                    </article>
-                </a>
-                <a href="/productDetail/1">
-                    <article class="product">
-                        <img src="/img/carrete-penn-slammer-iv-spinning-81-balineras_2.jpg" alt="producto4">
-                        <h3>Carretel Penn Slammer</h3>
-                        <p>$ 160.000</p>
-                        <form class="selection1" action="#" method="get">
-                            <div>
-                                <select name="color" id="color">
-                                    <option value="#FF0000">Rojo</option>
-                                    <option value="#008000">Verde</option>
-                                    <option value="#0000FF">Azul</option>
-                                </select>
-                                
-                                <select name="quantity" id="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select name="size" id="size">
-                                    <option value="3000">3000</option>
-                                    <option value="4000">4000</option>
-                                    <option value="4500">4500</option>
-                                    <option value="5500">5500</option>
-                                    <option value="6500">6500</option>
-                                </select>
-
-                                <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                            </div> 
-                        </form>
-                    </article>
-                </a>
+                <% for(i=0 ; i < productosPesca.length ; i ++) {%>
+                    <% if(productosPesca[i].idProducto<=4){%>
+                        <a href="/productDetail/<%= productosPesca[i].idProducto %>">
+                            <article class="product">
+                                <img src="<%= productosPesca[i].rutaImagen %>" alt="producto5">
+                                <h3>
+                                    <%= productosPesca[i].nombre%>
+                                </h3>
+                                <p>
+                                    <%= productosPesca[i].precio%>
+                                </p>
+                                <form class="selection1" action="#" method="get">
+                                    <div>
+                                        <select name="color" id="color">
+                                            <option value="#FF0000">Rojo</option>
+                                            <option value="#008000">Verde</option>
+                                            <option value="#0000FF">Azul</option>
+                                        </select>
+                
+                                        <select name="quantity" id="quantity">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <select name="size" id="size">
+                                            <option value="3000">3000</option>
+                                            <option value="4000">4000</option>
+                                            <option value="4500">4500</option>
+                                            <option value="5500">5500</option>
+                                            <option value="6500">6500</option>
+                                        </select>
+                
+                                        <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </form>
+                            </article>
+                        </a>
+                        
+                    <% } %>
+                <% } %>
                 <i class="arrow" class="fa-solid fa-angle-right"></i>
             </div>
         </div>
@@ -186,146 +90,47 @@
 
             <div class="relatedProducts">
                 <i class="arrow" class="fa-solid fa-angle-left"></i>
-                <a href="/productDetail/1">
-                    <article class="product">
-                        <img src="/img/senuelo-berkley-powerbait-glitter-trout-bait_1.jpg" alt="producto5">
-                        <h3>Señuelo Berkley Powerbait</h3>
-                        <p>$ 29.100</p>
-                        <form class="selection1" action="#" method="get">
-                            <div>
-                                <select name="color" id="color">
-                                    <option value="#FF0000">Rojo</option>
-                                    <option value="#008000">Verde</option>
-                                    <option value="#0000FF">Azul</option>
-                                </select>
-                                
-                                <select name="quantity" id="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select name="size" id="size">
-                                    <option value="3000">3000</option>
-                                    <option value="4000">4000</option>
-                                    <option value="4500">4500</option>
-                                    <option value="5500">5500</option>
-                                    <option value="6500">6500</option>
-                                </select>
 
-                                <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                            </div> 
-                        </form>
-                    </article>
-                </a>
-                <a href="/productDetail/1">
-                    <article class="product">
-                        <img src="/img/carretel-shimano-sienna-fg-4-balineras_1.jpg" alt="producto6">
-                        <h3>Carretel Shimano Sienna</h3>
-                        <p>$ 198.000</p>
-                        <form class="selection1" action="#" method="get">
-                            <div>
-                                <select name="color" id="color">
-                                    <option value="#FF0000">Rojo</option>
-                                    <option value="#008000">Verde</option>
-                                    <option value="#0000FF">Azul</option>
-                                </select>
-                                
-                                <select name="quantity" id="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select name="size" id="size">
-                                    <option value="3000">3000</option>
-                                    <option value="4000">4000</option>
-                                    <option value="4500">4500</option>
-                                    <option value="5500">5500</option>
-                                    <option value="6500">6500</option>
-                                </select>
+                <% for(i=0 ; i < productosPesca.length ; i ++) {%>
+                    <% if(productosPesca[i].idProducto>4){%>
+                        <a href="/productDetail/<%= productosPesca[i].idProducto %>">
+                            <article class="product">
+                                <img src="<%= productosPesca[i].rutaImagen %>" alt="producto5">
+                                <h3><%= productosPesca[i].nombre%></h3>
+                                <p><%= productosPesca[i].precio%></p>
+                                <form class="selection1" action="#" method="get">
+                                    <div>
+                                        <select name="color" id="color">
+                                            <option value="#FF0000">Rojo</option>
+                                            <option value="#008000">Verde</option>
+                                            <option value="#0000FF">Azul</option>
+                                        </select>
+                                        
+                                        <select name="quantity" id="quantity">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <select name="size" id="size">
+                                            <option value="3000">3000</option>
+                                            <option value="4000">4000</option>
+                                            <option value="4500">4500</option>
+                                            <option value="5500">5500</option>
+                                            <option value="6500">6500</option>
+                                        </select>
 
-                                <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                            </div> 
-                        </form>
-                    </article>
-                </a>
-                <a href="/productDetail/1">
-                    <article class="product">
-                        <img src="/img/nomad-madscad-sinking_1.jpg" alt="producto7">
-                        <h3>Nomad Madscad Sinking</h3>
-                        <p>$ 85.500</p>
-                        <form class="selection1" action="#" method="get">
-                            <div>
-                                <select name="color" id="color">
-                                    <option value="#FF0000">Rojo</option>
-                                    <option value="#008000">Verde</option>
-                                    <option value="#0000FF">Azul</option>
-                                </select>
-                                
-                                <select name="quantity" id="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select name="size" id="size">
-                                    <option value="3000">3000</option>
-                                    <option value="4000">4000</option>
-                                    <option value="4500">4500</option>
-                                    <option value="5500">5500</option>
-                                    <option value="6500">6500</option>
-                                </select>
-
-                                <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                            </div> 
-                        </form>
-                    </article>
-                </a>
-                <a href="/productDetail/1">
-                    <article class="product">
-                        <img src="/img/mochila-camuflada-ridge-hunter-20-hunting-pack.jpg" alt="producto8">
-                        <h3>Mochila Ridge Hunter 2.0</h3>
-                        <p>$ 98.000</p>
-                        <form class="selection1" action="#" method="get">
-                            <div>
-                                <select name="color" id="color">
-                                    <option value="#FF0000">Rojo</option>
-                                    <option value="#008000">Verde</option>
-                                    <option value="#0000FF">Azul</option>
-                                </select>
-                                
-                                <select name="quantity" id="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select name="size" id="size">
-                                    <option value="3000">3000</option>
-                                    <option value="4000">4000</option>
-                                    <option value="4500">4500</option>
-                                    <option value="5500">5500</option>
-                                    <option value="6500">6500</option>
-                                </select>
-
-                                <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                            </div> 
-                        </form>
-                    </article>
-                </a>
+                                        <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div> 
+                                </form>
+                            </article>
+                        </a>
+                        
+                    <% } %>
+                <% } %>
                 <i class="arrow" class="fa-solid fa-angle-right"></i>
             </div>
         </div>
