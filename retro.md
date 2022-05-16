@@ -30,3 +30,20 @@
 
 5-Dejar de hacer:
     Dejar de un lado la procrastinación y empezar a dedicar mas tiempo en las tareas asignadas.
+
+
+## Sprint 3:
+1-Comenzar a hacer: 
+    El trabajo en equipo ha sido excelente, podemos seguir mejorando, asimismo esperamos contar con el poaoyo de todos para que la ejecución de las tareas sea de forma agil.
+
+2-Hacer mas:
+    Nuestro proposito es culminar exitosamente este proyecto, cada día se ven mejores resultados y un trabajo mas organizado, podemos continuar mejorando en nuestras habilidades y entregar lo mejor de nosotros en cada sprint.
+
+3-Continuar haciendo:
+    Nuevamente resaltamos el excelente grupo de trabajo que tenemos conformado, las personas que hemos trabajado en este proceso hemos logrado sacrificar espacios personales para seguir creciendo como equipo y hacer que este proceso de frutos, continuamos realizando la distribución de tareas para una mejor optimización de trabajo.
+
+4- Hacer menos:
+    Ejecutar procesos o cambios en nuestro proyecto sin comentarlos con nuestros compañeros antes, somos un equipo y gracias a la comunicación que tenemos no hemos tenido inconvenientes, sin embargo, es bueno comunicar todo proceso.
+
+5-Dejar de hacer:
+    Debemos evitar dejar algunas cosas para ultima hora, tenemos buen tiempo para realización del trabajo y no sabemos si cercanos a las fechas de entrega vamos a tener algún inconveniente para poder cumplir con el proyecto.
