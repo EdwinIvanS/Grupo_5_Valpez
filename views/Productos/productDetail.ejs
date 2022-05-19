@@ -19,12 +19,16 @@
                 <li><a href="#">Carrete Okuma</a></li>
             </ul>
         </nav>
+
+    
+
         <div class="productSelected">
             <div class="preview">
                 <i class="fa-solid fa-angle-up"></i>
-                <img src="/img/carrete-okuma-alaris-preview1.jpg" alt="preview1">
-                <img src="/img/carrete-okuma-alaris-preview2.jpg" alt="preview2">
-                <img src="/img/carrete-okuma-alaris-preview3.jpg" alt="preview3">
+                
+                <img src="<%= detalleProducto.rutaImagen %> " alt="preview1">
+                <img src="<%= detalleProducto.rutaImagen %>" alt="preview2">
+                <img src="<%= detalleProducto.rutaImagen %>" alt="preview3">
                 <i class="fa-solid fa-angle-down"></i>
             </div>
             <img class="photo" src="/img/carrete-okuma-alaris.jpg" alt="photo">
@@ -107,7 +111,11 @@
                 </div>
             </article>
         </div>
+    <!--% } %--> 
+
         <div class="related">
+
+            <!--PRODUCTOS FOOTER-->
             <h2>Productos Relacionados</h2>
             <div class="relatedProducts">
                 <i class="fa-solid fa-angle-left"></i>

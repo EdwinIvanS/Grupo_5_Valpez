@@ -1,9 +1,16 @@
-// Express
-const express = require("express");
+// ************ Require's ************
+const createError = require('http-errors');
+const express = require('express');
+const methodOverride =  require('method-override'); 
+const ejsLint = require('ejs-lint');
+
+
 const app = express();
 
 // Router
-const rutaMain = require('./routers/main');
+const homeMain = require('./routers/main');
+const productMain = require('./routers/productsMain');
+const userMain = require('./routers/usersMain');
 
 // Path
 const path = require("path");
@@ -14,7 +21,9 @@ app.use (express.static(publicPath));
 app.set('view engine', 'ejs');
 
 // Ruta Principal
-app.use("/", rutaMain);
+app.use("/", homeMain);
+app.use("/products", productMain);
+app.use("/users", userMain);
 
 
 // Llamado al servidor

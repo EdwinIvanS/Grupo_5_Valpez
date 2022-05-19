@@ -38,7 +38,7 @@
                 <i class="arrow" class="fa-solid fa-angle-left"></i>
                 <% for(i=0 ; i < productosPesca.length ; i ++) {%>
                     <% if(productosPesca[i].idProducto<=4){%>
-                        <a href="/productDetail/<%= productosPesca[i].idProducto %>">
+                        <a href="/products/detail/<%= productosPesca[i].idProducto %>">
                             <article class="product">
                                 <img src="<%= productosPesca[i].rutaImagen %>" alt="producto5">
                                 <h3>
@@ -93,7 +93,7 @@
 
                 <% for(i=0 ; i < productosPesca.length ; i ++) {%>
                     <% if(productosPesca[i].idProducto>4){%>
-                        <a href="/productDetail/<%= productosPesca[i].idProducto %>">
+                        <a href="/products/detail/<%= productosPesca[i].idProducto %>">
                             <article class="product">
                                 <img src="<%= productosPesca[i].rutaImagen %>" alt="producto5">
                                 <h3><%= productosPesca[i].nombre%></h3>
