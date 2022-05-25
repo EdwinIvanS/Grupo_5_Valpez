@@ -115,7 +115,7 @@
         "url": "https://youtu.be/yRy4_p-MIgI",
         "units": 5,
         "colors": ["azul", "rojo", "verde", "negro", "dorado", "amarillo", "cafe"],
-        "size": ["unico"],
+        "size": ["único"],
         "classification": "Bolsos",
         "reference": "RHPKANATI20"
     },
@@ -130,7 +130,7 @@
         "url": "",
         "units": 5,
         "colors": ["azul", "rojo", "verde", "negro", "dorado", "amarillo", "cafe"],
-        "size": ["unico"],
+        "size": ["único"],
         "classification": "Bolsos",
         "reference": "SKA003SKSP"
     },
@@ -145,7 +145,7 @@
         "url": "",
         "units": 5,
         "colors": ["azul", "rojo", "verde", "negro", "dorado", "amarillo", "cafe"],
-        "size": ["unico"],
+        "size": ["único"],
         "classification": "Carpas",
         "reference": "CRP300S"
     }

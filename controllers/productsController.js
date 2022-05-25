@@ -5,7 +5,7 @@ const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const productss = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const products = require("../public/javascript/Productos");
 
-const productosController={
+const productsController={
 
     productCart: function(req,res){
         res.render("Productos/productCart");
@@ -13,6 +13,9 @@ const productosController={
 
     productCreate: function(req,res){
         res.render("Productos/productCreate");
+    },
+    store: function(req,res){
+
     },
 
     productDetail: function(req,res){
@@ -32,7 +35,15 @@ const productosController={
     productEdition: function(req,res){
         let idProducto = req.params.id;
         res.render("Productos/productEdition", {idProducto: idProducto})
+    },
+
+    update: function(req,res){
+
+    },
+
+    destroy: function(req,res){
+
     }
 }
 
-module.exports = productosController;
+module.exports = productsController;

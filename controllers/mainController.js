@@ -1,9 +1,13 @@
 
 const productosPesca = require("../public/javascript/Productos");
 
-const principalController={
+const mainController={
     home: function(req,res){
         res.render("Main/index", {'productosPesca' : productosPesca});
+   },
+
+   search: function(req,res){
+
    }
 }
-module.exports = principalController;
+module.exports = mainController;
