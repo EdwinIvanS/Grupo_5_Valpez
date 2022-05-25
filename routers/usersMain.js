@@ -8,7 +8,7 @@ const registroController  = require("../controllers/registro");
 
 
 // Enrutador registros
-router.get("/login"   , registroController.login);
+router.get("/login", registroController.login);
 router.get("/register", registroController.register);
 
 
