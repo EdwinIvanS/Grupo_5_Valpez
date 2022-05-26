@@ -56,13 +56,15 @@ const productsController={
             reference: req.body.reference
 		};
 		if (imagesUploaded){
-			newProduct.images.push(imagesUploaded);
+            for(let i = 0; i < imagesUploaded.length; i++){
+                newProduct.images.push(imagesUploaded[i].filename);
+            }			
 		}
 
 		products.push(newProduct);
 		let productsString = JSON.stringify(products);
 		fs.writeFileSync(productsFilePath, productsString)
-		res.redirect("Products/allProducts")
+		res.redirect("/products")
 
     },
 
