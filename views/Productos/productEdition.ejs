@@ -9,84 +9,59 @@
     <%- include('../partials/header') %>
     <main>
         <div class="form-creation">
-            <form class="formularios" action="#" method="POST">
-                <h1>Editar Producto</h1>
+            <form class="formularios" action="/products/detail/<%= productoAEditar.idProduct %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <h1>Editando: <%= productoAEditar.title %></h1>
                 <div>
                     <label class="titulos-formulario">Categoría: </label>
-                    <label class="formulario-creation"><input type="radio" name="category" value="Pesca" checked> Pesca </label>
+                    <label class="formulario-creation"><input type="radio" name="category" value="Pesca" > Pesca </label>
                     <label class="formulario-creation"><input type="radio" name="category" value="Camping" > Camping </label>
                 </div>
                 <div>
                     <label class="titulos-formulario">Titulo del Producto: </label>
-                    <input type="text" name="titulo" value="Carrete Okuma Alaris" class="formulario-creation" minlength="4">
+                    <input type="text" name="title" placeholder="Ej. Carrete Okuma Alaris" class="formulario-creation" minlength="4" value="<%= productoAEditar.title %>">
                 </div>
                 <div>
                     <label class="titulos-formulario">Precio: </label>
-                    <input type="number" name="precio" value="150.000" class="formulario-creation" minlength="4">
+                    <input type="number" name="price" placeholder="Ej. 100.000" class="formulario-creation" minlength="4" value="<%= productoAEditar.price %>">
                 </div>
                 <div>
                     <label class="titulos-formulario">Breve descripción del producto: </label>
-                    <textarea name="des1" class="formulario-creation" maxlength="250">Con un marco resistente a la corrosión, placas laterales y un diseño de rotor de flujo ciclónico, así como una bobina de aluminio mecanizado en dos tonos y un mango de metal rígido para mayor resistencia y durabilidad.</textarea>
+                    <textarea name="smallDescription" class="formulario-creation" placeholder="Máximo 250 caracteres" maxlength="250" ><%= productoAEditar.smallDescription %></textarea>
                 </div>
                 <div>
                     <label class="titulos-formulario">Descripción detallada del producto: </label>
-                    <textarea name="des2" class="formulario-creation" maxlength="1000">El Alaris funciona sin problemas en la salida de la línea y la recuperación. Gran carrete para agua dulce y acción costera ligera.
-
-                        Sistema de frenos multidisco, lubricado con aceite japonés. 
-                        3BB + 1 RB Balineras.
-                        Rodamientos con sistema Quick-set para anti-reverse continuo.
-                        Piñón principal de bronce mecanizado. Cuerpo y rotor de grafito resistente a la corrosión.
-                        CFR: Tecnología Cyclonic Flow Rotor.
-                        Diseño de manivela de metal rígido para mayor resistencia.
-                        Carrete de aluminio mecanizado anodizado en 2 tonos con borde LCS.
-                        Rodillos de acero inoxidables anti corrosión.
-                        RESII: Rotor balanceado por computadora.</textarea>
+                    <textarea name="detailedDescription" class="formulario-creation" placeholder="Máximo 1000 caracteres" maxlength="1000"><%= productoAEditar.detailedDescription %></textarea>
                 </div>
                 <div>
                     <label class="titulos-formulario">Imágenes del Producto: </label>
-                    <input type="file" name="foto" class="formulario-creation" multiple>
+                    <input type="file" name="images" class="formulario-creation" multiple>
                 </div>
                 <div>
                     <label class="titulos-formulario">Link video descriptivo: </label>
-                    <input type="url" name="url" value="https://www.youtube.com/embed/QeRVtNfF864" class="formulario-creation" minlength="4">
+                    <input type="url" name="url" placeholder="Ej. https://www.youtube.com/embed/QeRVtNfF864" class="formulario-creation" minlength="4" value="<%= productoAEditar.url %>">
                 </div>
                 <div>
                     <label class="titulos-formulario">Cantidad disponible: </label>
-                    <input type="number" name="cantidad" value="10" class="formulario-creation">
+                    <input type="number" name="units" placeholder="Ej. 10" class="formulario-creation" value="<%= productoAEditar.units %>">
                 </div>
                 <div>
                     <label class="titulos-formulario">Colores Disponibles: </label>
-                    <input type="color" name="color1" value="#ff0000" class="formulario-colores">
-                    <input type="color" name="color2" value="#06f5f9" class="formulario-colores">
-                    <input type="color" name="color3" value="#09f10d" class="formulario-colores">
-                    <input type="color" name="color4" value="#000000" class="formulario-colores">
+                    <input type="text" name="colors" placeholder="Ej. rojo, verde, azul" class="formulario-creation" minlength="4" value="<%= productoAEditar.colors.join(", ") %>">
                 </div>
                 <div>
-                    <label class="titulos-formulario">Tamaño 1: </label>
-                    <input type="text" name="size" value="3000" class="formulario-creation">
-                </div>
-                <div>
-                    <label class="titulos-formulario">Tamaño 2: </label>
-                    <input type="text" name="size" value="4500" class="formulario-creation">
-                </div>
-                <div>
-                    <label class="titulos-formulario">Tamaño 3: </label>
-                    <input type="text" name="size" value="5500" class="formulario-creation">
+                    <label class="titulos-formulario">Tamaños Disponibles: </label>
+                    <input type="text" name="size" placeholder="Ej. 1000, 150cm, 15gr, único" class="formulario-creation" value="<%= productoAEditar.size.join(", ") %>">
                 </div>
                 <div>
                     <label class="titulos-formulario">Clasificación: </label>
-                    <input type="text" name="size" value="Agua salada" class="formulario-creation">
-                </div>
-                <div>
-                    <label class="titulos-formulario">Balineras: </label>
-                    <input type="number" name="size" value="4" class="formulario-creation">
+                    <input type="text" name="classification" placeholder="Ej. Agua salada" class="formulario-creation" value="<%= productoAEditar.classification %>">
                 </div>
                 <div>
                     <label class="titulos-formulario">Referencia: </label>
-                    <input type="text" name="size" value="Ean13 4718947023353" class="formulario-creation">
+                    <input type="text" name="reference" placeholder="Ej. Ean13 4718947023353" class="formulario-creation" value="<%= productoAEditar.reference %>">
                 </div>
                 <button type="submit">Guardar</button>
-                <button>Eliminar producto</button>
+                <button type="reset">Borrar</button>
             </form>
         </div>
     </main>

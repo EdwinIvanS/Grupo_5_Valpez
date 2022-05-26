@@ -36,7 +36,7 @@ router.get("/detail/:id", productsController.productDetail);   //OK
 
 //Edición de producto
 router.get("/edition/:id", productsController.productEdition); //OK
-router.put("/detail/:id", productsController.update);
+router.put("/detail/:id", uploadFile.array("images", 4), productsController.update);
 
 //Eliminación de producto
 router.delete("/detail/:id", productsController.destroy);

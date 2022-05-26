@@ -88,16 +88,51 @@ const productsController={
 
     productEdition: function(req,res){
         let id = req.params.id;
-        res.render("Productos/productEdition", {id: id})
+        let productoAEditar;
+        for (let i = 0; i < products.length; i++){
+            if (products[i].idProduct == id){
+				productoAEditar = products[i]
+            }
+        }
+        res.render("Productos/productEdition", {productoAEditar: productoAEditar})
     },
 
     update: function(req,res){
+        let imagesUploaded = req.files;
+        let productEdited = {
+			idProduct: req.params.id,
+            category: req.body.category,
+            title: req.body.title,
+            price: req.body.price,
+            smallDescription: req.body.smallDescription,
+            detailedDescription: req.body.detailedDescription,
+            images: [],
+            url: req.body.url,
+            units: req.body.units,
+            colors: req.body.colors.split(','),
+            size: req.body.size.split(','),
+            classification: req.body.classification,
+            reference: req.body.reference
+		};
+		if (imagesUploaded){
+            for(let i = 0; i < imagesUploaded.length; i++){
+                productEdited.images.push(imagesUploaded[i].filename);
+            }			
+		}
 
+		let newProducts = products.filter(product => product.idProduct != req.params.id)
+		newProducts.push(productEdited)
+		let productsString = JSON.stringify(newProducts);
+		fs.writeFileSync(productsFilePath, productsString)
+		res.redirect("/products/detail/" + req.params.id)
     },
 
-    destroy: function(req,res){
-
-    }
+    destroy : function(req, res) {
+		let newProducts = products.filter(product => product.idProduct != req.params.id)
+		let productsString = JSON.stringify(newProducts);
+		fs.writeFileSync(productsFilePath, productsString)
+		res.redirect("/")
+	}
 }
 
 module.exports = productsController;
