@@ -19,13 +19,13 @@
             <div class="slide3"><img src="/img/Slide3.jpg" alt="carpas"></div>
         </div>
         <div class="categories">
-            <div class="categories-img">
+            <div class="subCategories">
                 <img src="/img/Category-camping.jpg" alt="camping">
-                <img src="/img/Category-fishing.jpg" alt="fishing">
+                <a href="/products/camping">CAMPING</a>
             </div>
-            <div class="categories-letra">
-                <a href="/products/camping"><h3>Camping</h3></a>
-                <a href="/products/fishing"><h3>Pesca </h3></a>
+            <div class="subCategories">
+                <img src="/img/Category-fishing.jpg" alt="fishing">
+                <a href="/products/fishing">PESCA</a>
             </div> 
         </div>
         
@@ -35,8 +35,7 @@
             <h2>Productos Destacados</h2>
 
             <div class="relatedProducts">
-                <i class="arrow" class="fa-solid fa-angle-left"></i>
-                <% for(let i=0 ; i <= 2 ; i ++) {%>                        
+                <% for(let i=0 ; i <= 3 ; i ++) {%>                        
                             <article class="product">
                                 <a href="/products/detail/<%= products[i].idProduct %>">
                                     <img src="/img/Products/<%= products[i].images[0] %>" alt="producto5">
@@ -74,7 +73,6 @@
                             </article>
                         
                 <% } %>
-                <i class="arrow" class="fa-solid fa-angle-right"></i>
             </div>
         </div>
 
@@ -83,12 +81,11 @@
             <h2>Nuevos Productos</h2>
 
             <div class="relatedProducts">
-                <i class="arrow" class="fa-solid fa-angle-left"></i>
 
-                <% for(i=3 ; i <= 5 ; i ++) {%>
+                <% for(i=4 ; i <= 7 ; i ++) {%>
                         
                             <article class="product">
-                                <a href="/products/detail/<%= products[i].idProduct %>"></a>
+                                <a href="/products/detail/<%= products[i].idProduct %>">
                                     <img src="/img/Products/<%= products[i].images[0] %>" alt="producto5">
                                 </a>
                                 <h3><%= products[i].title%></h3>
@@ -120,7 +117,6 @@
                             </article>
                         
                 <% } %>
-                <i class="arrow" class="fa-solid fa-angle-right"></i>
             </div>
         </div>
 
