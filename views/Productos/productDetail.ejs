@@ -81,28 +81,27 @@
             <article class="description">
                 <h2>Descripción</h2>
                 <p><%= detalleProducto.detailedDescription%></p>
-                <iframe width="420" height="250" src="https://www.youtube.com/embed/QeRVtNfF864"
+                <iframe width="420" height="250" src="<%= detalleProducto.url%>"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </article>
+            
             <article class="factSheet">
                 <h2>Ficha Técnica</h2>
                 <div class="features">
                     <div>
                         <span>Clasificación</span>
-                        <span>Balineras</span>
                         <span>Referencia</span>
                     </div>
                     <div>
-                      <span>Agua salada</span>
-                      <span>4</span>
-                      <span>Ean13 4718947023353</span>  
+                      <span><%= detalleProducto.classification%></span>
+                      <span><%= detalleProducto.reference%></span>  
                     </div>
                 </div>
             </article>
         </div>
-    <!--% } %--> 
+     
 
         <div class="related">
 
