@@ -7,6 +7,30 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController={
 
+    index: function(req,res){
+        res.render("Productos/allProducts", {products: products});
+    },
+
+    camping: function(req,res){
+        let campingProducts = [];
+        for(let i = 0; i < products.length; i++){
+            if(products[i].category == "Camping"){
+                campingProducts.push(products[i])
+            }
+        }
+        res.render("Productos/campingProducts", {campingProducts: campingProducts});
+    },
+
+    fishing: function(req,res){
+        let fishingProducts = [];
+        for(let i = 0; i < products.length; i++){
+            if(products[i].category == "Pesca"){
+                fishingProducts.push(products[i])
+            }
+        }
+        res.render("Productos/fishingProducts", {fishingProducts: fishingProducts});
+    },
+
     productCart: function(req,res){
         res.render("Productos/productCart");
     },

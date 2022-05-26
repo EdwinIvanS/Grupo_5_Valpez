@@ -24,8 +24,8 @@
                 <img src="/img/Category-fishing.jpg" alt="fishing">
             </div>
             <div class="categories-letra">
-                <h3>Camping</h3>
-                <h3>Pesca </h3>
+                <a href="/products/camping"><h3>Camping</h3></a>
+                <a href="/products/fishing"><h3>Pesca </h3></a>
             </div> 
         </div>
         
@@ -36,49 +36,43 @@
 
             <div class="relatedProducts">
                 <i class="arrow" class="fa-solid fa-angle-left"></i>
-                <% for(i=0 ; i < productosPesca.length ; i ++) {%>
-                    <% if(productosPesca[i].idProducto<=4){%>
-                        <a href="/products/detail/<%= productosPesca[i].idProducto %>">
+                <% for(let i=0 ; i <= 2 ; i ++) {%>                        
                             <article class="product">
-                                <img src="<%= productosPesca[i].rutaImagen %>" alt="producto5">
+                                <a href="/products/detail/<%= products[i].idProduct %>">
+                                    <img src="/img/Products/<%= products[i].images[0] %>" alt="producto5">
+                                </a>
                                 <h3>
-                                    <%= productosPesca[i].nombre%>
+                                    <%= products[i].title%>
                                 </h3>
                                 <p>
-                                    <%= productosPesca[i].precio%>
+                                    <%= products[i].price%>
                                 </p>
                                 <form class="selection1" action="#" method="get">
                                     <div>
                                         <select name="color" id="color">
-                                            <option value="#FF0000">Rojo</option>
-                                            <option value="#008000">Verde</option>
-                                            <option value="#0000FF">Azul</option>
+                                            <% for (let c = 0; c < products[i].colors.length; c++) {%>
+                                                <option value="<%= products[i].colors[c]%>"><%= products[i].colors[c]%></option>
+                                                <% } %>
                                         </select>
                 
                                         <select name="quantity" id="quantity">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
+                                            <% for (let q = 1; q <= products[i].units; q++) {%>
+                                                <option value="<%= q %>"><%= q %></option>
+                                                <% } %>
                                         </select>
                                     </div>
                                     <div>
                                         <select name="size" id="size">
-                                            <option value="3000">3000</option>
-                                            <option value="4000">4000</option>
-                                            <option value="4500">4500</option>
-                                            <option value="5500">5500</option>
-                                            <option value="6500">6500</option>
+                                            <% for (let s = 0; s < products[i].size.length; s++) {%>
+                                                <option value="<%= products[i].size[s]%>"><%= products[i].size[s]%></option>
+                                                <% } %>
                                         </select>
                 
                                         <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
                                     </div>
                                 </form>
                             </article>
-                        </a>
                         
-                    <% } %>
                 <% } %>
                 <i class="arrow" class="fa-solid fa-angle-right"></i>
             </div>
@@ -91,45 +85,40 @@
             <div class="relatedProducts">
                 <i class="arrow" class="fa-solid fa-angle-left"></i>
 
-                <% for(i=0 ; i < productosPesca.length ; i ++) {%>
-                    <% if(productosPesca[i].idProducto>4){%>
-                        <a href="/products/detail/<%= productosPesca[i].idProducto %>">
+                <% for(i=3 ; i <= 5 ; i ++) {%>
+                        
                             <article class="product">
-                                <img src="<%= productosPesca[i].rutaImagen %>" alt="producto5">
-                                <h3><%= productosPesca[i].nombre%></h3>
-                                <p><%= productosPesca[i].precio%></p>
+                                <a href="/products/detail/<%= products[i].idProduct %>"></a>
+                                    <img src="/img/Products/<%= products[i].images[0] %>" alt="producto5">
+                                </a>
+                                <h3><%= products[i].title%></h3>
+                                <p><%= products[i].price%></p>
                                 <form class="selection1" action="#" method="get">
                                     <div>
                                         <select name="color" id="color">
-                                            <option value="#FF0000">Rojo</option>
-                                            <option value="#008000">Verde</option>
-                                            <option value="#0000FF">Azul</option>
+                                            <% for (let c = 0; c < products[i].colors.length; c++) {%>
+                                                <option value="<%= products[i].colors[c]%>"><%= products[i].colors[c]%></option>
+                                                <% } %>
                                         </select>
                                         
                                         <select name="quantity" id="quantity">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
+                                            <% for (let q = 1; q <= products[i].units; q++) {%>
+                                                <option value="<%= q %>"><%= q %></option>
+                                                <% } %>
                                         </select>
                                     </div>
                                     <div>
                                         <select name="size" id="size">
-                                            <option value="3000">3000</option>
-                                            <option value="4000">4000</option>
-                                            <option value="4500">4500</option>
-                                            <option value="5500">5500</option>
-                                            <option value="6500">6500</option>
+                                            <% for (let s = 0; s < products[i].size.length; s++) {%>
+                                                <option value="<%= products[i].size[s]%>"><%= products[i].size[s]%></option>
+                                                <% } %>
                                         </select>
 
                                         <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
                                     </div> 
                                 </form>
                             </article>
-                        </a>
                         
-                    <% } %>
                 <% } %>
                 <i class="arrow" class="fa-solid fa-angle-right"></i>
             </div>

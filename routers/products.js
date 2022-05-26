@@ -6,6 +6,9 @@ const productsController = require("../controllers/productsController");
 
 
 // Enrutador productos
+router.get("/", productsController.index); //OK
+router.get("/camping", productsController.camping);
+router.get("/fishing", productsController.fishing);
 
 //Carrito
 router.get("/Cart", productsController.productCart); //OK

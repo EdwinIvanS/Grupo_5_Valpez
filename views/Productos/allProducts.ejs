@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') %>
+    <link href="/css/styles_home.css" rel="stylesheet">
+    <title>.:Todos los productos:.</title>
+</head>
+
+<body>
+    <!-- Seccion de la cabecera-->
+    <%- include('../partials/header') %>
+
+    <!-- Seccion del cuerpo-->
+    <main>
+        <div class="relatedProducts">
+            <i class="arrow" class="fa-solid fa-angle-left"></i>
+            <% for(let i=0 ; i < products.length ; i ++) {%>                        
+                        <article class="product">
+                            <a href="/products/detail/<%= products[i].idProduct %>">
+                                <img src="/img/Products/<%= products[i].images[0] %>" alt="producto5">
+                            </a>
+                            <h3>
+                                <%= products[i].title%>
+                            </h3>
+                            <p>
+                                <%= products[i].price%>
+                            </p>
+                            <form class="selection1" action="#" method="get">
+                                <div>
+                                    <select name="color" id="color">
+                                        <% for (let c = 0; c < products[i].colors.length; c++) {%>
+                                            <option value="<%= products[i].colors[c]%>"><%= products[i].colors[c]%></option>
+                                            <% } %>
+                                    </select>
+            
+                                    <select name="quantity" id="quantity">
+                                        <% for (let q = 1; q <= products[i].units; q++) {%>
+                                            <option value="<%= q %>"><%= q %></option>
+                                            <% } %>
+                                    </select>
+                                </div>
+                                <div>
+                                    <select name="size" id="size">
+                                        <% for (let s = 0; s < products[i].size.length; s++) {%>
+                                            <option value="<%= products[i].size[s]%>"><%= products[i].size[s]%></option>
+                                            <% } %>
+                                    </select>
+            
+                                    <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
+                                </div>
+                            </form>
+                        </article>
+                    
+            <% } %>
+            <i class="arrow" class="fa-solid fa-angle-right"></i>
+        </div>
+
+    </main>
+
+    <!-- Seccion del pie de pagina-->
+    <%- include('../partials/footer') %>
+
+</body>
+
+</html>

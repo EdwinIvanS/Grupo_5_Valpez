@@ -81,10 +81,12 @@
             <article class="description">
                 <h2>Descripción</h2>
                 <p><%= detalleProducto.detailedDescription%></p>
+                <% if(detalleProducto.url != null){ %>               
                 <iframe width="420" height="250" src="<%= detalleProducto.url%>"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
+                    <% } %>
             </article>
             
             <article class="factSheet">
