@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const productss = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const products = require("../public/javascript/Productos");
+const productsFilePath = path.join(__dirname, '../Data/productsDataBase.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 
 const productsController={
 
@@ -19,22 +19,26 @@ const productsController={
     },
 
     productDetail: function(req,res){
-        let idProducto = req.params.id;
+        let id = req.params.id;
         let detalleProducto = null;
+        for (let i = 0; i < products.length; i++) {
+            if (products[i].idProduct == id ) {
+                detalleProducto = products[i];
+            }
+        }
         
-        for (let i = 0; i < productss.length; i++) {
-            if (productss[i].idProducto == idProducto ) {
-                detalleProducto = productss[i];
+        for(let i = 0; i <= 3 ; i++){
+            if(detalleProducto.images[i]== undefined){
+                detalleProducto.images[i] = "Default.jpg"
             }
         }
 
-        console.log(detalleProducto);
         res.render("Productos/productDetail", {detalleProducto: detalleProducto});
     },
 
     productEdition: function(req,res){
-        let idProducto = req.params.id;
-        res.render("Productos/productEdition", {idProducto: idProducto})
+        let id = req.params.id;
+        res.render("Productos/productEdition", {id: id})
     },
 
     update: function(req,res){

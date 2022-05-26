@@ -255,6 +255,29 @@ main {
     flex-grow: 0.4;
 }
 
+.root {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.root button {
+    border: none;
+    background-color: var(--white);
+    
+
+}
+
+.root i {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    transition: all 500ms;
+}
+
+.root i:hover {
+    color: var(--fifth);
+}
+
 /*------ Vista Mobile ----------*/
 
 @media (max-width:768px){

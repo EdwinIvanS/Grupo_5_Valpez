@@ -13,10 +13,10 @@
     <main>
         <nav class="route">
             <ul>
-                <li><a href="/home">Inicio /</a></li>
-                <li><a href="#">Pesca /</a></li>
-                <li><a href="#">Carretes /</a></li>
-                <li><a href="#">Carrete Okuma</a></li>
+                <li><a href="/">Inicio /</a></li>
+                <li><a href="#"><%= detalleProducto.category %> /</a></li>
+                <li><a href="#"><%= detalleProducto.classification %> /</a></li>
+                <li><a href="#"><%= detalleProducto.title %></a></li>
             </ul>
         </nav>
 
@@ -26,50 +26,52 @@
             <div class="preview">
                 <i class="fa-solid fa-angle-up"></i>
                 
-                <img src="<%= detalleProducto.rutaImagen %> " alt="preview1">
-                <img src="<%= detalleProducto.rutaImagen %>" alt="preview2">
-                <img src="<%= detalleProducto.rutaImagen %>" alt="preview3">
+                <img src="/img/products/<%= detalleProducto.images[1]%> " alt="preview1">
+                <img src="/img/products/<%= detalleProducto.images[2]%> " alt="preview2">
+                <img src="/img/products/<%= detalleProducto.images[3]%> " alt="preview3">
                 <i class="fa-solid fa-angle-down"></i>
             </div>
-            <img class="photo" src="/img/products/carrete-okuma-alaris.jpg" alt="photo">
+            <img class="photo" src="/img/products/<%= detalleProducto.images[0]%>" alt="photo">
             <div class="details">
-                <h1>Carrete Okuma Alaris</h1>
-                <h2>$ 150.000</h2>
-                <p>Con un marco resistente a la corrosión, placas laterales y un diseño de rotor de flujo ciclónico, así como una bobina de aluminio mecanizado en dos tonos y un mango de metal rígido para mayor resistencia y durabilidad.</p>
+                <div class="root">
+                    <a href="/products/edition/<%= detalleProducto.idProduct %>"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
+                    <form action="/products/detail/<%= detalleProducto.idProduct %>?_method=DELETE" method="POST">
+                        <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                    </form>
+                </div>
+                
+                <h1><%= detalleProducto.title%></h1>
+                <h2>$ <%= detalleProducto.price%></h2>
+                <p><%= detalleProducto.smallDescription%></p>
                 <a href="#">Ver más detalles</a>
                 <p class="available">Disponible</p>
-                <form class="selection" action="#" method="get">
+                <form class="selection" action="#" method="post">
                     <div>
                        <label>Cantidad</label>
                         <select name="quantity" id="quantity">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                            <% for (let i = 1; i <= detalleProducto.units; i++) {%>
+                            <option value="<%= i %>"><%= i %></option>
+                            <% } %>
                         </select> 
                     </div>
 
                     <div>
                        <label>Color</label>
                         <select name="color" id="color">
-                            <option value="#FF0000">Rojo</option>
-                            <option value="#008000">Verde</option>
-                            <option value="#0000FF">Azul</option>
+                            <% for (let i = 0; i < detalleProducto.colors.length; i++) {%>
+                            <option value="<%= detalleProducto.colors%>"><%= detalleProducto.colors[i]%></option>
+                            <% } %>
                         </select> 
                     </div>
 
                     <div>
                        <label for="size">Tamaño</label>
                         <select name="size" id="size">
-                            <option value="3000">3000</option>
-                            <option value="4000">4000</option>
-                            <option value="4500">4500</option>
-                            <option value="5500">5500</option>
-                            <option value="6500">6500</option>
+                            <% for (let i = 0; i < detalleProducto.size.length; i++) {%>
+                            <option value="<%= detalleProducto.size[i]%>"><%= detalleProducto.size[i]%></option>
+                            <% } %>
                         </select> 
                     </div>
-                    
                     <button class="complete" type="submit"><i class="fa-solid fa-cart-plus"></i> Añadir al carrito</button>
                     <button class="onlyCart" type="submit"><i class="fa-solid fa-cart-plus"></i></button>
                 </form>
@@ -78,18 +80,7 @@
         <div class="moreDetails">
             <article class="description">
                 <h2>Descripción</h2>
-                <p>El Alaris funciona sin problemas en la salida de la línea y la recuperación. Gran carrete para agua
-                    dulce y acción costera ligera.</p>
-                <ul>
-                    <li>Sistema de frenos multidisco, lubricado con aceite japonés. o 3BB + 1 RB Balineras.</li>
-                    <li>Rodamientos con sistema Quick-set para anti-reverse continuo.</li>
-                    <li>Piñón principal de bronce mecanizado. Cuerpo y rotor de grafito resistente a la corrosión.</li>
-                    <li>CFR: Tecnología Cyclonic Flow Rotor.</li>
-                    <li>Diseño de manivela de metal rígido para mayor resistencia.</li>
-                    <li>Carrete de aluminio mecanizado anodizado en 2 tonos con borde LCS.</li>
-                    <li>Rodillos de acero inoxidables anti corrosión.</li>
-                    <li>RESII: Rotor balanceado por computadora.</li>
-                </ul>
+                <p><%= detalleProducto.detailedDescription%></p>
                 <iframe width="420" height="250" src="https://www.youtube.com/embed/QeRVtNfF864"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

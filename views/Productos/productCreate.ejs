@@ -18,23 +18,23 @@
                 </div>
                 <div>
                     <label class="titulos-formulario">Titulo del Producto: </label>
-                    <input type="text" name="titulo" placeholder="Ej. Carrete Okuma Alaris" class="formulario-creation" minlength="4">
+                    <input type="text" name="title" placeholder="Ej. Carrete Okuma Alaris" class="formulario-creation" minlength="4">
                 </div>
                 <div>
                     <label class="titulos-formulario">Precio: </label>
-                    <input type="number" name="precio" placeholder="Ej. 100.000" class="formulario-creation" minlength="4">
+                    <input type="number" name="price" placeholder="Ej. 100.000" class="formulario-creation" minlength="4">
                 </div>
                 <div>
                     <label class="titulos-formulario">Breve descripción del producto: </label>
-                    <textarea name="des1" class="formulario-creation" placeholder="Máximo 250 caracteres" maxlength="250"></textarea>
+                    <textarea name="smallDescription" class="formulario-creation" placeholder="Máximo 250 caracteres" maxlength="250"></textarea>
                 </div>
                 <div>
                     <label class="titulos-formulario">Descripción detallada del producto: </label>
-                    <textarea name="des2" class="formulario-creation" placeholder="Máximo 1000 caracteres" maxlength="1000"></textarea>
+                    <textarea name="detailedDescription" class="formulario-creation" placeholder="Máximo 1000 caracteres" maxlength="1000"></textarea>
                 </div>
                 <div>
                     <label class="titulos-formulario">Imágenes del Producto: </label>
-                    <input type="file" name="foto" class="formulario-creation" multiple>
+                    <input type="file" name="images" class="formulario-creation" multiple>
                 </div>
                 <div>
                     <label class="titulos-formulario">Link video descriptivo: </label>
@@ -42,38 +42,23 @@
                 </div>
                 <div>
                     <label class="titulos-formulario">Cantidad disponible: </label>
-                    <input type="number" name="cantidad" placeholder="Ej. 10" class="formulario-creation">
+                    <input type="number" name="units" placeholder="Ej. 10" class="formulario-creation">
                 </div>
                 <div>
                     <label class="titulos-formulario">Colores Disponibles: </label>
-                    <input type="color" name="color1" class="formulario-colores">
-                    <input type="color" name="color2" class="formulario-colores">
-                    <input type="color" name="color3" class="formulario-colores">
-                    <input type="color" name="color4" class="formulario-colores">
+                    <input type="text" name="colors" placeholder="Ej. rojo, verde, azul" class="formulario-creation" minlength="4">
                 </div>
                 <div>
-                    <label class="titulos-formulario">Tamaño 1: </label>
-                    <input type="text" name="size" placeholder="Ej. 3000" class="formulario-creation">
-                </div>
-                <div>
-                    <label class="titulos-formulario">Tamaño 2: </label>
-                    <input type="text" name="size" placeholder="Ej. 198cm" class="formulario-creation">
-                </div>
-                <div>
-                    <label class="titulos-formulario">Tamaño 3: </label>
-                    <input type="text" name="size" placeholder="Ej. 1/0" class="formulario-creation">
+                    <label class="titulos-formulario">Tamaños Disponibles: </label>
+                    <input type="text" name="size" placeholder="Ej. 1000, 150cm, 15gr, único" class="formulario-creation">
                 </div>
                 <div>
                     <label class="titulos-formulario">Clasificación: </label>
-                    <input type="text" name="size" placeholder="Ej. Agua salada" class="formulario-creation">
-                </div>
-                <div>
-                    <label class="titulos-formulario">Balineras: </label>
-                    <input type="number" name="size" placeholder="Ej. 4" class="formulario-creation">
+                    <input type="text" name="classification" placeholder="Ej. Agua salada" class="formulario-creation">
                 </div>
                 <div>
                     <label class="titulos-formulario">Referencia: </label>
-                    <input type="text" name="size" placeholder="Ej. Ean13 4718947023353" class="formulario-creation">
+                    <input type="text" name="reference" placeholder="Ej. Ean13 4718947023353" class="formulario-creation">
                 </div>
                 <button type="submit">Guardar</button>
                 <button type="reset">Borrar</button>
