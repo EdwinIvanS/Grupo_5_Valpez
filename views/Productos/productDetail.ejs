@@ -81,6 +81,7 @@
             <article class="description">
                 <h2>Descripción</h2>
                 <p><%= detalleProducto.detailedDescription%></p>
+                <br>
                 <% if(detalleProducto.url != null){ %>               
                 <iframe width="420" height="250" src="<%= detalleProducto.url%>"
                     title="YouTube video player" frameborder="0"
@@ -106,117 +107,45 @@
      
 
         <div class="related">
+            <h2>Productos relacionados</h2>
 
-            <!--PRODUCTOS FOOTER-->
-            <h2>Productos Relacionados</h2>
             <div class="relatedProducts">
-                <i class="fa-solid fa-angle-left"></i>
-                <a href="/productDetail/1">
-                    <article class="product">
-                        <img src="/img/products/carrete-spinning-daiwa-sweepfire.jpg" alt="producto1">
-                        <h3>Carrete Daiwa Sweepfire</h3>
-                        <p>$ 110.000</p>
-                        <form class="selection1" action="#" method="get">
-                            <div>
-                                <select name="color" id="color">
-                                    <option value="#FF0000">Rojo</option>
-                                    <option value="#008000">Verde</option>
-                                    <option value="#0000FF">Azul</option>
-                                </select>
-                                
-                                <select name="quantity" id="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select name="size" id="size">
-                                    <option value="3000">3000</option>
-                                    <option value="4000">4000</option>
-                                    <option value="4500">4500</option>
-                                    <option value="5500">5500</option>
-                                    <option value="6500">6500</option>
-                                </select>
 
-                                <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                            </div> 
-                        </form>
-                    </article>
-                </a>
-                <a href="/productDetail/1">
-                    <article class="product">
-                        <img src="/img/products/carretel-shimano-sienna-fg-4-balineras_1.jpg" alt="producto2">
-                        <h3>Carrete Shimano Sienna</h3>
-                        <p>$ 198.000</p>
-                        <form class="selection1" action="#" method="get">
-                            <div>
-                                <select name="color" id="color">
-                                    <option value="#FF0000">Rojo</option>
-                                    <option value="#008000">Verde</option>
-                                    <option value="#0000FF">Azul</option>
-                                </select>
-                                
-                                <select name="quantity" id="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select name="size" id="size">
-                                    <option value="3000">3000</option>
-                                    <option value="4000">4000</option>
-                                    <option value="4500">4500</option>
-                                    <option value="5500">5500</option>
-                                    <option value="6500">6500</option>
-                                </select>
-                                
-                                <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                            </div>
-                        </form>
-                    </article>
-                </a>
-                <a href="/productDetail/1">
-                    <article class="product">
-                        <img src="/img/products/cana-okuma-competition-casting.jpg" alt="producto3">
-                        <h3>Caña Okuma Competition</h3>
-                        <p>$ 128.700</p>
-                        <form class="selection1" action="#" method="get">
-                            <div>
-                                <select name="color" id="color">
-                                    <option value="#FF0000">Rojo</option>
-                                    <option value="#008000">Verde</option>
-                                    <option value="#0000FF">Azul</option>
-                                </select>
-                                
-                                <select name="quantity" id="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select name="size" id="size">
-                                    <option value="3000">3000</option>
-                                    <option value="4000">4000</option>
-                                    <option value="4500">4500</option>
-                                    <option value="5500">5500</option>
-                                    <option value="6500">6500</option>
-                                </select>
-                                
-                                <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                            </div>
-                        </form>
-                    </article>
-                </a>
-                <i class="fa-solid fa-angle-right"></i>
+                <% for(i=0 ; i < products.length ; i ++) {
+                    if(detalleProducto.classification == products[i].classification) { %>
+                            <article class="product">
+                                <a href="/products/detail/<%= products[i].idProduct %>">
+                                    <img src="/img/Products/<%= products[i].images[0] %>" alt="producto5">
+                                </a>
+                                <h3><%= products[i].title%></h3>
+                                <p><%= products[i].price%></p>
+                                <form class="selection1" action="#" method="get">
+                                    <div>
+                                        <select name="color" id="color">
+                                            <% for (let c = 0; c < products[i].colors.length; c++) {%>
+                                                <option value="<%= products[i].colors[c]%>"><%= products[i].colors[c]%></option>
+                                                <% } %>
+                                        </select>
+                                        
+                                        <select name="quantity" id="quantity">
+                                            <% for (let q = 1; q <= products[i].units; q++) {%>
+                                                <option value="<%= q %>"><%= q %></option>
+                                                <% } %>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <select name="size" id="size">
+                                            <% for (let s = 0; s < products[i].size.length; s++) {%>
+                                                <option value="<%= products[i].size[s]%>"><%= products[i].size[s]%></option>
+                                                <% } %>
+                                        </select>
+
+                                        <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div> 
+                                </form>
+                            </article>
+                        
+                <% } } %>
             </div>
         </div>
     </main>

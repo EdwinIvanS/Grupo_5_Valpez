@@ -39,6 +39,30 @@ const productsController={
         res.render("Productos/productCreate");
     },
     store: function(req,res){
+        let imagesUploaded = req.files;
+        let newProduct = {
+			idProduct: products.length + 1,
+            category: req.body.category,
+            title: req.body.title,
+            price: req.body.price,
+            smallDescription: req.body.smallDescription,
+            detailedDescription: req.body.detailedDescription,
+            images: [],
+            url: req.body.url,
+            units: req.body.units,
+            colors: req.body.colors.split(','),
+            size: req.body.size.split(','),
+            classification: req.body.classification,
+            reference: req.body.reference
+		};
+		if (imagesUploaded){
+			newProduct.images.push(imagesUploaded);
+		}
+
+		products.push(newProduct);
+		let productsString = JSON.stringify(products);
+		fs.writeFileSync(productsFilePath, productsString)
+		res.redirect("Products/allProducts")
 
     },
 
@@ -57,7 +81,7 @@ const productsController={
             }
         }
 
-        res.render("Productos/productDetail", {detalleProducto: detalleProducto});
+        res.render("Productos/productDetail", {detalleProducto: detalleProducto, products: products});
     },
 
     productEdition: function(req,res){
