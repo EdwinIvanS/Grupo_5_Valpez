@@ -22,7 +22,7 @@ const productsController = require("../controllers/productsController");
 // Enrutador productos
 router.get("/", productsController.index); //Listado de productos.
 router.get("/camping", productsController.camping);
-router.get("/fishing", productsController.fishing);
+router.get("/pesca", productsController.fishing);
 
 //Carrito
 router.get("/Cart", productsController.productCart); //OK
