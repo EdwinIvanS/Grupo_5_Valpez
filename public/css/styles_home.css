@@ -71,6 +71,27 @@ button {
     animation: slide3 20s infinite alternate;
 }
 
+.AddProducts {
+    align-items: center;
+    color: var(--second);
+    display: flex;
+    font-size: 1rem;
+    justify-content: right;
+    margin-top: 15px;
+    margin-right: 25px;
+    transition: all 500ms;
+}
+
+.AddProducts:hover .circle{
+    color: var(--principal);
+}
+
+.circle {
+    color: var(--second);
+    font-size: 2rem;
+    margin-left: 5px;  
+}
+
 .categories {
     display: flex;
     justify-content: space-around;
