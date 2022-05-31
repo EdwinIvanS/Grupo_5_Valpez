@@ -28,4 +28,31 @@ Se revisan los puntos del sprint 3 y ultiman detalles.
 - Impedimentos:
 Al momento de segmentar las vista parciales se generaba error con las views lo cual fue resuelto.
 
+==============================//==============================//==============================//==============
+
+## Reunión del 23-05-22
+- ¿Qué se hizo hasta Ayer?:
+
+Continuamos de forma organizada preparandonos con todo el contenido de las clases propuestas en playground para poder obtener toda la información necesaria para el desarrollo del sprint.
+
+Se evaluan los impactos que se pueden generar a la hora de analizar un tema y no lograr comprenderlo en su totalidad.
+
+- ¿Qué se hizo hoy?:
+
+Se realiza el proceso de asignación de tareas en Trello y se establecen las fehas limites para la entrega.
+
+## Reunión del 30-05-22
+- ¿Qué se hizo hasta Ayer?:
+
+Se desarrolla en su totalidad el sprint #4:
+    - Se desarrolla la retrospectiva del sprint.
+    - Se finaliza el CRUD de productos.
+    - Se establecen los datos necesarios para el formulario de registro de usuario y el JSON de usuarios.
+    - 
+- ¿Qué se hizo hoy?:
+
+Se culmina el Weekly del sprint.
+
+Se verifica que todos los puntos del sprint esten completados y en funcionamiento.
+
 
