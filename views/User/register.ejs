@@ -11,33 +11,33 @@
 
     <main>
         <div class="form-register">
-            <form class="formularios" action="#" method="POST">
+            <form class="formularios" action="/users/register" method="POST" enctype="multipart/form-data">
                 <h2>Crear una cuenta</h2>
                 <div>
-                    <input type="text" name="nombre" placeholder="Nombre y apellidos" class="formulario-registro" minlength="4">
+                    <input type="text" name="name" placeholder="Nombre y apellidos" class="formulario-registro">
                 </div>
                 <div>
-                    <input type="text" name="usuario" placeholder="Nombre de usuario" class="formulario-registro" minlength="4">
+                    <input type="text" name="user" placeholder="Nombre de usuario" class="formulario-registro">
                 </div>
                 <div>
-                    <input type="email" name="correo" placeholder="Email" class="formulario-registro">
+                    <input type="email" name="email" placeholder="Email" class="formulario-registro">
                 </div>
                 <div>
                     <label class="titulos-formulario">Fecha de Nacimiento</label>
-                    <input type="date" name="calendario" class="formulario-registro">
+                    <input type="date" name="dob" class="formulario-registro">
                 </div>
                 <div>
-                    <input type="text" name="dirección" placeholder="Dirección" class="formulario-registro">
+                    <input type="text" name="address" placeholder="Dirección" class="formulario-registro">
                 </div>
                 <div>
                     <label class="titulos-formulario">Foto de usuario</label>
-                    <input type="file" name="foto" class="formulario-registro">
+                    <input type="file" name="photo" class="formulario-registro">
                 </div>
                 <div>
-                    <input type="password" name="contraseña" placeholder="Contraseña" class="formulario-registro" minlength="8">
+                    <input type="password" name="password" placeholder="Contraseña" class="formulario-registro">
                 </div>
                 <div>
-                    <input type="password" name="contraseña" placeholder="Confirmar contraseña" class="formulario-registro" minlength="8">
+                    <input type="password" name="confirmPassword" placeholder="Confirmar contraseña" class="formulario-registro">
                 </div>
                 <div class="terminos-condiciones">
                     <input type="checkbox" name="terminos">
