@@ -47,3 +47,24 @@
 
 5-Dejar de hacer:
     Debemos evitar dejar algunas cosas para ultima hora, tenemos buen tiempo para realización del trabajo y no sabemos si cercanos a las fechas de entrega vamos a tener algún inconveniente para poder cumplir con el proyecto.
+
+
+## Sprint 4:
+1-Comenzar a hacer: 
+    El estado de animo de los participantes y la buena actitud de los mismos nos ha permitido tener un excelente trabajo en equipo, evitando inconformidades o molestias con todo el equipo, seguimos unidos en el proyecto.
+
+2-Hacer mas:
+    Realizar reuniones de forma mas seguida para compartir los avances y asi efectuar un seguimiento del trabajo de los demas integrantes del equipo.
+
+3-Continuar haciendo:
+    Continuar generando un buen ambiente de trabajo entre todo el equipo.
+
+    Hemos logrado cumplir con los objetivos propuestos, lo que nos permite entregar satisfactoriamente el trabajo.
+
+    La distribución de trabajo ha sido muy buena, hasta ahora no se ha sentido una carga laboral para una sola persona, todos estamos de acuerdo con las actividades otorgadas.
+
+4- Hacer menos:
+    Por ahora el equipo se encuentra a gusto con todas las actividades y acciones propuestas, continuamos trabajando de la mejor manera.
+
+5-Dejar de hacer:
+    El grupo de trabajo es solido y atento a los procesos que se vienen realizando, seguimos en pro del proyecto, por lo que no dejamos de realizar alguna acción.
