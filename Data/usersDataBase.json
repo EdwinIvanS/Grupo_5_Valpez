@@ -1,1 +1,24 @@
-[]
+[
+ {
+  "idUser": 1,
+  "name": "Ernesto Perez",
+  "user": "Frailejon",
+  "email": "perez@valpez.com",
+  "dob": "03/10/2022",
+  "address": "Calle 123",
+  "photo": "DefaultFish.jpg",
+  "password": "qwerty123",
+  "category": "client"
+ },
+ {
+  "idUser": 2,
+  "name": "Sebas Vallejo",
+  "user": "Sebas",
+  "email": "sebas@gmail.com",
+  "dob": "1998-03-24",
+  "address": "calle 456",
+  "photo": "DefaultFish.jpg",
+  "password": "$2a$10$8bMvey0jj401glNjFa2QBuSDn2GRNhG5hFwtaRhIAEtOqempz2.d.",
+  "category": "client"
+ }
+]

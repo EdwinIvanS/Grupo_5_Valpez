@@ -23,8 +23,21 @@ const usersController={
     userCreate: function(req,res){
         let validResult = validationResult(req);
         if(!validResult.isEmpty()){
-            res.render("User/register", {errors: validResult.mapped(), oldData: req.body})
+            res.render("User/register", {errors: validResult.mapped(), oldData: req.body});
         }else{
+            for(let i = 0; i < users.length; i++) {
+                if(req.body.email == users[i].email){
+                    return res.render("User/register", {
+                        errors: {
+                            email: {
+                                msg: 'Este email ya está registrado'
+                            }
+                        }, 
+                        oldData: req.body
+                    });
+                };
+            }
+                
             let profileImage = req.file;
             let newUser = {
                 idUser: users.length + 1,
@@ -45,8 +58,7 @@ const usersController={
             let usersString = JSON.stringify(users, null, ' ');
             fs.writeFileSync(usersFilePath, usersString)
             res.redirect("/users/login")
-            }
-        
+        }     
     }
 }
 

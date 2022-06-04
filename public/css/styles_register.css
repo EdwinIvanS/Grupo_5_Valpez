@@ -12,7 +12,7 @@
     --fifth: #e18340;
     --sixth: #a99c68;
     --white: #FFFFFF;
-    --invalid : rgb(211, 8, 8);
+    --invalid : rgba(211, 8, 8,0.5);
 }
 
 li {
@@ -30,13 +30,14 @@ button {
 
 .text-danger{
     color: var(--invalid);
-    font-size: 10px;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 /*------------ Main-----------------*/
 
 .form-register{
-    background-color: rgba(57,69,93,0.4);
+    background-color: rgba(57,69,93,0.2);
     border-radius: 20px;
     display: block;
     margin: 5rem auto;
@@ -95,12 +96,8 @@ button {
     color: var(--white);
 }
 
-input:invalid{
-    border: 1px solid rgb(167, 11, 11);
-}
-
 .is-invalid {
-    border: 1px solid var(--invalid);;
+    box-shadow: 1px 1px 1px 1px var(--invalid);;
 }
 
 /*----------Fin Main---------------*/
