@@ -8,8 +8,8 @@ const path = require("path");
 const app = express();
 
 app.use(express.json());
-
 app.use(methodOverride("_method"));
+app.use(express.urlencoded({extended: false}));
 
 const publicPath = path.resolve(__dirname, "./public");
 app.use (express.static(publicPath));

@@ -33,6 +33,9 @@ button {
     font-size: 1rem;
     font-weight: bold;
 }
+.is-invalid {
+    box-shadow: 1px 1px 1px 1px var(--invalid);;
+}
 
 /*------------ Main-----------------*/
 
@@ -96,8 +99,6 @@ button {
     color: var(--white);
 }
 
-.is-invalid {
-    box-shadow: 1px 1px 1px 1px var(--invalid);;
-}
+
 
 /*----------Fin Main---------------*/

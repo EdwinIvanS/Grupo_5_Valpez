@@ -13,12 +13,17 @@
     <main>
         <div class="form-login">
             <h2>Iniciar sesión</h2>
-            <form action="#" method="POST">
+            <form action="/users/login" method="POST">
+                <% if(locals.errors && errors.email){ %>
+                    <div class="text-danger">
+                        <%= errors.email.msg %>
+                    </div>
+                <% } %>
                 <div>
-                    <input type="text" name="registered-user" placeholder="Nombre de usuario" class="form-element">
+                    <input type="email" name="email" placeholder="Email" class="form-element">
                 </div>
                 <div>
-                    <input type="password" name="registered-password" placeholder="Contraseña" class="form-element">
+                    <input type="password" name="password" placeholder="Contraseña" class="form-element">
                 </div>
                 <button class="bLogin" type="submit">Enviar</button>
             </form> 

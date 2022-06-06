@@ -40,14 +40,15 @@ const productsController={
     },
     store: function(req,res){
         let imagesUploaded = req.files;
+        let lastProduct = products[products.length - 1];
         let newProduct = {
-			idProduct: products.length + 1,
+			idProduct: 1,
             category: req.body.category,
             title: req.body.title,
             price: req.body.price,
             smallDescription: req.body.smallDescription,
             detailedDescription: req.body.detailedDescription,
-            images: [],
+            images: ["Default.jpg"],
             url: req.body.url,
             units: req.body.units,
             colors: req.body.colors.split(','),
@@ -56,13 +57,17 @@ const productsController={
             reference: req.body.reference
 		};
 		if (imagesUploaded){
+            newProduct.images = [];
             for(let i = 0; i < imagesUploaded.length; i++){
                 newProduct.images.push(imagesUploaded[i].filename);
             }			
 		}
+        if (lastProduct){
+            newProduct.idProduct = lastProduct.idProduct + 1;
+        }
 
 		products.push(newProduct);
-		let productsString = JSON.stringify(products);
+		let productsString = JSON.stringify(products, null, ' ');
 		fs.writeFileSync(productsFilePath, productsString)
 		res.redirect("/products")
 
@@ -106,7 +111,7 @@ const productsController={
             price: req.body.price,
             smallDescription: req.body.smallDescription,
             detailedDescription: req.body.detailedDescription,
-            images: [],
+            images: ["Default.jpg"],
             url: req.body.url,
             units: req.body.units,
             colors: req.body.colors.split(','),
@@ -115,6 +120,7 @@ const productsController={
             reference: req.body.reference
 		};
 		if (imagesUploaded){
+            productEdited.images = [];
             for(let i = 0; i < imagesUploaded.length; i++){
                 productEdited.images.push(imagesUploaded[i].filename);
             }			
@@ -122,7 +128,7 @@ const productsController={
 
 		let newProducts = products.filter(product => product.idProduct != req.params.id)
 		newProducts.push(productEdited)
-		let productsString = JSON.stringify(newProducts);
+		let productsString = JSON.stringify(newProducts, null, ' ');
 		fs.writeFileSync(productsFilePath, productsString)
 		res.redirect("/products/detail/" + req.params.id)
     },

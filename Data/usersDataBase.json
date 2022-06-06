@@ -1,24 +1,35 @@
 [
  {
   "idUser": 1,
-  "name": "Ernesto Perez",
-  "user": "Frailejon",
-  "email": "perez@valpez.com",
-  "dob": "03/10/2022",
-  "address": "Calle 123",
-  "photo": "DefaultFish.jpg",
-  "password": "qwerty123",
-  "category": "client"
+  "name": "Ernesto Pérez",
+  "user": "frailejon",
+  "email": "frailejon@valpez.com",
+  "dob": "2022-03-15",
+  "address": "calle 123",
+  "photo": "img - 1654545223792.jpeg",
+  "password": "$2a$10$GzxNQ3ZaYnc7Wh/E.U2YpuqGiGsMyyQZHc9R4D2ngRjY18/kMncE.",
+  "category": "root"
  },
  {
   "idUser": 2,
-  "name": "Sebas Vallejo",
-  "user": "Sebas",
-  "email": "sebas@gmail.com",
-  "dob": "1998-03-24",
+  "name": "Camila Mejia",
+  "user": "mcamim",
+  "email": "camila@email.com",
+  "dob": "1998-03-27",
   "address": "calle 456",
-  "photo": "DefaultFish.jpg",
-  "password": "$2a$10$8bMvey0jj401glNjFa2QBuSDn2GRNhG5hFwtaRhIAEtOqempz2.d.",
+  "photo": "img - 1654545303475.jpg",
+  "password": "$2a$10$9OMJ8a8HTb/1UK/7AslyNOLwbuBsHxAAbwFD6s2LksA3fH0p4EiDm",
   "category": "client"
+ },
+ {
+  "idUser": 3,
+  "name": "Sebastian Vallejo",
+  "user": "sebvalper",
+  "email": "sebas@valpez.com",
+  "dob": "1995-05-26",
+  "address": "calle 789",
+  "photo": "img - 1654545412982.jpg",
+  "password": "$2a$10$UHs6bS2ZLUJtxDu0HFOdVOVKhoV0357vCZxhr79fk5eK3MX5e5uXG",
+  "category": "root"
  }
 ]

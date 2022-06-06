@@ -12,7 +12,28 @@ const usersController={
         res.render("User/login");
     },
 
-    logged: function(req,res){
+    loginProcess: function(req,res){
+        let userToLogin = users.find(user => user.email == req.body.email);
+        if(userToLogin){
+            let verifyPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+            if(verifyPassword){
+                return res.render("User/profile")
+            }
+            return res.render("User/login", {
+                errors: {
+                    email: {
+                        msg: "Las credenciales son inválidas"
+                    }
+                }
+            });
+        }
+        return res.render("User/login", {
+            errors: {
+                email: {
+                    msg: "Email no está registrado"
+                }
+            }
+        });
 
     },
 
@@ -23,7 +44,7 @@ const usersController={
     userCreate: function(req,res){
         let validResult = validationResult(req);
         if(!validResult.isEmpty()){
-            res.render("User/register", {errors: validResult.mapped(), oldData: req.body});
+            return res.render("User/register", {errors: validResult.mapped(), oldData: req.body});
         }else{
             for(let i = 0; i < users.length; i++) {
                 if(req.body.email == users[i].email){
@@ -39,8 +60,9 @@ const usersController={
             }
                 
             let profileImage = req.file;
+            let lastUser = users[users.length - 1];
             let newUser = {
-                idUser: users.length + 1,
+                idUser: 1,
                 name: req.body.name,
                 user: req.body.user,
                 email: req.body.email,
@@ -52,6 +74,9 @@ const usersController={
             };
             if (profileImage){
                 newUser.photo = profileImage.filename;
+            }
+            if (lastUser){
+                newUser.idUser = lastUser.idUser + 1;
             }
 
             users.push(newUser);

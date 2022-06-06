@@ -30,11 +30,11 @@ const validateRegister =[
     body('dob').notEmpty().withMessage("Debes ingresar fecha de nacimiento"),
     body('photo').custom((value, {req})=>{
         let file = req.file;
-        let acceptedExtensions = [".jpg", ".png", ".gif"];
+        let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg"];
         if(file){
             let fileExtension = path.extname(file.originalname);
             if(!acceptedExtensions.includes(fileExtension)){
-                throw new Error('Las extensiones del archivo permitidas son: ${acceptedExtensions.join(', ')}')
+                throw new Error('Las extensiones del archivo permitidas son: ' + acceptedExtensions.join(', '))
             }
         }
         return true;
@@ -56,7 +56,7 @@ const usersController  = require("../controllers/usersController");
 
 // Enrutador registros
 router.get("/login", usersController.login);
-router.post("/login", usersController.logged);
+router.post("/login", usersController.loginProcess);
 
 router.get("/register", usersController.register);
 router.post("/register", uploadFile.single('photo'), validateRegister, usersController.userCreate);

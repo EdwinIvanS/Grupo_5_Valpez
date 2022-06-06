@@ -12,6 +12,7 @@
     --fifth: #e18340;
     --sixth: #a99c68;
     --white: #FFFFFF;
+    --invalid : rgba(211, 8, 8,0.5);
 }
 
 li {
@@ -25,6 +26,14 @@ a {
 
 button {
     cursor: pointer;
+}
+.text-danger{
+    color: var(--invalid);
+    font-size: 1rem;
+    font-weight: bold;
+}
+.is-invalid {
+    box-shadow: 1px 1px 1px 1px var(--invalid);;
 }
 
 /*----------- Main ----------*/
