@@ -17,9 +17,7 @@ const usersController={
         if(userToLogin){
             let verifyPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(verifyPassword){
-
                 let valorProfile ='';
-
                 for (let a = 0; a < users.length; a++) {
                     if(req.body.email == users[a].email){
                         valorProfile=users[a];
@@ -42,7 +40,6 @@ const usersController={
                 }
             }
         });
-
     },
 
     register: function(req,res){
