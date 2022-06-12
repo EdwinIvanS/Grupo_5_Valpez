@@ -2,18 +2,83 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head') %>
-    <title>.:Profile:.</title>
+    <%- include('../partials/head') %> 
+        <link href="/css/styles_login.css" rel="stylesheet">
+        <title>.:Profile:.</title>
 </head>
-    
+
 <body>
-    <%- include('../partials/header') %>
+    <%- include('../partials/header') %> 
 
-    <main>
-        
-    </main>
+        <main>
+            <div class="form-login">
+            
+                <figure class="EditProfile-img">
+                    <img src="/img/Users/<%= valorProfile.photo %>" alt="Perfil-foto">
+                </figure>
+                <h2>Tus Datos</h2>
+                <form action="/" method="POST">
+                    <div>
+                        <label class="titulos-formulario">Nombres y apellidos</label><br>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                placeholder="Nombre y apellidos" 
+                                class="formulario-perfil"
+                                readonly="readonly" 
+                                value="<%=valorProfile.name %>">
+                    </div>
+                    <div>
+                        <label class="titulos-formulario">Usuario</label><br>
+                            <input
+                                type="text" 
+                                name="user" 
+                                placeholder="Nombre de usuario" 
+                                class="formulario-perfil"
+                                readonly="readonly"
+                                value="<%=valorProfile.user %>">
+                    </div>
+                    
+                    <div>
+                        <label class="titulos-formulario">Email</label><br>
+                            <input 
+                                type="email" 
+                                name="email" 
+                                placeholder="Email" 
+                                class="formulario-perfil"
+                                readonly="readonly"
+                                value="<%=valorProfile.email%>">
+                    </div>
+                    
+                    <div>
+                        <label class="titulos-formulario">Fecha de Nacimiento</label><br>
+                            <input 
+                                type="date" 
+                                name="dob" 
+                                class="formulario-perfil"
+                                readonly="readonly"
+                                value="<%=valorProfile.dob %>"
+                            >
+                    </div>
 
-    <%- include('../partials/footer') %>
-    
+                    <div>
+                        <label class="titulos-formulario-1">Direccion</label><br>
+                            <input 
+                                type="text" 
+                                name="address" 
+                                placeholder="Dirección" 
+                                class="formulario-perfil"
+                                readonly="readonly"
+                                value="<%=valorProfile.address%>"
+                            >                        
+                    </div>
+                
+                </form>   
+            </div>
+        </main>
+
+        <%- include('../partials/footer') %>
+
 </body>
+
 </html>

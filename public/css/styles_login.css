@@ -84,3 +84,9 @@ h2 {
 .form-login a:hover {
     color: var(--fifth);
 }
+
+.EditProfile-img img{
+    height: 128px;
+    width: 128px;
+    border-radius: 50%;
+}

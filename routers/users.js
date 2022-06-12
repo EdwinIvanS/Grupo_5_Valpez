@@ -61,5 +61,6 @@ router.post("/login", usersController.loginProcess);
 router.get("/register", usersController.register);
 router.post("/register", uploadFile.single('photo'), validateRegister, usersController.userCreate);
 
+router.get("/profile", usersController.profile);
 
 module.exports=router;

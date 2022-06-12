@@ -17,7 +17,15 @@ const usersController={
         if(userToLogin){
             let verifyPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(verifyPassword){
-                return res.render("User/profile")
+
+                let valorProfile ='';
+
+                for (let a = 0; a < users.length; a++) {
+                    if(req.body.email == users[a].email){
+                        valorProfile=users[a];
+                    }                
+                }
+                return res.render("User/profile", {valorProfile:valorProfile})
             }
             return res.render("User/login", {
                 errors: {
@@ -81,9 +89,14 @@ const usersController={
 
             users.push(newUser);
             let usersString = JSON.stringify(users, null, ' ');
-            fs.writeFileSync(usersFilePath, usersString)
-            res.redirect("/users/login")
+            fs.writeFileSync(usersFilePath, usersString);
+
+            res.render("User/login");
         }     
+    },
+
+    profile: function(req,res){
+        res.render("User/profile");
     }
 }
 
