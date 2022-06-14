@@ -63,4 +63,7 @@ router.post("/register", uploadFile.single('photo'), validateRegister, usersCont
 
 router.get("/profile", usersController.profile);
 
+//ruta prueba session
+
+
 module.exports=router;

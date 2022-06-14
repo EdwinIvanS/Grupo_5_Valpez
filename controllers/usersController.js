@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const bcryptjs = require('bcryptjs');
 const {validationResult} = require('express-validator');
+const { Console } = require('console');
 
 const usersFilePath = path.join(__dirname, '../Data/usersDataBase.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -23,6 +24,15 @@ const usersController={
                         valorProfile=users[a];
                     }                
                 }
+                req.session.usuarioLogueqado = valorProfile;   //implementar variable session
+                
+                if(req.session.usuarioLogueqado == undefined){
+                    console.log('no estas logueado');
+                }
+                else {
+                    console.log("sucess " + req.session.usuarioLogueqado.email);
+                }
+
                 return res.render("User/profile", {valorProfile:valorProfile})
             }
             return res.render("User/login", {

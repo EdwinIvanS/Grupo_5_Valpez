@@ -4,6 +4,7 @@ const express = require('express');
 const methodOverride =  require('method-override'); 
 const ejsLint = require('ejs-lint');
 const path = require("path");
+const session = require('express-session');
 
 const app = express();
 
@@ -22,6 +23,7 @@ const usersRouter = require('./routers/users');
 //Usar ejs templates
 app.set('view engine', 'ejs');
 
+app.use(session({secret:'valor'}));
 // Ruta Principal
 app.use("/", mainRouter);
 app.use("/products", productsRouter);
