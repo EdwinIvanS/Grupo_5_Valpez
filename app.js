@@ -23,7 +23,12 @@ const usersRouter = require('./routers/users');
 //Usar ejs templates
 app.set('view engine', 'ejs');
 
-app.use(session({secret:'valor'}));
+app.use(session({
+    secret:'valor',
+    resave: false,
+    saveUninitialized : false
+}));
+
 // Ruta Principal
 app.use("/", mainRouter);
 app.use("/products", productsRouter);

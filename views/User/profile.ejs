@@ -14,7 +14,7 @@
             <div class="form-login">
             
                 <figure class="EditProfile-img">
-                    <img src="/img/Users/<%= valorProfile.photo %>" alt="Perfil-foto">
+                    <img src="/img/Users/<%= user.photo %>" alt="Perfil-foto">
                 </figure>
                 <h2>Tus Datos</h2>
                 <form action="/" method="POST">
@@ -26,7 +26,7 @@
                                 placeholder="Nombre y apellidos" 
                                 class="formulario-perfil"
                                 readonly="readonly" 
-                                value="<%=valorProfile.name %>">
+                                value="<%=user.name %>">
                     </div>
                     <div>
                         <label class="titulos-formulario">Usuario</label><br>
@@ -36,7 +36,7 @@
                                 placeholder="Nombre de usuario" 
                                 class="formulario-perfil"
                                 readonly="readonly"
-                                value="<%=valorProfile.user %>">
+                                value="<%=user.user %>">
                     </div>
                     
                     <div>
@@ -47,7 +47,7 @@
                                 placeholder="Email" 
                                 class="formulario-perfil"
                                 readonly="readonly"
-                                value="<%=valorProfile.email%>">
+                                value="<%=user.email%>">
                     </div>
                     
                     <div>
@@ -57,7 +57,7 @@
                                 name="dob" 
                                 class="formulario-perfil"
                                 readonly="readonly"
-                                value="<%=valorProfile.dob %>"
+                                value="<%=user.dob %>"
                             >
                     </div>
 
@@ -69,7 +69,7 @@
                                 placeholder="Dirección" 
                                 class="formulario-perfil"
                                 readonly="readonly"
-                                value="<%=valorProfile.address%>"
+                                value="<%=user.address%>"
                             >                        
                     </div>
                 

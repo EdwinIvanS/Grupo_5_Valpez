@@ -1,13 +1,11 @@
 
-// valida si el usuario no se ha autenticado
+// valida si el usuario esta en session
 
-function guestMiddleware(req, res, next) {
-    
-    if(req.session.usuarioLogueqado == undefined){
-        next;
-    } else {
-            console.log("No te has logueado");
-        }
+function guestMiddleware(req, res, next) {    
+    if(req.session.usuarioLogueqado){
+        return res.redirect("profile");
+    }    
+    next();
 }
 
 module.exports = guestMiddleware;

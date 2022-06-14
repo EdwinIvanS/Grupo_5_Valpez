@@ -24,16 +24,8 @@ const usersController={
                         valorProfile=users[a];
                     }                
                 }
-                req.session.usuarioLogueqado = valorProfile;   //implementar variable session
-                
-                if(req.session.usuarioLogueqado == undefined){
-                    console.log('no estas logueado');
-                }
-                else {
-                    console.log("sucess " + req.session.usuarioLogueqado.email);
-                }
-
-                return res.render("User/profile", {valorProfile:valorProfile})
+                req.session.usuarioLogueqado = valorProfile;
+                return res.redirect("profile");
             }
             return res.render("User/login", {
                 errors: {
@@ -103,7 +95,15 @@ const usersController={
     },
 
     profile: function(req,res){
-        res.render("User/profile");
+        console.log(req.session);
+        return res.render("User/profile",{
+            user : req.session.usuarioLogueqado
+        });
+    },
+
+    logout: function(req,res){
+        req.session.destroy();
+        return res.redirect("/");
     }
 }
 
