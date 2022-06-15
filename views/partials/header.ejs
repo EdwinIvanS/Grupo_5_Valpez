@@ -8,8 +8,13 @@
                 <input type="search" name="searchBar" placeholder="Buscar artículos">
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
-            <a class="login" href="/users/login">Iniciar sesión</a>
-            <a class="cart" href="/products/Cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                <% if(locals.isLogged) { %> 
+                    <a class="login" href="/users/profile">Profile</a>
+                    <a class="login" href="/users/logout">Logout</a>
+                <% } else {%> 
+                    <a class="login" href="/users/login">Iniciar sesión</a>
+                <% } %> 
+                <a class="cart" href="/products/Cart"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </div>
     <nav class="header2">

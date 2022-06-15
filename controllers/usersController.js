@@ -25,7 +25,8 @@ const usersController={
                     }                
                 }
                 req.session.usuarioLogueqado = valorProfile;
-                return res.redirect("profile");
+                //return res.redirect("profile");
+                return res.redirect("/");
             }
             return res.render("User/login", {
                 errors: {
@@ -95,7 +96,7 @@ const usersController={
     },
 
     profile: function(req,res){
-        console.log(req.session);
+        //console.log(req.session);
         return res.render("User/profile",{
             user : req.session.usuarioLogueqado
         });

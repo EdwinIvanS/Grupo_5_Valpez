@@ -6,6 +6,8 @@ const ejsLint = require('ejs-lint');
 const path = require("path");
 const session = require('express-session');
 
+const userLoguestMiddleware = require('./middlewares/userLoguestMiddleware');
+
 const app = express();
 
 app.use(express.json());
@@ -28,6 +30,8 @@ app.use(session({
     resave: false,
     saveUninitialized : false
 }));
+
+app.use(userLoguestMiddleware);
 
 // Ruta Principal
 app.use("/", mainRouter);
