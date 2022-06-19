@@ -28,7 +28,7 @@ Se revisan los puntos del sprint 3 y ultiman detalles.
 - Impedimentos:
 Al momento de segmentar las vista parciales se generaba error con las views lo cual fue resuelto.
 
-==============================//==============================//==============================//==============
+==============================//==============================//==============================
 
 ## Reunión del 23-05-22
 - ¿Qué se hizo hasta Ayer?:
@@ -55,4 +55,33 @@ Se culmina el Weekly del sprint.
 
 Se verifica que todos los puntos del sprint esten completados y en funcionamiento.
 
+==============================//==============================//==============================
+
+## Reunión del 01-06-22
+
+- ¿Qué se hizo hasta Ayer?:
+
+El equipo de prepara con el material necesario para afrontar el sprint número 5.
+
+- ¿Qué se hizo hoy?:
+
+Se crea el tablero de trabajo en trello y se discute sobre la repartición de las consignas.
+
+## Reunión del 08-06-22
+
+- ¿Qué se hizo hasta Ayer?:
+
+Las consignas para la implementación de la entidad de usuarios y registro de usuarios se finaliza por completo.
+
+- ¿Qué se hizo hoy?:
+
+Se verifica el procedimiento para la implementación del loguin de usuarios.
+
+## Reunión del 20-06-22
+
+- ¿Qué se hizo hasta Ayer?:
+
+
+
+- ¿Qué se hizo hoy?:
 
