@@ -1,12 +1,10 @@
 // ************ Require's ************
-const createError = require('http-errors');
 const express = require('express');
 const methodOverride =  require('method-override'); 
-const ejsLint = require('ejs-lint');
 const path = require("path");
 const session = require('express-session');
 
-const userLoguestMiddleware = require('./middlewares/userLoguestMiddleware');
+const userLoguinMiddleware = require('./middlewares/userLoguinMiddleware');
 
 const app = express();
 
@@ -31,7 +29,7 @@ app.use(session({
     saveUninitialized : false
 }));
 
-app.use(userLoguestMiddleware);
+app.use(userLoguinMiddleware);
 
 // Ruta Principal
 app.use("/", mainRouter);
@@ -45,34 +43,3 @@ app.listen(3000, () => {
 
 
 
-
-
-/*
-BACKUP
-***********CODIGO ORIGINAL****************
-
-app.get("/home", (req,res) => {
-    res.sendFile(path.resolve(__dirname, "./views/Main/index.html"))
-});
-
-app.get("/productDetail", (req,res) => {
-    res.sendFile(path.resolve(__dirname, "./views/Productos/productDetail.html"))
-});
-
-app.get("/productCart", (req,res) => {
-    res.sendFile(path.resolve(__dirname, "./views/Productos/productCart.html"))
-});
-
-app.get("/productCreate", (req,res) => {
-    res.sendFile(path.resolve(__dirname, "./views/Productos/productCreate.html"))
-});
-
-app.get("/login", (req,res) => {
-    res.sendFile(path.resolve(__dirname, "./views/User/login.html"))
-});
-
-app.get("/register", (req,res) => {
-    res.sendFile(path.resolve(__dirname, "./views/User/register.html"))
-});
-
-*/

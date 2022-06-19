@@ -42,5 +42,16 @@
   "photo": "img - 1655229283380.jpg",
   "password": "$2a$10$B7fbij.kFe1uoCjG2Yu.u.YiV.e5f0QpphC0FCVfUV1A5d/TX4EDS",
   "category": "client"
+ },
+ {
+  "idUser": 5,
+  "name": "Gustavo Urrego",
+  "user": "Gustaflow",
+  "email": "petro@colombia.com",
+  "dob": "2022-06-19",
+  "address": "enrique segoviano",
+  "photo": "DefaultFish.jpg",
+  "password": "$2a$10$jUYBn1a37jCK/gtW6cp6veBJGAhUExpGgoPQTtRnzxNHQ8Nkf/mpO",
+  "category": "client"
  }
 ]

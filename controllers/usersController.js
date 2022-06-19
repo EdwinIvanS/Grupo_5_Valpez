@@ -24,7 +24,7 @@ const usersController={
                         valorProfile=users[a];
                     }                
                 }
-                req.session.usuarioLogueqado = valorProfile;
+                req.session.usuarioLogueado = valorProfile;
                 //return res.redirect("profile");
                 return res.redirect("/");
             }
@@ -98,7 +98,7 @@ const usersController={
     profile: function(req,res){
         //console.log(req.session);
         return res.render("User/profile",{
-            user : req.session.usuarioLogueqado
+            user : req.session.usuarioLogueado
         });
     },
 

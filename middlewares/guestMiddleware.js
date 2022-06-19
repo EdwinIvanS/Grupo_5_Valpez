@@ -1,7 +1,7 @@
 // valida si el usuario esta en session
 
 function guestMiddleware(req, res, next) {    
-    if(req.session.usuarioLogueqado){
+    if(req.session.usuarioLogueado){
         return res.redirect("profile");
     }    
     next();
