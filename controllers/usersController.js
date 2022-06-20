@@ -18,15 +18,15 @@ const usersController={
         if(userToLogin){
             let verifyPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(verifyPassword){
-                let valorProfile ='';
-                for (let a = 0; a < users.length; a++) {
-                    if(req.body.email == users[a].email){
-                        valorProfile=users[a];
-                    }                
+                delete userToLogin.password;
+
+                req.session.usuarioLogueado = userToLogin;
+
+                if(req.body.remember){
+                    res.cookie('emailLogged', req.body.email, {maxAge: (1000 * 60) * 60})
                 }
-                req.session.usuarioLogueado = valorProfile;
                 //return res.redirect("profile");
-                return res.redirect("/");
+                return res.redirect("profile");
             }
             return res.render("User/login", {
                 errors: {
@@ -103,6 +103,7 @@ const usersController={
     },
 
     logout: function(req,res){
+        req.clearCookie('emailLogged')
         req.session.destroy();
         return res.redirect("/");
     }

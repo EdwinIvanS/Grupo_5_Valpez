@@ -90,3 +90,21 @@ h2 {
     width: 128px;
     border-radius: 50%;
 }
+
+.remember {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;  
+}
+.remember2 {
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    width: 100%;  
+}
+.remember2 input {
+    margin: 0;
+    width: 5%;
+    text-align: right;
+}
