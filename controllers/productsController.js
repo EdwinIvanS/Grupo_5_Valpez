@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const {validationResult} = require('express-validator');
 
 const productsFilePath = path.join(__dirname, '../Data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -41,6 +42,10 @@ const productsController={
     store: function(req,res){
         let imagesUploaded = req.files;
         let lastProduct = products[products.length - 1];
+        let validResult = validationResult(req);
+        if(!validResult.isEmpty()){
+            return res.render("Productos/productCreate", {errors: validResult.mapped(), oldData: req.body});
+        }
         let newProduct = {
 			idProduct: 1,
             category: req.body.category,

@@ -15,14 +15,29 @@
                     <label class="titulos-formulario">Categoría: </label>
                     <label class="formulario-creation"><input type="radio" name="category" value="Pesca" > Pesca </label>
                     <label class="formulario-creation"><input type="radio" name="category" value="Camping" > Camping </label>
+                    <% if(locals.errors && errors.category){ %>
+                        <div class="text-danger">
+                            <%= errors.category.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label class="titulos-formulario">Titulo del Producto: </label>
                     <input type="text" name="title" placeholder="Ej. Carrete Okuma Alaris" class="formulario-creation" minlength="4">
+                    <% if(locals.errors && errors.title){ %>
+                        <div class="text-danger">
+                            <%= errors.title.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label class="titulos-formulario">Precio: </label>
                     <input type="number" name="price" placeholder="Ej. 100.000" class="formulario-creation" minlength="4">
+                    <% if(locals.errors && errors.price){ %>
+                        <div class="text-danger">
+                            <%= errors.price.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label class="titulos-formulario">Breve descripción del producto: </label>
@@ -31,10 +46,20 @@
                 <div>
                     <label class="titulos-formulario">Descripción detallada del producto: </label>
                     <textarea name="detailedDescription" class="formulario-creation" placeholder="Máximo 1000 caracteres" maxlength="1000"></textarea>
+                    <% if(locals.errors && errors.detailedDescription){ %>
+                        <div class="text-danger">
+                            <%= errors.detailedDescription.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label class="titulos-formulario">Imágenes del Producto: </label>
                     <input type="file" name="images" class="formulario-creation" multiple>
+                    <% if(locals.errors && errors.images){ %>
+                        <div class="text-danger">
+                            <%= errors.images.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label class="titulos-formulario">Link video descriptivo: </label>
@@ -43,14 +68,29 @@
                 <div>
                     <label class="titulos-formulario">Cantidad disponible: </label>
                     <input type="number" name="units" placeholder="Ej. 10" class="formulario-creation">
+                    <% if(locals.errors && errors.units){ %>
+                        <div class="text-danger">
+                            <%= errors.units.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label class="titulos-formulario">Colores Disponibles: </label>
                     <input type="text" name="colors" placeholder="Ej. rojo, verde, azul" class="formulario-creation" minlength="4">
+                    <% if(locals.errors && errors.colors){ %>
+                        <div class="text-danger">
+                            <%= errors.colors.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label class="titulos-formulario">Tamaños Disponibles: </label>
                     <input type="text" name="size" placeholder="Ej. 1000, 150cm, 15gr, único" class="formulario-creation">
+                    <% if(locals.errors && errors.size){ %>
+                        <div class="text-danger">
+                            <%= errors.size.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label class="titulos-formulario">Clasificación: </label>
