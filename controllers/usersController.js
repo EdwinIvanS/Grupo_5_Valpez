@@ -103,7 +103,7 @@ const usersController={
     },
 
     logout: function(req,res){
-        req.clearCookie('emailLogged')
+        res.clearCookie('emailLogged')
         req.session.destroy();
         return res.redirect("/");
     }

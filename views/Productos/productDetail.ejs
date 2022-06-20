@@ -33,12 +33,15 @@
             </div>
             <img class="photo" src="/img/products/<%= detalleProducto.images[0]%>" alt="photo">
             <div class="details">
-                <div class="root">
-                    <a href="/products/edition/<%= detalleProducto.idProduct %>"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
-                    <form action="/products/detail/<%= detalleProducto.idProduct %>?_method=DELETE" method="POST">
-                        <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
-                    </form>
-                </div>
+                <% if(locals.rootUser) { %> 
+                    <div class="root">
+                        <a href="/products/edition/<%= detalleProducto.idProduct %>"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
+                        <form action="/products/detail/<%= detalleProducto.idProduct %>?_method=DELETE" method="POST">
+                            <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                        </form>
+                    </div>
+                <% } %> 
+               
                 
                 <h1><%= detalleProducto.title%></h1>
                 <h2>$ <%= detalleProducto.price%></h2>

@@ -16,7 +16,12 @@ function userLoguinMiddleware(req, res, next) {
 
     if(req.session.usuarioLogueado){
         res.locals.isLogged = true;
+        if(req.session.usuarioLogueado.category == 'root'){
+            res.locals.rootUser = true;
+        }
     }
+
+    
     
     next();
 }

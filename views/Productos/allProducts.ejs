@@ -13,12 +13,15 @@
 
     <!-- Seccion del cuerpo-->
     <main>
-        <a href="/products/create">
-            <div class="AddProducts">
-                <h4>Añadir Productos</h4>
-                <i class="circle fa-solid fa-circle-plus"></i>
-            </div>
-        </a>
+        <% if(locals.rootUser) { %> 
+            <a href="/products/create">
+                <div class="AddProducts">
+                    <h4>Añadir Productos</h4>
+                    <i class="circle fa-solid fa-circle-plus"></i>
+                </div>
+            </a>
+        <% } %> 
+        
         <div class="related">
             <div class="relatedProducts">
                 <i class="arrow" class="fa-solid fa-angle-left"></i>

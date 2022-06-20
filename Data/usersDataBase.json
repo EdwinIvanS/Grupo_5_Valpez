@@ -42,5 +42,16 @@
   "photo": "img - 1655229283380.jpg",
   "password": "$2a$10$B7fbij.kFe1uoCjG2Yu.u.YiV.e5f0QpphC0FCVfUV1A5d/TX4EDS",
   "category": "client"
+ },
+ {
+  "idUser": 5,
+  "name": "Sebastian Vallejo Perez",
+  "user": "ValPer45",
+  "email": "nomuere123@gmail.com",
+  "dob": "2014-05-11",
+  "address": "Avenida 41 # 65-118",
+  "photo": "DefaultFish.jpg",
+  "password": "$2a$10$Daw7Tj3nJuLcgmVZ4l.j9OOY8m48UzHERtpWo8OUs0vCyf.M2Wz/O",
+  "category": "client"
  }
 ]
