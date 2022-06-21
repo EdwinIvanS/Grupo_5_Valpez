@@ -81,7 +81,14 @@ Se verifica el procedimiento para la implementación del loguin de usuarios.
 
 - ¿Qué se hizo hasta Ayer?:
 
-
+Se genera la creación de la cookie para recordar usuario siempre y cuando el usuario que se esta conectando marque la opción en el loguin. 
+Se configuran las rutas para los usuarios guest y usuario root.
+Finalmente se genera la la implementación de validaciones para el formulario productos (recomendación en la revisión del sprint pasado).
 
 - ¿Qué se hizo hoy?:
+
+Verificamos que todas las opciones y funcionalidades se esten ejecutando correctamente, se comparten casuisticas presentadas durante el desarrollo del sprint 5.
+
+==============================//==============================//==============================
+
 
