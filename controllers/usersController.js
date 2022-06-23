@@ -14,6 +14,7 @@ const usersController={
     },
 
     loginProcess: function(req,res){
+        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
         let userToLogin = users.find(user => user.email == req.body.email);
         if(userToLogin){
             let verifyPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);

@@ -35,5 +35,6 @@ https://www.basspro.com/shop/en
  - Sprint 3: https://trello.com/b/Le5Ce28r/sprint-3
  - Sprint 4: https://trello.com/b/yKGfwjbS/sprint-4
  - Sprint 5: https://trello.com/b/aV5iMhmh/sprint-5
+ - Sprint 6: https://trello.com/b/XeZtRkCL/sprint-6
  
  

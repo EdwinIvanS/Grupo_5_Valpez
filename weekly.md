@@ -91,4 +91,12 @@ Verificamos que todas las opciones y funcionalidades se esten ejecutando correct
 
 ==============================//==============================//==============================
 
+## Reunión del 22-06-22
 
+- ¿Qué se hizo hasta Ayer?:
+
+Se realiza todas las actividades propuestas en el cronograma del programa.
+
+- ¿Qué se hizo hoy?:
+
+Se crea el tablero de trabajo para el Sprint 6. Se definen las actividades a desarrollar y la repartición de deberes de cada integrante.

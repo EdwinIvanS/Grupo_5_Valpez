@@ -68,3 +68,20 @@
 
 5-Dejar de hacer:
     El grupo de trabajo es solido y atento a los procesos que se vienen realizando, seguimos en pro del proyecto, por lo que no dejamos de realizar alguna acción.
+
+
+## Sprint 5:
+1-Comenzar a hacer: 
+    Intentar investigar y estudiar más temas adicionales a los propuestos en el programa para que podamos complementar nuestro proyecto.
+
+2-Hacer mas:
+    Dedicar más tiempo al proceso de aprendizaje de los temas para poderlos aplicar más eficientemente en el proyecto.
+
+3-Continuar haciendo:
+    Continuar con el buen desempeño con el que hemos estado trabajando.
+
+4- Hacer menos:
+    Seguir cumpliendo con las fechas destinadas para la entrega de cada sprint.
+
+5-Dejar de hacer:
+    Dejar de dedicar poco tiempo al contenido en Playground para estar al día con todos los temas.
