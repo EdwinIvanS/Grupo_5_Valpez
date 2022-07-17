@@ -1,4 +1,4 @@
-module.exports = (sequalize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
 
     let alias = "Product";
     
@@ -40,11 +40,11 @@ module.exports = (sequalize, DataTypes) => {
         },
         class_id: {
             type: DataTypes.INTEGER.UNSIGNED,
-            allowNull: false,
+            allowNull: false /*,
             references: {
                 model: Class,
                 key: 'id'
-            }     
+            }     */
         }
     };
     
@@ -54,6 +54,22 @@ module.exports = (sequalize, DataTypes) => {
         };
 
     const Product = sequelize.define(alias, cols, config);
+
+    Product.associate = function (models) {
+        Product.hasMany(models.Image, { 
+            as: "Image",
+            foreignKey: 'product_num',
+            timestamps: false,
+            onDelete: 'cascade'
+        })
+
+        Product.hasMany(models.OrderDetail, { 
+            as: "OrderDetail",
+            foreignKey: 'product_id',
+            timestamps: false,
+            onDelete: 'cascade'
+        })
+    }
 
     return Product;
 };

@@ -1,4 +1,4 @@
-module.exports = (sequalize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
 
     let alias = "Order";
     
@@ -11,11 +11,11 @@ module.exports = (sequalize, DataTypes) => {
             },
         user_id: {
             type: DataTypes.INTEGER.UNSIGNED,
-            allowNull: false,
+            allowNull: false/*
             references: {
                 model: User,
                 key: 'id'
-                }
+                }*/
             },
         ammount: {
             type: DataTypes.INTEGER,

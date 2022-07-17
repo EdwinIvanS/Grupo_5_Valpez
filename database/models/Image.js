@@ -1,4 +1,4 @@
-module.exports = (sequalize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
 
     let alias = "Image";
     
@@ -15,11 +15,12 @@ module.exports = (sequalize, DataTypes) => {
         },
         product_id: {
             type: DataTypes.INTEGER.UNSIGNED,
-            allowNull: false,
+            allowNull: false
+            /*,
             references: {
                 model: Product,
                 key: 'id'
-            } 
+            }  */
         }
     };
     
@@ -29,6 +30,15 @@ module.exports = (sequalize, DataTypes) => {
         };
 
     const Image = sequelize.define(alias, cols, config);
+
+    Image.associate = function (models) {
+        Image.belongsTo(models.Product, { // models.Movie -> Movies es el valor de alias en movie.js
+            as: "Product",
+            foreignKey: 'product_num',
+            timestamps: false,
+            onDelete: 'cascade'
+        })
+    }
 
     return Image;
 }

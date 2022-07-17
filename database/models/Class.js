@@ -1,4 +1,4 @@
-module.exports = (sequalize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
 
     let alias = "Class";
     

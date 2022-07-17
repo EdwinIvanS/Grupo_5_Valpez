@@ -54,22 +54,22 @@ const productsController = require("../controllers/productsController");
 
 
 // Enrutador productos
-router.get("/", productsController.index); //Listado de productos.
+router.get("/", productsController.index); 
 router.get("/camping", productsController.camping);
 router.get("/pesca", productsController.fishing);
 
 //Carrito
-router.get("/Cart", productsController.productCart); //OK
+router.get("/Cart", productsController.productCart); 
 
-//Creación de producto
-router.get("/create", rootMiddleware, productsController.productCreate);  //OK
+//Creación de producto  
+router.get("/create", productsController.productCreate);  //OKKK
 router.post("/", uploadFile.array("images", 4), validateCreateProducts, productsController.store);
 
 //Detalle de producto
-router.get("/detail/:id", productsController.productDetail);   //OK
+router.get("/detail/:id", productsController.productDetail);   
 
 //Edición de producto
-router.get("/edition/:id", rootMiddleware, productsController.productEdition); //OK
+router.get("/edition/:id", productsController.productEdition);
 router.put("/detail/:id", uploadFile.array("images", 4), productsController.update);
 
 //Eliminación de producto

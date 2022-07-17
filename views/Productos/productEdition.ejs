@@ -9,7 +9,7 @@
     <%- include('../partials/header') %>
     <main>
         <div class="form-creation">
-            <form class="formularios" action="/products/detail/<%= productoAEditar.idProduct %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="formularios" action="/products/detail/<%= productoAEditar.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <h1>Editando: <%= productoAEditar.title %></h1>
                 <div>
                     <label class="titulos-formulario">Categoría: </label>
@@ -46,11 +46,11 @@
                 </div>
                 <div>
                     <label class="titulos-formulario">Colores Disponibles: </label>
-                    <input type="text" name="colors" placeholder="Ej. rojo, verde, azul" class="formulario-creation" minlength="4" value="<%= productoAEditar.colors.join(", ") %>">
+                    <input type="text" name="colors" placeholder="Ej. rojo, verde, azul" class="formulario-creation" minlength="4" value="<%= productoAEditar.colors%>">  <!--.join(", ")--> 
                 </div>
                 <div>
                     <label class="titulos-formulario">Tamaños Disponibles: </label>
-                    <input type="text" name="size" placeholder="Ej. 1000, 150cm, 15gr, único" class="formulario-creation" value="<%= productoAEditar.size.join(", ") %>">
+                    <input type="text" name="size" placeholder="Ej. 1000, 150cm, 15gr, único" class="formulario-creation" value="<%= productoAEditar.sizes%>"> <!--.join(", ")-->
                 </div>
                 <div>
                     <label class="titulos-formulario">Clasificación: </label>

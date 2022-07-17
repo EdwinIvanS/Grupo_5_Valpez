@@ -1,4 +1,4 @@
-module.exports = (sequalize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
 
     let alias = "OrderDetail";
     
@@ -11,19 +11,19 @@ module.exports = (sequalize, DataTypes) => {
             },
         order_id: {
             type: DataTypes.INTEGER.UNSIGNED,
-            allowNull: false,
+            allowNull: false /*,
             references: {
                 model: Order,
                 key: 'id'
-                }     
+                }   */   
             },
         product_id: {
             type: DataTypes.INTEGER.UNSIGNED,
-            allowNull: false,
+            allowNull: false /*,
             references: {
                 model: Product,
-                key: 'id'
-                }     
+                key: 'id' 
+                }     */
             },
         price: {
             type: DataTypes.INTEGER,
@@ -48,5 +48,12 @@ module.exports = (sequalize, DataTypes) => {
 
     const OrderDetail = sequelize.define(alias, cols, config);
 
+    OrderDetail.associate = function (models) {
+        OrderDetail.belongsTo(models.Product, { // models.Movie -> Movies es el valor de alias en movie.js
+            as: "Product",
+            foreignKey: 'product_id',
+            timestamps: false
+        })
+    }
     return OrderDetail;
 }
