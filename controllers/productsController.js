@@ -9,6 +9,8 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 // llamda al modelo de productos 
 
 const Productos = db.Product;
+const Images = db.Images;
+const Class = db.Class;
 
 const productsController={
 
@@ -96,7 +98,7 @@ const productsController={
         })
         .then(confirm => {
             if(confirm){
-                console.log("Registro guradado en la base de datos")
+                console.log("Registro guardado en la base de datos")
             }            
         })   
         
@@ -107,6 +109,29 @@ const productsController={
     productDetail: function(req,res){
         let id = req.params.id;
         let detalleProducto = null;
+
+        let consultarId = Productos.findByPk(id);
+        let consultarTodo = Productos.findAll({
+            where: {class_id: 1} 
+        });
+        let consultaImagenes = Images.findAll({
+            where: {product_num: id} 
+        });
+        let casificacion = Class.findAll({ 
+        });
+        
+        
+        Promise.all([consultarId , consultarTodo , consultaImagenes , casificacion])
+        .then(([consultarId , consultarTodo , consultaImagenes]) =>{
+            console.log(consultaImagenes);
+            console.log(consultarTodo);
+            res.render("Productos/productDetail", {detalleProducto: consultarId, products: consultarTodo , imagenes : consultaImagenes});
+        })
+
+        
+        
+        /*
+        /*
         for (let i = 0; i < products.length; i++) {
             if (products[i].idProduct == id ) {
                 detalleProducto = products[i];
@@ -118,8 +143,11 @@ const productsController={
                 detalleProducto.images[i] = "Default.jpg"
             }
         }
+            res.render("Productos/productDetail", {detalleProducto: detalleProducto, products: products});
 
-        res.render("Productos/productDetail", {detalleProducto: detalleProducto, products: products});
+        */
+
+
     },
 
     productEdition: function(req,res){
@@ -175,7 +203,8 @@ const productsController={
             }			
 		}
 
-        console.log(productEdited);
+        let files = req.files;
+        console.log(files);
         //UPDATE DE PRODUCTOS
       
         Productos.update(
@@ -201,23 +230,21 @@ const productsController={
                     console.log("Registro actualizado correctamente en la base de datos")
                 }            
             })   
-        
-        /*
-		let newProducts = products.filter(product => product.idProduct != req.params.id)
-		newProducts.push(productEdited)
-		let productsString = JSON.stringify(newProducts, null, ' ');
-		fs.writeFileSync(productsFilePath, productsString)
-		
-        */
 
         res.redirect("/products/detail/" + idProduct)
     },
 
     destroy : function(req, res) {
-		let newProducts = products.filter(product => product.idProduct != req.params.id)
-		let productsString = JSON.stringify(newProducts);
-		fs.writeFileSync(productsFilePath, productsString)
-		res.redirect("/")
+        let id = req.params.id;
+
+        Productos.destroy({
+            where: {id: id},
+             force: true
+            })
+            .then(respuesta =>{
+                console.log("registro eliminado correctamente");
+                res.redirect("/")
+            })
 	}
 }
 

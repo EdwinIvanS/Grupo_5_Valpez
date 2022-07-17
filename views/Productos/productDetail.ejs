@@ -3,156 +3,193 @@
 
 <head>
     <%- include('../partials/head') %>
-    <link href="/css/styles_productDetail.css" rel="stylesheet">  
-    <title>.:Detalle del producto:.</title>
+        <link href="/css/styles_productDetail.css" rel="stylesheet">
+        <title>.:Detalle del producto:.</title>
 </head>
 
 <body>
     <%- include('../partials/header') %>
 
-    <main>
-        <nav class="route">
-            <ul>
-                <li><a href="/">Inicio /</a></li>
-                <li><a href="/products/<%= detalleProducto.category %>"><%= detalleProducto.category %> /</a></li>
-                <li><a href="#"><%= detalleProducto.classification %> /</a></li>
-                <li><a><%= detalleProducto.title %></a></li>
-            </ul>
-        </nav>
+        <main>
+            <nav class="route">
+                <ul>
+                    <li><a href="/">Inicio /</a></li>
+                    <li><a href="/products/<%= detalleProducto.category %>">
+                            <%= detalleProducto.category %> /
+                        </a></li>
+                    <li><a href="#">
+                            <%= detalleProducto.classification %> /
+                        </a></li>
+                    <li><a>
+                            <%= detalleProducto.title %>
+                        </a></li>
+                </ul>
+            </nav>
 
-    
+            <div class="productSelected">
+                <div class="preview">
+                    <i class="fa-solid fa-angle-up"></i>
+                    <% for (let i=1; i < imagenes.length; i++) { %>
+                        <img src="/img/products/<%= imagenes[i].dataValues.name%> " alt="preview">
+                        <% }%>
+                            <i class="fa-solid fa-angle-down"></i>
 
-        <div class="productSelected">
-            <div class="preview">
-                <i class="fa-solid fa-angle-up"></i>
-                
-                <img src="/img/products/<%= detalleProducto.images[1]%> " alt="preview1">
-                <img src="/img/products/<%= detalleProducto.images[2]%> " alt="preview2">
-                <img src="/img/products/<%= detalleProducto.images[3]%> " alt="preview3">
-                <i class="fa-solid fa-angle-down"></i>
-            </div>
-            <img class="photo" src="/img/products/<%= detalleProducto.images[0]%>" alt="photo">
-            <div class="details">
-                <% if(locals.rootUser) { %> 
-                    <div class="root">
-                        <a href="/products/edition/<%= detalleProducto.idProduct %>"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
-                        <form action="/products/detail/<%= detalleProducto.idProduct %>?_method=DELETE" method="POST">
-                            <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
-                        </form>
-                    </div>
-                <% } %> 
-               
-                
-                <h1><%= detalleProducto.title%></h1>
-                <h2>$ <%= detalleProducto.price%></h2>
-                <p><%= detalleProducto.smallDescription%></p>
-                <a href="#">Ver más detalles</a>
-                <p class="available">Disponible</p>
-                <form class="selection" action="#" method="post">
-                    <div>
-                       <label>Cantidad</label>
-                        <select name="quantity" id="quantity">
-                            <% for (let i = 1; i <= detalleProducto.units; i++) {%>
-                            <option value="<%= i %>"><%= i %></option>
-                            <% } %>
-                        </select> 
-                    </div>
-
-                    <div>
-                       <label>Color</label>
-                        <select name="color" id="color">
-                            <% for (let i = 0; i < detalleProducto.colors.length; i++) {%>
-                            <option value="<%= detalleProducto.colors%>"><%= detalleProducto.colors[i]%></option>
-                            <% } %>
-                        </select> 
-                    </div>
-
-                    <div>
-                       <label for="size">Tamaño</label>
-                        <select name="size" id="size">
-                            <% for (let i = 0; i < detalleProducto.size.length; i++) {%>
-                            <option value="<%= detalleProducto.size[i]%>"><%= detalleProducto.size[i]%></option>
-                            <% } %>
-                        </select> 
-                    </div>
-                    <button class="complete" type="submit"><i class="fa-solid fa-cart-plus"></i> Añadir al carrito</button>
-                    <button class="onlyCart" type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                </form>
-            </div>
-        </div>
-        <div class="moreDetails">
-            <article class="description">
-                <h2>Descripción</h2>
-                <p><%= detalleProducto.detailedDescription%></p>
-                <br>
-                <% if(detalleProducto.url != null){ %>               
-                <iframe width="420" height="250" src="<%= detalleProducto.url%>"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-                    <% } %>
-            </article>
-            
-            <article class="factSheet">
-                <h2>Ficha Técnica</h2>
-                <div class="features">
-                    <div>
-                        <span>Clasificación</span>
-                        <span>Referencia</span>
-                    </div>
-                    <div>
-                      <span><%= detalleProducto.classification%></span>
-                      <span><%= detalleProducto.reference%></span>  
-                    </div>
                 </div>
-            </article>
-        </div>
-     
+                <img class="photo" src="/img/products/<%= imagenes[0].dataValues.name%>" alt="photo">
 
-        <div class="related">
-            <h2>Productos relacionados</h2>
 
-            <div class="relatedProducts">
+                <div class="details">
+                    <% if(locals.rootUser) { %>
+                        <div class="root">
+                            <a href="/products/edition/<%= detalleProducto.id %>"><i
+                                    class="fa-solid fa-wand-magic-sparkles"></i></a>
+                            <form action="/products/detail/<%= detalleProducto.id %>?_method=DELETE" method="POST">
+                                <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                            </form>
+                        </div>
+                        <% } %>
 
-                <% for(i=0 ; i < products.length ; i ++) {
-                    if(detalleProducto.classification == products[i].classification) { %>
-                            <article class="product">
-                                <a href="/products/detail/<%= products[i].idProduct %>">
-                                    <img src="/img/Products/<%= products[i].images[0] %>" alt="producto5">
-                                </a>
-                                <h3><%= products[i].title%></h3>
-                                <p><%= products[i].price%></p>
-                                <form class="selection1" action="#" method="get">
-                                    <div>
-                                        <select name="color" id="color">
-                                            <% for (let c = 0; c < products[i].colors.length; c++) {%>
-                                                <option value="<%= products[i].colors[c]%>"><%= products[i].colors[c]%></option>
-                                                <% } %>
-                                        </select>
-                                        
-                                        <select name="quantity" id="quantity">
-                                            <% for (let q = 1; q <= products[i].units; q++) {%>
-                                                <option value="<%= q %>"><%= q %></option>
-                                                <% } %>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <select name="size" id="size">
-                                            <% for (let s = 0; s < products[i].size.length; s++) {%>
-                                                <option value="<%= products[i].size[s]%>"><%= products[i].size[s]%></option>
-                                                <% } %>
-                                        </select>
 
-                                        <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div> 
-                                </form>
-                            </article>
-                        
-                <% } } %>
+                            <h1>
+                                <%= detalleProducto.title%>
+                            </h1>
+                            <h2>$ <%= detalleProducto.price%>
+                            </h2>
+                            <p>
+                                <%= detalleProducto.smallDescription%>
+                            </p>
+                            <a href="#">Ver más detalles</a>
+                            <p class="available">Disponible</p>
+                            <form class="selection" action="#" method="post">
+                                <div>
+                                    <label>Cantidad</label>
+                                    <select name="quantity" id="quantity">
+                                        <% for (let i=1; i <=detalleProducto.units; i++) {%>
+                                            <option value="<%= i %>">
+                                                <%= i %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label>Color</label>
+                                    <select name="color" id="color">
+                                        <% for (let i=0; i < detalleProducto.length; i++) {%>
+                                            <option value="<%= detalleProducto.colors%>">
+                                                <%= detalleProducto.colors[i]%>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="size">Tamaño</label>
+                                    <select name="size" id="size">
+                                        <% for (let i=0; i < detalleProducto.length; i++) {%>
+                                            <option value="<%= detalleProducto.sizes[i]%>">
+                                                <%= detalleProducto.size[i]%>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                </div>
+                                <button class="complete" type="submit"><i class="fa-solid fa-cart-plus"></i> Añadir al
+                                    carrito</button>
+                                <button class="onlyCart" type="submit"><i class="fa-solid fa-cart-plus"></i></button>
+                            </form>
+                </div>
             </div>
-        </div>
-    </main>
-    <%- include('../partials/footer') %>
+            <div class="moreDetails">
+                <article class="description">
+                    <h2>Descripción</h2>
+                    <p>
+                        <%= detalleProducto.detailedDescription%>
+                    </p>
+                    <br>
+                    <% if(detalleProducto.url !=null){ %>
+                        <iframe width="420" height="250" src="<%= detalleProducto.url%>" title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <% } %>
+                </article>
+
+                <article class="factSheet">
+                    <h2>Ficha Técnica</h2>
+                    <div class="features">
+                        <div>
+                            <span>Clasificación</span>
+                            <span>Referencia</span>
+                        </div>
+                        <div>
+                            <span>
+                                <%= detalleProducto.classification%>
+                            </span>
+                            <span>
+                                <%= detalleProducto.reference%>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="related">
+                <h2>Productos relacionados</h2>
+
+                <div class="relatedProducts">
+                    <% for(i=0 ; i < products.length ; i ++) { if(detalleProducto.class_id==products[i].class_id) { %>
+                        <article class="product">
+                            <a href="/products/detail/<%= products[i].id %>">
+                                <% for (let i=0; i < imagenes.length; i++) {%>
+                                    <% if(imagenes[i].product_num==products.id){ %>
+                                        <img src="/img/Products/<%= imagenes[i].dataValues.name %>" alt="producto5">
+                                        <h1>AQUI SE EJECUTO </h1>
+                                        <%} %>
+                                            <% }%>
+                            </a>
+                            <h3>
+                                <%= products[i].title%>
+                            </h3>
+                            <p>
+                                <%= products[i].price%>
+                            </p>
+                            <form class="selection1" action="#" method="get">
+                                <div>
+                                    <select name="color" id="color">
+                                        <% for (let c=0; c < products[i].colors.length; c++) {%>
+                                            <option value="<%= products[i].colors[c]%>">
+                                                <%= products[i].colors[c]%>
+                                            </option>
+                                            <% } %>
+                                    </select>
+
+                                    <select name="quantity" id="quantity">
+                                        <% for (let q=1; q <=products[i].units; q++) {%>
+                                            <option value="<%= q %>">
+                                                <%= q %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                </div>
+                                <div>
+                                    <select name="size" id="size">
+                                        <% for (let s=0; s < products[i].length; s++) {%>
+                                            <option value="<%= products[i].size[s]%>">
+                                                <%= products[i].size[s]%>
+                                            </option>
+                                            <% } %>
+                                    </select>
+
+                                    <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
+                                </div>
+                            </form>
+                        </article>
+
+                        <% } } %>
+                </div>
+
+        </main>
+        <%- include('../partials/footer') %>
 </body>
 
 </html>
