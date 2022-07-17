@@ -94,7 +94,11 @@
                 </div>
                 <div>
                     <label class="titulos-formulario">Clasificación: </label>
-                    <input type="text" name="classification" placeholder="Ej. Agua salada" class="formulario-creation" value="<%= locals.oldData ? oldData.classification : null %>">
+                    <select name="classification" class="formulario-creation">
+                        <% for (let i = 0; i < clasificacion.length; i++) { %>
+                            <option value="<%=clasificacion[i].id %>"><%=clasificacion[i].name %></option>                            
+                        <% } %>                         
+                    </select>
                 </div>
                 <div>
                     <label class="titulos-formulario">Referencia: </label>

@@ -43,7 +43,13 @@ const productsController={
     },
 
     productCreate: function(req,res){
-        res.render("Productos/productCreate");
+        Class.findAll()
+        .then(clasificacion => {
+            console.log("consulta exitosa");
+            res.render("Productos/productCreate", {clasificacion : clasificacion});
+        });
+
+        
     },
     store: function(req,res){
         let imagesUploaded = req.files;
@@ -94,10 +100,11 @@ const productsController={
             colors: req.body.colors,
             sizes: req.body.size,
             reference: req.body.reference,
-            class_id: (req.body.category == 'Pesca')? 1 : 2
+            class_id: req.body.category
         })
         .then(confirm => {
             if(confirm){
+                console.log(confirm)
                 console.log("Registro guardado en la base de datos")
             }            
         })   
