@@ -83,12 +83,6 @@ const productsController={
             newProduct.idProduct = lastProduct.idProduct + 1;
         }
 
-        /*
-		products.push(newProduct);
-		let productsString = JSON.stringify(products, null, ' ');
-		fs.writeFileSync(productsFilePath, productsString)
-        */
-       console.log(req.body)
         Productos.create({
             id: lastProduct,
             title:req.body.title,
@@ -100,11 +94,10 @@ const productsController={
             colors: req.body.colors,
             sizes: req.body.size,
             reference: req.body.reference,
-            class_id: req.body.category
+            class_id: req.body.classification
         })
         .then(confirm => {
             if(confirm){
-                console.log(confirm)
                 console.log("Registro guardado en la base de datos")
             }            
         })   
@@ -130,8 +123,7 @@ const productsController={
         
         Promise.all([consultarId , consultarTodo , consultaImagenes , casificacion])
         .then(([consultarId , consultarTodo , consultaImagenes]) =>{
-            console.log(consultaImagenes);
-            console.log(consultarTodo);
+            console.log(consultarId);
             res.render("Productos/productDetail", {detalleProducto: consultarId, products: consultarTodo , imagenes : consultaImagenes});
         })
 

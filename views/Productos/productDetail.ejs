@@ -137,15 +137,16 @@
                 <h2>Productos relacionados</h2>
 
                 <div class="relatedProducts">
-                    <% for(i=0 ; i < products.length ; i ++) { if(detalleProducto.class_id==products[i].class_id) { %>
+                    <% for(i=0 ; i < products.length ; i ++) { %>
+                        <% let valorIdProduto = products[i].dataValues.id %> 
+                        <% if((detalleProducto.class_id>=1 && detalleProducto.class_id<=7)|| (detalleProducto.class_id>=8 && detalleProducto.class_id<=17)) { %>
                         <article class="product">
                             <a href="/products/detail/<%= products[i].id %>">
-                                <% for (let i=0; i < imagenes.length; i++) {%>
-                                    <% if(imagenes[i].product_num==products.id){ %>
+                                <% for (let i=0; i < 1; i++) {%>
+                                    <% if(imagenes[i].product_num==valorIdProduto){ %>
                                         <img src="/img/Products/<%= imagenes[i].dataValues.name %>" alt="producto5">
-                                        <h1>AQUI SE EJECUTO </h1>
-                                        <%} %>
-                                            <% }%>
+                                    <%} %>
+                                <% }%>
                             </a>
                             <h3>
                                 <%= products[i].title%>
