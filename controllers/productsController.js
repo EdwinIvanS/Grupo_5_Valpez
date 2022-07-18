@@ -15,7 +15,16 @@ const Class = db.Class;
 const productsController={
 
     index: function(req,res){
-        res.render("Productos/allProducts", {products: products});
+        let allProduct = Productos.findAll();
+        let allImages = Images.findAll();
+
+        Promise.all([allProduct , allImages])
+        .then(([allProduct , allImages]) => {
+            console.log("consulta exitosa");
+            console.log(allProduct);
+            res.render("Productos/allProducts", {products: allProduct, imagenes : allImages });
+        });
+        
     },
 
     camping: function(req,res){
