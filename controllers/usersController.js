@@ -1,11 +1,7 @@
-const fs = require('fs');
-const path = require('path');
+const db = require('../database/models');
 const bcryptjs = require('bcryptjs');
 const {validationResult} = require('express-validator');
-const { Console } = require('console');
 
-const usersFilePath = path.join(__dirname, '../Data/usersDataBase.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const usersController={
 
@@ -52,11 +48,16 @@ const usersController={
 
     userCreate: function(req,res){
         let validResult = validationResult(req);
+        let profileImage = req.file;
+        
         if(!validResult.isEmpty()){
             return res.render("User/register", {errors: validResult.mapped(), oldData: req.body});
         }else{
-            for(let i = 0; i < users.length; i++) {
-                if(req.body.email == users[i].email){
+            db.User.findOne({where: {
+                email: req.body.email
+            }})
+            .then(result => {
+                if(result != null){
                     return res.render("User/register", {
                         errors: {
                             email: {
@@ -65,34 +66,22 @@ const usersController={
                         }, 
                         oldData: req.body
                     });
-                };
-            }
-                
-            let profileImage = req.file;
-            let lastUser = users[users.length - 1];
-            let newUser = {
-                idUser: 1,
-                name: req.body.name,
-                user: req.body.user,
-                email: req.body.email,
-                dob: req.body.dob,
-                address: req.body.address,
-                photo: "DefaultFish.jpg",
-                password: bcryptjs.hashSync(req.body.password),
-                category: "client"
-            };
-            if (profileImage){
-                newUser.photo = profileImage.filename;
-            }
-            if (lastUser){
-                newUser.idUser = lastUser.idUser + 1;
-            }
-
-            users.push(newUser);
-            let usersString = JSON.stringify(users, null, ' ');
-            fs.writeFileSync(usersFilePath, usersString);
-
-            res.render("User/login");
+                }else {
+                    db.User.create({
+                        name: req.body.name,
+                        user: req.body.user,
+                        email: req.body.email,
+                        dob: req.body.dob,
+                        address: req.body.address,
+                        photo: profileImage ? profileImage.filename : "DefaultFish.jpg",
+                        password: bcryptjs.hashSync(req.body.password),
+                    })
+                    .then(result => {
+                        res.render("User/login");
+                    })
+                }
+            })
+            
         }     
     },
 
