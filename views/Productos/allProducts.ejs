@@ -29,12 +29,11 @@
                     <% let valorIdProduto=products[i].dataValues.id %>
                             <article class="product">                                
                                 <a href="/products/detail/<%= products[i].dataValues.id %>">
-                                    <% for(let i=0 ; i<imagenes.length; i ++) {%>
-                                        <% let count = 0 %> 
-                                        <% if(imagenes[i].product_num == valorIdProduto){ %>
-                                            <img src="/img/Products/<%= imagenes[i].dataValues.name %>" alt="producto5">
-                                        <% } %>
-                                    <% } %> 
+                                    
+                                        
+                                            <img src="/img/Products/<%= products[i].Image[0].name %>" alt="producto5">
+                                       
+                                    
                                 </a>
                                 <h3><%= products[i].title%></h3>
                                 <p><%= products[i].price%></p>

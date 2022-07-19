@@ -9,20 +9,22 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 // llamda al modelo de productos 
 
 const Productos = db.Product;
-const Images = db.Images;
+const Image = db.Image;
 const Class = db.Class;
 
 const productsController={
 
     index: function(req,res){
-        let allProduct = Productos.findAll();
-        let allImages = Images.findAll();
-
-        Promise.all([allProduct , allImages])
-        .then(([allProduct , allImages]) => {
+        Productos.findAll({
+            include : ['Image']
+        })
+       .then((allProduct) => {
             console.log("consulta exitosa");
-            console.log(allProduct);
-            res.render("Productos/allProducts", {products: allProduct, imagenes : allImages });
+            allProduct.forEach(element => {
+                console.log(element.dataValues.Image[0].name)
+            });
+            
+            res.render("Productos/allProducts", {products: allProduct});
         });
         
     },
@@ -55,7 +57,7 @@ const productsController={
         Class.findAll()
         .then(clasificacion => {
             console.log("consulta exitosa");
-            res.render("Productos/productCreate", {clasificacion : clasificacion});
+            res.render("Productos/productCreate", {clasificacion});
         });
 
         
