@@ -100,3 +100,53 @@ Se realiza todas las actividades propuestas en el cronograma del programa.
 - ¿Qué se hizo hoy?:
 
 Se crea el tablero de trabajo para el Sprint 6. Se definen las actividades a desarrollar y la repartición de deberes de cada integrante.
+
+## Reunión del 29-06-22
+
+- ¿Qué se hizo hasta Ayer?:
+
+Los integrantes del grupo de trabajo repasan los temas correspondientes al sprint actual, asimismo, se realizan practicas para mejorar el conocimiento sobre bases de datos.
+
+- ¿Qué se hizo hoy?:
+
+Se debaten los campos correspondientes para cada una de las tablas que incluira la base de datos.
+Se inicia con la creación del diagrama de entidades en base a los pasarametros establecidos anteriormente.
+
+## Reunión del 06-07-22
+
+- ¿Qué se hizo hasta Ayer?:
+
+Continuamos trabajando sobre el diagrama de entidades, se han presentado algunas inconsistencias con los diseños creados hasta ahora.
+Se repasan los temas del sprint y se aclaran dudas sobre el diagrama de entidades.
+
+- ¿Qué se hizo hoy?:
+
+Se da inicio a un nuevo diagrama ya que el anterior era demasiado extenso y poco organizacional.
+
+## Reunión del 13-07-22
+
+- ¿Qué se hizo hasta Ayer?:
+
+Se culmina el diagrama de entidades y se comparte con el equipo.
+Se asignan nuevamente los miembros y las tareas correspondientes al sprint.
+
+- ¿Qué se hizo hoy?:
+
+Se crea la base de datos en MySQL y la adecuación de cada una de las tablas correspondientes a la misma.
+
+## Reunión del 20-07-22
+
+- ¿Qué se hizo hasta Ayer?:
+
+Creamos los modelos correspondientes en el proyecto.
+Se culmina con la creación del CRUD de productos para dar funcionalidad completa a la BD.
+Iniciamos con el proceso de CRUD para los usuarios.
+
+- ¿Qué se hizo hoy?:
+
+Se finaliza el proceso de CRUD para los usuarios.
+Se verifica la funcionalidad de la app con la base de datos.
+Se finalizan todas las tareas del sprint.
+
+==============================//==============================//==============================
+
