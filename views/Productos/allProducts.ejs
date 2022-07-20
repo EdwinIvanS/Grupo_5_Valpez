@@ -29,21 +29,15 @@
                     <% let valorIdProduto=products[i].dataValues.id %>
                             <article class="product">                                
                                 <a href="/products/detail/<%= products[i].dataValues.id %>">
-                                    
-                                        
-                                            <img src="/img/Products/<%= products[i].Image[0].name %>" alt="producto5">
-                                       
-                                    
+                                   <img src="/img/Products/<%= products[i].Image[0].name %>" alt="producto5">
                                 </a>
                                 <h3><%= products[i].title%></h3>
                                 <p><%= products[i].price%></p>
                                
                                 <form class="selection1" action="#" method="get">
                                     <div>
-                                        <select name="color" id="color">
-                                            <% for (let c = 0; c < products[i].colors.length; c++) {%>
-                                                <option value="<%= products[i].colors[c]%>"><%= products[i].colors[c]%></option>
-                                                <% } %>
+                                        <select name="color" id="color">                                            
+                                                <option value="<%= products[0].colors%>"><%= products[i].colors%></option>                                                
                                         </select>
                 
                                         <select name="quantity" id="quantity">
@@ -54,9 +48,7 @@
                                     </div>
                                     <div>
                                         <select name="size" id="size">
-                                            <% for (let s = 0; s < products[i].sizes.length; s++) {%>
-                                                <option value="<%= products[i].sizes[s]%>"><%= products[i].sizes[s]%></option>
-                                                <% } %>
+                                            <option value="<%= products[i].sizes%>"><%= products[i].sizes%></option>
                                         </select>
                 
                                         <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
