@@ -38,8 +38,7 @@
                                     <div>
                                         <select name="color" id="color">                                            
                                                 <option value="<%= products[0].colors%>"><%= products[i].colors%></option>                                                
-                                        </select>
-                
+                                        </select>                
                                         <select name="quantity" id="quantity">
                                             <% for (let q = 1; q <= products[i].units; q++) {%>
                                                 <option value="<%= q %>"><%= q %></option>
@@ -49,8 +48,7 @@
                                     <div>
                                         <select name="size" id="size">
                                             <option value="<%= products[i].sizes%>"><%= products[i].sizes%></option>
-                                        </select>
-                
+                                        </select>                
                                         <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
                                     </div>
                                 </form>
