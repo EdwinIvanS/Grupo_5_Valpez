@@ -21,7 +21,7 @@ const productsController={
        .then((allProduct) => {
             console.log("consulta exitosa");
             allProduct.forEach(element => {
-                console.log(element.dataValues.Image[0].name)
+                console.log(element.dataValues.colo)
             });
             
             res.render("Productos/allProducts", {products: allProduct});
