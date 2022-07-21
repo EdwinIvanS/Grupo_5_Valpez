@@ -85,3 +85,26 @@
 
 5-Dejar de hacer:
     Dejar de dedicar poco tiempo al contenido en Playground para estar al día con todos los temas.
+
+
+## Sprint 6:
+1-Comenzar a hacer:
+    Dar inicio al sprint en las fechas establecidas para evitar retrasos en las fechas de entrega.
+    Compartir con los demás integrantes del equipo las falencias que notemos para garantizar un mejor trabajo y viabilidad del proyecto.
+
+2-Hacer mas:
+    Garantinzar las fechas de entrega del sprint.
+    Estudiar y debatir los temas en los que nos encontramos con problemas a la hora de la ejecución del proyecto.
+
+3-Continuar haciendo:
+    Asegurarnos de las tareas que cada uno tiene asignadas y garantizar la funcionalidad de las mismas.
+    Seguimos creando espacios para trabajar en conjunto en los errores más grandes o inconvenientes mayores que se presentan durante la ejecución del sprint.
+
+4- Hacer menos:
+    Realizar modificaciones "grandes" al proyecto sin debatirlos con los demas integrantes. Como grupo de trabajo y con una buena comunicación todo saldra bien como lo ha sido hasta ahora.
+
+5-Dejar de hacer:
+    Nuevamente presentamos algunas falencias dado a que continuamos atrasados en algunos contenidos de Playground, esperamos para el nuevo módulo estar al día y poder desenvolvernos mas fácil.
+
+
+    
