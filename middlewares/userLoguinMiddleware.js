@@ -1,29 +1,30 @@
-const fs = require('fs');
-const path = require("path");
-
-const usersFilePath = path.join(__dirname, '../Data/usersDataBase.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+const db = require('../database/models');
 
 function userLoguinMiddleware(req, res, next) { 
     res.locals.isLogged = false;
 
     let emailInCookie = req.cookies.emailLogged;
-    let userFromCookie = users.find(user => user.email == emailInCookie);
+    if(emailInCookie){
+        db.User.findOne({where: {
+            email: emailInCookie
+        }})
+        .then(userFromCookie => {
+            if(userFromCookie != null){
+                req.session.usuarioLogueado = userFromCookie;
+            }
+            
+            if(req.session.usuarioLogueado){
+                if(req.session.usuarioLogueado.category == 'root'){
+                    res.locals.rootUser = true;
+                }
+                res.locals.isLogged = true;
+                next();
+            }
+        })
 
-    if(userFromCookie){
-        req.session.usuarioLogueado = userFromCookie
+        
     }
-
-    if(req.session.usuarioLogueado){
-        res.locals.isLogged = true;
-        if(req.session.usuarioLogueado.category == 'root'){
-            res.locals.rootUser = true;
-        }
-    }
-
     
-    
-    next();
 }
 
 module.exports = userLoguinMiddleware;

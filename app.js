@@ -3,7 +3,7 @@ const express = require('express');
 const methodOverride =  require('method-override'); 
 const path = require("path");
 const session = require('express-session');
-const cookies = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 
 const userLoguinMiddleware = require('./middlewares/userLoguinMiddleware');
 
@@ -20,19 +20,24 @@ app.use (express.static(publicPath));
 const mainRouter = require('./routers/main');
 const productsRouter = require('./routers/products');
 const usersRouter = require('./routers/users');
-const cookieParser = require('cookie-parser');
+
 
 //Usar ejs templates
 app.set('view engine', 'ejs');
+
+
 
 app.use(session({
     secret:'valor',
     resave: false,
     saveUninitialized : false
 }));
+
 app.use(cookieParser());
 
 app.use(userLoguinMiddleware);
+
+
 
 // Ruta Principal
 app.use("/", mainRouter);

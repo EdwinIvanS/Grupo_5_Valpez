@@ -10,36 +10,41 @@ const usersController={
     },
 
     loginProcess: function(req,res){
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-        let userToLogin = users.find(user => user.email == req.body.email);
-        if(userToLogin){
-            let verifyPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-            if(verifyPassword){
-                delete userToLogin.password;
+        db.User.findOne({where: {
+            email: req.body.email
+        }})
+        .then(userToLogin => {
+            if(userToLogin != null){
+                let verifyPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+                if(verifyPassword){
+                    delete userToLogin.password;
+    
+                    req.session.usuarioLogueado = userToLogin;
 
-                req.session.usuarioLogueado = userToLogin;
-
-                if(req.body.remember){
-                    res.cookie('emailLogged', req.body.email, {maxAge: (1000 * 60) * 60})
+                    console.log(req.body.remember)
+    
+                    if(req.body.remember == 'on'){
+                        res.cookie('emailLogged', req.body.email, {maxAge: (1000 * 60) * 60})
+                    }
+                    return res.redirect("profile");
                 }
-                //return res.redirect("profile");
-                return res.redirect("profile");
+                return res.render("User/login", {
+                    errors: {
+                        email: {
+                            msg: "Las credenciales son inválidas"
+                        }
+                    }
+                });
             }
             return res.render("User/login", {
                 errors: {
                     email: {
-                        msg: "Las credenciales son inválidas"
+                        msg: "Email no está registrado"
                     }
                 }
             });
-        }
-        return res.render("User/login", {
-            errors: {
-                email: {
-                    msg: "Email no está registrado"
-                }
-            }
-        });
+        })
+        
     },
 
     register: function(req,res){
@@ -86,7 +91,6 @@ const usersController={
     },
 
     profile: function(req,res){
-        //console.log(req.session);
         return res.render("User/profile",{
             user : req.session.usuarioLogueado
         });
