@@ -26,7 +26,6 @@ const usersRouter = require('./routers/users');
 app.set('view engine', 'ejs');
 
 
-
 app.use(session({
     secret:'valor',
     resave: false,
@@ -36,8 +35,6 @@ app.use(session({
 app.use(cookieParser());
 
 app.use(userLoguinMiddleware);
-
-
 
 // Ruta Principal
 app.use("/", mainRouter);

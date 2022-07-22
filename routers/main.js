@@ -1,7 +1,5 @@
 const express = require('express')
 const router  = express.Router();
-
-// implementar los controladores
 const mainController = require("../controllers/mainController");
 
 // Enrutador index

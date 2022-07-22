@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link href="/css/styles_register.css" rel="stylesheet">
+    <title>.:Edición:.</title>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <main>
+        <div class="form-register">
+            <form class="formularios" action="/users/profile/edit/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <h2>Editar cuenta</h2>
+                <div>
+                    <input 
+                        type="text" 
+                        name="name" 
+                        placeholder="Nombre y apellidos" 
+                        class="formulario-registro <%= (locals.errors && errors.name) ? 'is-invalid' : null %>"
+                        value="<%= user.name %>"
+                    >
+                    <% if(locals.errors && errors.name){ %>
+                        <div class="text-danger">
+                            <%= errors.name.msg %>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div>
+                    <input 
+                        type="text" 
+                        name="user" 
+                        placeholder="Nombre de usuario" 
+                        class="formulario-registro <%= (locals.errors && errors.user) ? 'is-invalid' : null %>"
+                        value="<%= user.user %>"
+                    >
+                    <% if(locals.errors && errors.user){ %>
+                        <div class="text-danger">
+                            <%= errors.user.msg %>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div>
+                    <input 
+                        type="email" 
+                        name="email" 
+                        placeholder="Email" 
+                        class="formulario-registro <%= (locals.errors && errors.email) ? 'is-invalid' : null %>"
+                        value="<%= user.email %>"
+                    >
+                    <% if(locals.errors && errors.email){ %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div>
+                    <label class="titulos-formulario">Fecha de Nacimiento</label>
+                    <input 
+                        type="date" 
+                        name="dob" 
+                        class="formulario-registro <%= (locals.errors && errors.dob) ? 'is-invalid' : null %>"
+                        value="<%= user.dob %>"
+                    >
+                    <% if(locals.errors && errors.dob){ %>
+                        <div class="text-danger">
+                            <%= errors.dob.msg %>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div>
+                    <input 
+                        type="text" 
+                        name="address" 
+                        placeholder="Dirección" 
+                        class="formulario-registro <%= (locals.errors && errors.address) ? 'is-invalid' : null %>"
+                        value="<%= user.address %>"
+                    >                        
+                    <% if(locals.errors && errors.address){ %>
+                        <div class="text-danger">
+                            <%= errors.address.msg %>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div>
+                    <label class="titulos-formulario">Foto de usuario</label>
+                    <input 
+                        type="file" 
+                        name="photo" 
+                        class="formulario-registro <%= (locals.errors && errors.photo) ? 'is-invalid' : null %>"
+                    >
+                    <% if(locals.errors && errors.photo){ %>
+                        <div class="text-danger">
+                            <%= errors.photo.msg %>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div>
+                    <input 
+                        type="password" 
+                        name="password" 
+                        placeholder="Contraseña" 
+                        class="formulario-registro <%= (locals.errors && errors.password) ? 'is-invalid' : null %>"
+                    >
+                    <% if(locals.errors && errors.password){ %>
+                        <div class="text-danger">
+                            <%= errors.password.msg %>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div>
+                    <input 
+                        type="password" 
+                        name="confirmPassword" 
+                        placeholder="Confirmar contraseña" 
+                        class="formulario-registro <%= (locals.errors && errors.confirmPassword) ? 'is-invalid' : null %>"
+                    >
+                    <% if(locals.errors && errors.confirmPassword){ %>
+                        <div class="text-danger">
+                            <%= errors.confirmPassword.msg %>
+                        </div>
+                    <% } %>
+                </div>
+                <button type="reset">Borrar</button>
+                <button type="submit">Editar</button>
+            </form>
+        </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+
+</body>
+</html>

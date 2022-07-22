@@ -96,6 +96,24 @@ const usersController={
         });
     },
 
+    edition: function(req,res){
+        return res.render("User/edit",{
+            user : req.session.usuarioLogueado
+        });
+    },
+
+    userEdit: function(req,res){
+        return res.render("User/edit",{
+            user : req.session.usuarioLogueado
+        });
+    },
+
+    delete: function(req,res){
+        return res.render("User/profile",{
+            user : req.session.usuarioLogueado
+        });
+    },
+
     logout: function(req,res){
         res.clearCookie('emailLogged')
         req.session.destroy();
