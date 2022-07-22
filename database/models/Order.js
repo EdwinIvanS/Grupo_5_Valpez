@@ -11,11 +11,7 @@ module.exports = (sequelize, DataTypes) => {
             },
         user_id: {
             type: DataTypes.INTEGER.UNSIGNED,
-            allowNull: false/*
-            references: {
-                model: User,
-                key: 'id'
-                }*/
+            allowNull: false
             },
         ammount: {
             type: DataTypes.INTEGER,
@@ -39,6 +35,23 @@ module.exports = (sequelize, DataTypes) => {
         };
 
     const Order = sequelize.define(alias, cols, config);
+
+    Order.associate = function (models) {
+        Order.hasMany(models.OrderDetail, { 
+            as: "OrdersDetail",
+            foreignKey: 'order_id',
+            timestamps: false,
+            onDelete: 'cascade'
+        });
+
+        Order.belongsTo(models.User, { 
+            as: "User",
+            foreignKey: 'user_id',
+            timestamps: false,
+            onDelete: 'cascade'
+        });
+
+    }
 
     return Order;
 }

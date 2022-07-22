@@ -18,13 +18,13 @@ function userLoguinMiddleware(req, res, next) {
                     res.locals.rootUser = true;
                 }
                 res.locals.isLogged = true;
-                next();
+                return next();
             }
         })
 
         
     }
-    
+    return next();   
 }
 
 module.exports = userLoguinMiddleware;

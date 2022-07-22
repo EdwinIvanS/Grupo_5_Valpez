@@ -40,11 +40,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         class_id: {
             type: DataTypes.INTEGER.UNSIGNED,
-            allowNull: false /*,
-            references: {
-                model: Class,
-                key: 'id'
-            }     */
+            allowNull: false,
         }
     };
     
@@ -57,15 +53,22 @@ module.exports = (sequelize, DataTypes) => {
 
     Product.associate = function (models) {
         Product.hasMany(models.Image, { 
-            as: "Image",
+            as: "Images",
             foreignKey: 'product_num',
             timestamps: false,
             onDelete: 'cascade'
-        })
+        });
 
         Product.hasMany(models.OrderDetail, { 
             as: "OrderDetail",
             foreignKey: 'product_id',
+            timestamps: false,
+            onDelete: 'cascade'
+        });
+
+        Product.belongsTo(models.Class, { 
+            as: "Class",
+            foreignKey: 'class_id',
             timestamps: false,
             onDelete: 'cascade'
         })

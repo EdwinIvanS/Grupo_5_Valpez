@@ -35,10 +35,10 @@
             <h2>Productos Destacados</h2>
 
             <div class="relatedProducts">
-                <% for(let i=0 ; i <= 3 ; i ++) {%>                        
+                <% for(let i=0 ; i < products.length ; i ++) {%>                        
                             <article class="product">
-                                <a href="/products/detail/<%= products[i].idProduct %>">
-                                    <img src="/img/Products/<%= products[i].images[0] %>" alt="producto5">
+                                <a href="/products/detail/<%= products[i].id%>">
+                                    <img src="/img/Products/<%= products[i].Images[0] %>" alt="producto5">
                                 </a>
                                 <h3>
                                     <%= products[i].title%>
@@ -49,8 +49,9 @@
                                 <form class="selection1" action="#" method="get">
                                     <div>
                                         <select name="color" id="color">
-                                            <% for (let c = 0; c < products[i].colors.length; c++) {%>
-                                                <option value="<%= products[i].colors[c]%>"><%= products[i].colors[c]%></option>
+                                            <% let arrayColors = products[i].colors.split(',')
+                                                for (let c = 0; c < arrayColors.length; c++) {%>
+                                                <option value="<%= arrayColors[c]%>"><%= arrayColors[c]%></option>
                                                 <% } %>
                                         </select>
                 
@@ -62,8 +63,9 @@
                                     </div>
                                     <div>
                                         <select name="size" id="size">
-                                            <% for (let s = 0; s < products[i].size.length; s++) {%>
-                                                <option value="<%= products[i].size[s]%>"><%= products[i].size[s]%></option>
+                                            <% let arraySizes = products[i].sizes.split(',')
+                                            for (let s = 0; s < arraySizes.length; s++) {%>
+                                                <option value="<%= arraySizes[s]%>"><%= arraySizes[s]%></option>
                                                 <% } %>
                                         </select>
                 
@@ -82,22 +84,27 @@
 
             <div class="relatedProducts">
 
-                <% for(i=4 ; i <= 7 ; i ++) {%>
+                <% for(let i=0 ; i < products.length ; i ++) {%>
                         
-                            <article class="product">
-                                <a href="/products/detail/<%= products[i].idProduct %>">
-                                    <img src="/img/Products/<%= products[i].images[0] %>" alt="producto5">
+                    <article class="product">
+                                <a href="/products/detail/<%= products[i].id%>">
+                                    <img src="/img/Products/<%= products[i].Images[0] %>" alt="producto5">
                                 </a>
-                                <h3><%= products[i].title%></h3>
-                                <p><%= products[i].price%></p>
+                                <h3>
+                                    <%= products[i].title%>
+                                </h3>
+                                <p>
+                                    <%= products[i].price%>
+                                </p>
                                 <form class="selection1" action="#" method="get">
                                     <div>
                                         <select name="color" id="color">
-                                            <% for (let c = 0; c < products[i].colors.length; c++) {%>
-                                                <option value="<%= products[i].colors[c]%>"><%= products[i].colors[c]%></option>
+                                            <% let arrayColors = products[i].colors.split(',')
+                                                for (let c = 0; c < arrayColors.length; c++) {%>
+                                                <option value="<%= arrayColors[c]%>"><%= arrayColors[c]%></option>
                                                 <% } %>
                                         </select>
-                                        
+                
                                         <select name="quantity" id="quantity">
                                             <% for (let q = 1; q <= products[i].units; q++) {%>
                                                 <option value="<%= q %>"><%= q %></option>
@@ -106,16 +113,16 @@
                                     </div>
                                     <div>
                                         <select name="size" id="size">
-                                            <% for (let s = 0; s < products[i].size.length; s++) {%>
-                                                <option value="<%= products[i].size[s]%>"><%= products[i].size[s]%></option>
+                                            <% let arraySizes = products[i].sizes.split(',')
+                                            for (let s = 0; s < arraySizes.length; s++) {%>
+                                                <option value="<%= arraySizes[s]%>"><%= arraySizes[s]%></option>
                                                 <% } %>
                                         </select>
-
+                
                                         <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div> 
+                                    </div>
                                 </form>
                             </article>
-                        
                 <% } %>
             </div>
         </div>

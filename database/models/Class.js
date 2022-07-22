@@ -26,5 +26,14 @@ module.exports = (sequelize, DataTypes) => {
 
     const Class = sequelize.define(alias, cols, config);
 
+    Class.associate = function (models) {
+        Class.hasMany(models.Product, { 
+            as: "Products",
+            foreignKey: 'class_id',
+            timestamps: false,
+            onDelete: 'cascade'
+        })
+    }
+
     return Class;
 };

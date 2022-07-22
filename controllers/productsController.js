@@ -1,30 +1,16 @@
-const fs = require('fs');
-const path = require('path');
 const {validationResult} = require('express-validator');
 const db = require("../database/models");
-const { Op } = require("sequelize");
-const productsFilePath = path.join(__dirname, '../Data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-// llamda al modelo de productos 
-
-const Productos = db.Product;
-const Image = db.Image;
-const Class = db.Class;
 
 const productsController={
 
     index: function(req,res){
-        Productos.findAll({
+        db.Product.findAll({
             include : ['Image']
         })
        .then((allProduct) => {
-            console.log("consulta exitosa");
-            allProduct.forEach(element => {
-                console.log(element.dataValues.colo)
-            });
-            
-            res.render("Productos/allProducts", {products: allProduct});
+        console.log(allProduct);
+                res.render("Productos/allProducts", {products: allProduct});
         });
         
     },
