@@ -12,7 +12,7 @@ module.exports = [
     body('dob').notEmpty().withMessage("Debes ingresar fecha de nacimiento"),
     body('photo').custom((value, {req})=>{
         let file = req.file;
-        let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg"];
+        let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg", ".JPG", ".PNG", ".GIF", ".JPEG"];
         if(file){
             let fileExtension = path.extname(file.originalname);
             if(!acceptedExtensions.includes(fileExtension)){

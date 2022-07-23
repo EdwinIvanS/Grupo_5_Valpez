@@ -28,7 +28,7 @@ const validateCreateProducts =[
         .isNumeric().withMessage("El precio debe ser un número"),
     body('images').custom((value, {req})=>{
         let files = req.files;
-        let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg"];
+        let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg", ".JPG", ".PNG", ".GIF", ".JPEG"];
         
         if(files){
             for(let i = 0; i < files.length; i++){

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-07-2022 a las 19:20:58
+-- Tiempo de generación: 23-07-2022 a las 20:35:50
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `valpez_db`
 --
-CREATE DATABASE IF NOT EXISTS `valpez_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `valpez_db`;
 
 -- --------------------------------------------------------
 
@@ -34,29 +32,6 @@ CREATE TABLE `classes` (
   `name` varchar(100) NOT NULL,
   `category` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `classes`
---
-
-INSERT INTO `classes` (`id`, `name`, `category`) VALUES
-(1, 'Accesorios Pesca', 'Pesca'),
-(2, 'Cañas', 'Pesca'),
-(3, 'Carretes', 'Pesca'),
-(4, 'Herramientas Pesca', 'Pesca'),
-(5, 'Lineas', 'Pesca'),
-(6, 'Señuelos', 'Pesca'),
-(7, 'Terminales', 'Pesca'),
-(8, 'Accesorios Camping', 'Camping'),
-(9, 'Aislantes', 'Camping'),
-(10, 'Bastones', 'Camping'),
-(11, 'Carpas', 'Camping'),
-(12, 'Cocina', 'Camping'),
-(13, 'Herramientas Camping', 'Camping'),
-(14, 'Hidratación', 'Camping'),
-(15, 'Morrales', 'Camping'),
-(16, 'Riñoneras', 'Camping'),
-(17, 'Sleeping', 'Camping');
 
 -- --------------------------------------------------------
 
@@ -136,7 +111,7 @@ CREATE TABLE `users` (
   `address` varchar(100) DEFAULT NULL,
   `photo` varchar(100) DEFAULT NULL,
   `password` varchar(100) NOT NULL,
-  `category` varchar(50) NOT NULL
+  `category` varchar(50) DEFAULT 'client'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='	';
 
 --
@@ -192,7 +167,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `classes`
 --
 ALTER TABLE `classes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `images`
