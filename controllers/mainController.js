@@ -3,14 +3,14 @@ const db = require("../database/models");
 const mainController={
     home: function(req,res){
         db.Product.findAll({
-            include : ['Images']
+            include : ['Images'],
+            order: [['id', 'DESC']],
+            limit: 3
         })
-            .then((allProduct) => {
-                console.log(allProduct)
-                res.render("Main/index", {products: allProduct});
+            .then((newProducts) => {
+                res.render("Main/index", {products: newProducts});
             });
-        
-   },
+    },
 
     search: function(req,res){
 

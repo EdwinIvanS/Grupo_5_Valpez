@@ -6,11 +6,10 @@ const productsController={
 
     index: function(req,res){
         db.Product.findAll({
-            include : ['Image']
+            include : ['Images']
         })
-       .then((allProduct) => {
-        console.log(allProduct);
-                res.render("Productos/allProducts", {products: allProduct});
+        .then((allProduct) => {
+            res.render("Productos/allProducts", {products: allProduct});
         });
         
     },
