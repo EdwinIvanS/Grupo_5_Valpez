@@ -15,23 +15,29 @@ const productsController={
     },
 
     camping: function(req,res){
-        let campingProducts = [];
-        for(let i = 0; i < products.length; i++){
-            if(products[i].category == "Camping"){
-                campingProducts.push(products[i])
-            }
-        }
-        res.render("Productos/campingProducts", {campingProducts: campingProducts});
+        db.Product.findAll({
+            include : [{association:'Images'}, {association:'Class'}],
+        })
+        .then((allProducts) => {
+            let campingProducts = allProducts.filter(producto => {
+                return producto.Class.category == 'Camping'
+            })
+            res.render("Productos/campingProducts", {products: campingProducts});
+        });
+        
     },
 
     fishing: function(req,res){
-        let fishingProducts = [];
-        for(let i = 0; i < products.length; i++){
-            if(products[i].category == "Pesca"){
-                fishingProducts.push(products[i])
-            }
-        }
-        res.render("Productos/fishingProducts", {fishingProducts: fishingProducts});
+        db.Product.findAll({
+            include : [{association:'Images'}, {association:'Class'}],
+        })
+        .then((allProducts) => {
+            let fishingProducts = allProducts.filter(producto => {
+                return producto.Class.category == 'Pesca'
+            })
+            res.render("Productos/fishingProducts", {products: fishingProducts});
+        });
+        
     },
 
     productCart: function(req,res){
@@ -39,67 +45,51 @@ const productsController={
     },
 
     productCreate: function(req,res){
-        Class.findAll()
-        .then(clasificacion => {
-            console.log("consulta exitosa");
-            res.render("Productos/productCreate", {clasificacion});
+        db.Class.findAll()
+        .then(classes => {
+            res.render("Productos/productCreate", {classes});
         });
 
         
     },
     store: function(req,res){
-        let imagesUploaded = req.files;
-        let lastProduct = products[products.length - 1];
         let validResult = validationResult(req);
         if(!validResult.isEmpty()){
             return res.render("Productos/productCreate", {errors: validResult.mapped(), oldData: req.body});
         }
-        let newProduct = {
-			idProduct: 1,
-            category: req.body.category,
+
+        db.Product.create({
             title: req.body.title,
             price: req.body.price,
             smallDescription: req.body.smallDescription,
-            detailedDescription: req.body.detailedDescription,
-            images: ["Default.jpg"],
-            url: req.body.url,
-            units: req.body.units,
-            colors: req.body.colors.split(','),
-            size: req.body.size.split(','),
-            classification: req.body.classification,
-            reference: req.body.reference
-		};
-		if (imagesUploaded){
-            newProduct.images = [];
-            for(let i = 0; i < imagesUploaded.length; i++){
-                newProduct.images.push(imagesUploaded[i].filename);
-            }			
-		}
-        if (lastProduct){
-            newProduct.idProduct = lastProduct.idProduct + 1;
-        }
-
-        Productos.create({
-            id: lastProduct,
-            title:req.body.title,
-            price: req.body.price,
-            smallDescription:req.body.smallDescription,
             detailedDescription: req.body.detailedDescription,
             url: req.body.url,
             units: req.body.units,
             colors: req.body.colors,
             sizes: req.body.size,
             reference: req.body.reference,
-            class_id: req.body.classification
+            class_id: req.body.classification,
         })
-        .then(confirm => {
-            if(confirm){
-                console.log("Registro guardado en la base de datos")
-            }            
-        })   
-        
-		res.redirect("/products")
-
+        .then(result => {
+            console.log(result)
+            let imagesUploaded = [];
+            if (req.files){
+                for(let i = 0; i < req.files.length; i++){
+                    imagesUploaded.push(req.files[i].filename);
+                }
+                imagesUploaded.forEach(image => {
+                    db.Image.create({
+                        name: image,
+                        product_num: result.id
+                    })
+                    .then(result => {
+                        console.log(result)
+                        return res.redirect("/products");
+                    })
+                });  
+            }
+            return res.redirect("/products");
+        })
     },
 
     productDetail: function(req,res){

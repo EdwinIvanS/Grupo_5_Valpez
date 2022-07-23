@@ -136,58 +136,7 @@
             <div class="related">
                 <h2>Productos relacionados</h2>
 
-                <div class="relatedProducts">
-                    <% for(i=0 ; i < products.length ; i ++) { %>
-                        <% let valorIdProduto = products[i].dataValues.id %> 
-                        <% if((detalleProducto.class_id>=1 && detalleProducto.class_id<=7)|| (detalleProducto.class_id>=8 && detalleProducto.class_id<=17)) { %>
-                        <article class="product">
-                            <a href="/products/detail/<%= products[i].id %>">
-                                <% for (let i=0; i < 1; i++) {%>
-                                    <% if(imagenes[i].product_num==valorIdProduto){ %>
-                                        <img src="/img/Products/<%= imagenes[i].dataValues.name %>" alt="producto5">
-                                    <%} %>
-                                <% }%>
-                            </a>
-                            <h3>
-                                <%= products[i].title%>
-                            </h3>
-                            <p>
-                                <%= products[i].price%>
-                            </p>
-                            <form class="selection1" action="#" method="get">
-                                <div>
-                                    <select name="color" id="color">
-                                        <% for (let c=0; c < products[i].colors.length; c++) {%>
-                                            <option value="<%= products[i].colors[c]%>">
-                                                <%= products[i].colors[c]%>
-                                            </option>
-                                            <% } %>
-                                    </select>
-
-                                    <select name="quantity" id="quantity">
-                                        <% for (let q=1; q <=products[i].units; q++) {%>
-                                            <option value="<%= q %>">
-                                                <%= q %>
-                                            </option>
-                                            <% } %>
-                                    </select>
-                                </div>
-                                <div>
-                                    <select name="size" id="size">
-                                        <% for (let s=0; s < products[i].length; s++) {%>
-                                            <option value="<%= products[i].size[s]%>">
-                                                <%= products[i].size[s]%>
-                                            </option>
-                                            <% } %>
-                                    </select>
-
-                                    <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                                </div>
-                            </form>
-                        </article>
-
-                        <% } } %>
-                </div>
+                <%- include('../partials/productBox') %>
 
         </main>
         <%- include('../partials/footer') %>

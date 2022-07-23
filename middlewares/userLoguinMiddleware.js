@@ -1,9 +1,7 @@
 const db = require('../database/models');
 
 function userLoguinMiddleware(req, res, next) { 
-    res.locals.isLogged = false;
-
-    let emailInCookie = req.cookies.emailLogged;
+    /*let emailInCookie = req.cookies.emailLogged;
     if(emailInCookie){
         db.User.findOne({where: {
             email: emailInCookie
@@ -12,7 +10,7 @@ function userLoguinMiddleware(req, res, next) {
             if(userFromCookie != null){
                 req.session.usuarioLogueado = userFromCookie;
             }
-            
+
             if(req.session.usuarioLogueado){
                 if(req.session.usuarioLogueado.category == 'root'){
                     res.locals.rootUser = true;
@@ -20,11 +18,22 @@ function userLoguinMiddleware(req, res, next) {
                 res.locals.isLogged = true;
                 return next();
             }
-        })
-
-        
+        })   
     }
-    return next();   
+    return next();     funcion recordar usuario que no funciona */   
+
+    // Valida usuario logueado y usuario root
+    res.locals.isLogged = false;
+
+    if(req.session.usuarioLogueado){
+        res.locals.isLogged = true;
+        if(req.session.usuarioLogueado.category == 'root'){
+            res.locals.rootUser = true;
+        }
+        return next();
+    }
+    return next();
+    
 }
 
 module.exports = userLoguinMiddleware;

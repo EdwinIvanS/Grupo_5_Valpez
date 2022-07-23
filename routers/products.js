@@ -3,6 +3,9 @@ const router  = express.Router();
 const path = require('path');
 const multer = require('multer');
 const {body} = require('express-validator');
+// implementar los controladores
+const productsController = require("../controllers/productsController");
+
 const rootMiddleware = require('../middlewares/rootMiddleware')
 
 //Multer
@@ -18,7 +21,6 @@ const storage = multer.diskStorage({
 const uploadFile = multer({storage});
 
 const validateCreateProducts =[
-    body('category').notEmpty().withMessage("Debes seleccionar una categoría"),
     body('title')
         .notEmpty().withMessage("Debes ingresar el título del producto"),
     body('price')
@@ -49,9 +51,6 @@ const validateCreateProducts =[
         .notEmpty().withMessage("Debes ingresar uno o varios tamaños")
 ]
 
-// implementar los controladores
-const productsController = require("../controllers/productsController");
-
 
 // Enrutador productos
 router.get("/", productsController.index); 
@@ -63,7 +62,7 @@ router.get("/Cart", productsController.productCart);
 
 //Creación de producto  
 router.get("/create", productsController.productCreate);  //OKKK
-router.post("/", uploadFile.array("images", 4), validateCreateProducts, productsController.store);
+router.post("/create", uploadFile.array("images", 4), validateCreateProducts, productsController.store);
 
 //Detalle de producto
 router.get("/detail/:id", productsController.productDetail);   

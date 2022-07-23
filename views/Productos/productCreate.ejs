@@ -9,18 +9,8 @@
     <%- include('../partials/header') %>
     <main>
         <div class="form-creation">
-            <form class="formularios" action="/products" method="POST" enctype="multipart/form-data">
+            <form class="formularios" action="/products/create" method="POST" enctype="multipart/form-data">
                 <h1>Agregar Producto</h1>
-                <div>
-                    <label class="titulos-formulario">Categoría: </label>
-                    <label class="formulario-creation"><input type="radio" name="category" value="Pesca" > Pesca </label>
-                    <label class="formulario-creation"><input type="radio" name="category" value="Camping" > Camping </label>
-                    <% if(locals.errors && errors.category){ %>
-                        <div class="text-danger">
-                            <%= errors.category.msg %>
-                        </div>
-                    <% } %>
-                </div>
                 <div>
                     <label class="titulos-formulario">Titulo del Producto: </label>
                     <input type="text" name="title" placeholder="Ej. Carrete Okuma Alaris" class="formulario-creation" minlength="4" value="<%= locals.oldData ? oldData.title : null %>">
@@ -95,8 +85,8 @@
                 <div>
                     <label class="titulos-formulario">Clasificación: </label>
                     <select name="classification" class="formulario-creation">
-                        <% for (let i = 0; i < clasificacion.length; i++) { %>
-                            <option value="<%=clasificacion[i].id %>"><%=clasificacion[i].name %></option>                            
+                        <% for (let i = 0; i < classes.length; i++) { %>
+                            <option value="<%=classes[i].id %>"><%=classes[i].name %></option>                            
                         <% } %>                         
                     </select>
                 </div>
@@ -104,8 +94,8 @@
                     <label class="titulos-formulario">Referencia: </label>
                     <input type="text" name="reference" placeholder="Ej. Ean13 4718947023353" class="formulario-creation" value="<%= locals.oldData ? oldData.reference : null %>">
                 </div>
-                <button type="submit">Guardar</button>
                 <button type="reset">Borrar</button>
+                <button type="submit">Guardar</button>
             </form>
         </div>
     </main>

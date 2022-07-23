@@ -23,39 +23,7 @@
         <% } %> 
         
         <div class="related">
-            <div class="relatedProducts">
-                <i class="arrow" class="fa-solid fa-angle-left"></i>
-                <% for(let i=0 ; i < products.length ; i ++) {%>
-                    <% let valorIdProduto=products[i].dataValues.id %>
-                            <article class="product">                                
-                                <a href="/products/detail/<%= products[i].dataValues.id %>">
-                                   <img src="/img/Products/<%= products[i].Image[0].name %>" alt="producto5">
-                                </a>
-                                <h3><%= products[i].title%></h3>
-                                <p><%= products[i].price%></p>
-                               
-                                <form class="selection1" action="#" method="get">
-                                    <div>
-                                        <select name="color" id="color">                                            
-                                                <option value="<%= products[0].colors%>"><%= products[i].colors%></option>                                                
-                                        </select>                
-                                        <select name="quantity" id="quantity">
-                                            <% for (let q = 1; q <= products[i].units; q++) {%>
-                                                <option value="<%= q %>"><%= q %></option>
-                                                <% } %>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <select name="size" id="size">
-                                            <option value="<%= products[i].sizes%>"><%= products[i].sizes%></option>
-                                        </select>                
-                                        <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </form>
-                            </article>                        
-                <% } %>
-                <i class="arrow" class="fa-solid fa-angle-right"></i>
-            </div>
+            <%- include('../partials/productBox') %>
         </div>
     </main>
 

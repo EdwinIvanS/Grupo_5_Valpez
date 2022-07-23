@@ -1,0 +1,43 @@
+<div class="relatedProducts">
+
+    <% for(let i=0 ; i < products.length ; i ++) {%>
+            
+        <article class="product">
+            <a href="/products/detail/<%= products[i].id%>">
+                <img src="/img/Products/<%= products[i].Images[0] %>" alt="producto">
+            </a>
+            <h3>
+                <%= products[i].title%>
+            </h3>
+            <p>
+                <%= products[i].price%>
+            </p>
+            <form class="selection1" action="/products/orderDetail" method="post">
+                <div>
+                    <select name="color" id="color">
+                        <% let arrayColors = products[i].colors.split(',')
+                            for (let c = 0; c < arrayColors.length; c++) {%>
+                            <option value="<%= arrayColors[c]%>"><%= arrayColors[c]%></option>
+                            <% } %>
+                    </select>
+
+                    <select name="quantity" id="quantity">
+                        <% for (let q = 1; q <= products[i].units; q++) {%>
+                            <option value="<%= q %>"><%= q %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <div>
+                    <select name="size" id="size">
+                        <% let arraySizes = products[i].sizes.split(',')
+                        for (let s = 0; s < arraySizes.length; s++) {%>
+                            <option value="<%= arraySizes[s]%>"><%= arraySizes[s]%></option>
+                        <% } %>
+                    </select>
+
+                    <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+            </form>
+        </article>
+    <% } %>
+</div>

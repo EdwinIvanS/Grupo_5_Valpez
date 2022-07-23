@@ -16,45 +16,7 @@
         <div class="related">
             <h2 class="titleSub">Productos de Camping</h2>
 
-            <div class="relatedProducts">
-                <% for(let i=0 ; i < campingProducts.length ; i ++) {%>                        
-                            <article class="product">
-                                <a href="/products/detail/<%= campingProducts[i].idProduct %>">
-                                    <img src="/img/Products/<%= campingProducts[i].images[0] %>" alt="producto5">
-                                </a>
-                                <h3>
-                                    <%= campingProducts[i].title%>
-                                </h3>
-                                <p>
-                                    <%= campingProducts[i].price%>
-                                </p>
-                                <form class="selection1" action="#" method="get">
-                                    <div>
-                                        <select name="color" id="color">
-                                            <% for (let c = 0; c < campingProducts[i].colors.length; c++) {%>
-                                                <option value="<%= campingProducts[i].colors[c]%>"><%= campingProducts[i].colors[c]%></option>
-                                                <% } %>
-                                        </select>
-                
-                                        <select name="quantity" id="quantity">
-                                            <% for (let q = 1; q <= campingProducts[i].units; q++) {%>
-                                                <option value="<%= q %>"><%= q %></option>
-                                                <% } %>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <select name="size" id="size">
-                                            <% for (let s = 0; s < campingProducts[i].size.length; s++) {%>
-                                                <option value="<%= campingProducts[i].size[s]%>"><%= campingProducts[i].size[s]%></option>
-                                                <% } %>
-                                        </select>
-                
-                                        <button type="submit"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </form>
-                            </article>                        
-                <% } %>
-            </div>
+            <%- include('../partials/productBox') %>
         </div>
     </main>
 
