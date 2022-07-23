@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-07-2022 a las 20:35:50
+-- Tiempo de generación: 23-07-2022 a las 20:55:17
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `valpez_db`
 --
+CREATE DATABASE IF NOT EXISTS `valpez_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `valpez_db`;
 
 -- --------------------------------------------------------
 
