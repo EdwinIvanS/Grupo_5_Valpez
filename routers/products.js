@@ -26,7 +26,6 @@ const validateCreateProducts =[
     body('price')
         .notEmpty().withMessage("Debes ingresar un valor").bail()
         .isNumeric().withMessage("El precio debe ser un número"),
-    body('detailedDescription').notEmpty().withMessage("Debes ingresar una descripción"),
     body('images').custom((value, {req})=>{
         let files = req.files;
         let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg"];

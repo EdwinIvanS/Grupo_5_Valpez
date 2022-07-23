@@ -10,6 +10,7 @@ const productsController={
         })
         .then((allProduct) => {
             res.render("Productos/allProducts", {products: allProduct});
+            console.log(allProduct[0].Images)
         });
         
     },
@@ -55,8 +56,11 @@ const productsController={
     store: function(req,res){
         let validResult = validationResult(req);
         if(!validResult.isEmpty()){
-            return res.render("Productos/productCreate", {errors: validResult.mapped(), oldData: req.body});
-        }
+            db.Class.findAll()
+            .then(classes => {
+                return res.render("Productos/productCreate", {errors: validResult.mapped(), oldData: req.body, classes});
+            });
+        };
 
         db.Product.create({
             title: req.body.title,
