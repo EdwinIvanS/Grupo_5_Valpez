@@ -11,69 +11,44 @@
     <%- include('../partials/header') %> 
 
         <main>
+            <div class="root">
+                <a href="/users/edit"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
+                <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
+                    <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                </form>
+            </div>
             <div class="form-login">
-            
-                <figure class="EditProfile-img">
-                    <img src="/img/Users/<%= user.photo %>" alt="Perfil-foto">
-                </figure>
-                <h2>Tus Datos</h2>
-                <form action="/" method="POST">
-                    <div>
-                        <label class="titulos-formulario">Nombres y apellidos</label><br>
-                            <input 
-                                type="text" 
-                                name="name" 
-                                placeholder="Nombre y apellidos" 
-                                class="formulario-perfil"
-                                readonly="readonly" 
-                                value="<%=user.name %>">
-                    </div>
-                    <div>
-                        <label class="titulos-formulario">Usuario</label><br>
-                            <input
-                                type="text" 
-                                name="user" 
-                                placeholder="Nombre de usuario" 
-                                class="formulario-perfil"
-                                readonly="readonly"
-                                value="<%=user.user %>">
-                    </div>
+                <div class="profile">
+                    <figure class="EditProfile-img">
+                        <img src="/img/Users/<%= user.photo %>" alt="Perfil-foto">
+                    </figure>
+                    <h2>Tus Datos</h2>
                     
-                    <div>
-                        <label class="titulos-formulario">Email</label><br>
-                            <input 
-                                type="email" 
-                                name="email" 
-                                placeholder="Email" 
-                                class="formulario-perfil"
-                                readonly="readonly"
-                                value="<%=user.email%>">
-                    </div>
-                    
-                    <div>
-                        <label class="titulos-formulario">Fecha de Nacimiento</label><br>
-                            <input 
-                                type="date" 
-                                name="dob" 
-                                class="formulario-perfil"
-                                readonly="readonly"
-                                value="<%=user.dob %>"
-                            >
-                    </div>
+                        <div>
+                            <h3>Nombres y apellidos:</h3>
+                            <h3><strong><%=user.name %></strong></h3>
+                        </div>
+                        <div>
+                            <h3>Usuario:</h3>
+                            <h3><strong><%=user.user %></strong></h3>
+                        </div>
+                        
+                        <div>
+                            <h3>Email:</h3>
+                            <h3><strong><%=user.email%></strong></h3>
+                        </div>
+                        
+                        <div>
+                            <h3>Fecha de Nacimiento:</h3>
+                            <h3><strong><%=user.dob %></strong></h3>
+                        </div>
 
-                    <div>
-                        <label class="titulos-formulario-1">Direccion</label><br>
-                            <input 
-                                type="text" 
-                                name="address" 
-                                placeholder="Dirección" 
-                                class="formulario-perfil"
-                                readonly="readonly"
-                                value="<%=user.address%>"
-                            >                        
-                    </div>
-                
-                </form>   
+                        <div>
+                            <h3>Direccion:</h3>
+                            <h3><strong><%=user.address%></strong></h3>                       
+                        </div>
+                    
+                    </div>   
             </div>
         </main>
 

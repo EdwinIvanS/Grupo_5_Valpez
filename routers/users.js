@@ -23,11 +23,11 @@ router.post("/register", uploadFile.single('photo'), validateRegister, usersCont
 router.get("/profile", authMiddleware, usersController.profile);
 
 //edit profile
-router.get("/profile/edit/:id", authMiddleware, usersController.edition);
-router.put("/profile/edit/:id", usersController.userEdit);
+router.get("/edit", authMiddleware, usersController.edition);
+router.put("/edit/:id", uploadFile.single('photo'), validateRegister, usersController.userEdit);
 
 //delete profile
-router.delete("/profile/delete/:id", usersController.delete);
+router.delete("/delete/:id", usersController.delete);
 
 //Logout
 router.get("/logout", usersController.logout);

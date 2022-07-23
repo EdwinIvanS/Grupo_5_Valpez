@@ -6,7 +6,7 @@ const {validationResult} = require('express-validator');
 const usersController={
 
     login: function(req,res){
-        res.render("User/login");
+        return res.render("User/login");
     },
 
     loginProcess: function(req,res){
@@ -20,8 +20,6 @@ const usersController={
                     delete userToLogin.password;
     
                     req.session.usuarioLogueado = userToLogin;
-
-                    console.log(req.body.remember)
     
                     if(req.body.remember == 'on'){
                         res.cookie('emailLogged', req.body.email, {maxAge: (1000 * 60) * 60})
@@ -48,7 +46,7 @@ const usersController={
     },
 
     register: function(req,res){
-        res.render("User/register");
+        return res.render("User/register");
     },
 
     userCreate: function(req,res){
@@ -82,7 +80,7 @@ const usersController={
                         password: bcryptjs.hashSync(req.body.password),
                     })
                     .then(result => {
-                        res.render("User/login");
+                        return res.render("User/login");
                     })
                 }
             })
@@ -103,15 +101,42 @@ const usersController={
     },
 
     userEdit: function(req,res){
-        return res.render("User/edit",{
-            user : req.session.usuarioLogueado
-        });
+        let validResult = validationResult(req);
+        let profileImage = req.file;
+        
+        if(!validResult.isEmpty()){
+            return res.render("User/edit", {errors: validResult.mapped(), user : req.session.usuarioLogueado});
+        }else{
+            db.User.update({
+                name: req.body.name,
+                user: req.body.user,
+                email: req.body.email,
+                dob: req.body.dob,
+                address: req.body.address,
+                photo: profileImage ? profileImage.filename : "DefaultFish.jpg",
+                password: bcryptjs.hashSync(req.body.password),
+            },
+            {
+                where:{
+                    id: req.params.id
+                }
+            })
+            .then(result => {
+                return res.redirect("users/profile");
+            })
+        }
     },
 
     delete: function(req,res){
-        return res.render("User/profile",{
-            user : req.session.usuarioLogueado
-        });
+        db.User.destroy({
+            where: {id: req.params.id},
+        })
+        .then(respuesta =>{
+            console.log("registro eliminado correctamente");
+            res.clearCookie('emailLogged')
+            req.session.destroy();
+            return res.redirect("/")
+        })
     },
 
     logout: function(req,res){

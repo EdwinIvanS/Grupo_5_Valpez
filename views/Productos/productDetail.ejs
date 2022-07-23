@@ -41,8 +41,7 @@
                 <div class="details">
                     <% if(locals.rootUser) { %>
                         <div class="root">
-                            <a href="/products/edition/<%= detalleProducto.id %>"><i
-                                    class="fa-solid fa-wand-magic-sparkles"></i></a>
+                            <a href="/products/edition/<%= detalleProducto.id %>"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
                             <form action="/products/detail/<%= detalleProducto.id %>?_method=DELETE" method="POST">
                                 <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
                             </form>
