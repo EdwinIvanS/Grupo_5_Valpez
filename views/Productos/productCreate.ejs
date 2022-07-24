@@ -13,7 +13,7 @@
                 <h1>Agregar Producto</h1>
                 <div>
                     <label class="titulos-formulario">Titulo del Producto: </label>
-                    <input type="text" name="title" placeholder="Ej. Carrete Okuma Alaris" class="formulario-creation" minlength="4" value="<%= locals.oldData ? oldData.title : null %>">
+                    <input type="text" name="title" placeholder="Ej. Carrete Okuma Alaris" class="formulario-creation" value="<%= locals.oldData ? oldData.title : null %>">
                     <% if(locals.errors && errors.title){ %>
                         <div class="text-danger">
                             <%= errors.title.msg %>
@@ -22,7 +22,7 @@
                 </div>
                 <div>
                     <label class="titulos-formulario">Precio: </label>
-                    <input type="number" name="price" placeholder="Ej. 100.000" class="formulario-creation" minlength="4" value="<%= locals.oldData ? oldData.price : null %>">
+                    <input type="number" name="price" placeholder="Ej. 100.000" class="formulario-creation" value="<%= locals.oldData ? oldData.price : null %>">
                     <% if(locals.errors && errors.price){ %>
                         <div class="text-danger">
                             <%= errors.price.msg %>
@@ -31,11 +31,11 @@
                 </div>
                 <div>
                     <label class="titulos-formulario">Breve descripción del producto: </label>
-                    <textarea name="smallDescription" class="formulario-creation" placeholder="Máximo 250 caracteres" maxlength="250" value="<%= locals.oldData ? oldData.smallDescription : null %>"></textarea>
+                    <textarea name="smallDescription" class="formulario-creation" placeholder="Máximo 250 caracteres"><%= locals.oldData ? oldData.smallDescription : null %></textarea>
                 </div>
                 <div>
                     <label class="titulos-formulario">Descripción detallada del producto: </label>
-                    <textarea name="detailedDescription" class="formulario-creation" placeholder="Máximo 1000 caracteres" maxlength="1000" value="<%= locals.oldData ? oldData.detailedDescription : null %>"></textarea>
+                    <textarea name="detailedDescription" class="formulario-creation" placeholder="Máximo 1000 caracteres"><%= locals.oldData ? oldData.detailedDescription : null %></textarea>
                     <% if(locals.errors && errors.detailedDescription){ %>
                         <div class="text-danger">
                             <%= errors.detailedDescription.msg %>
@@ -53,7 +53,7 @@
                 </div>
                 <div>
                     <label class="titulos-formulario">Link video descriptivo: </label>
-                    <input type="url" name="url" placeholder="Ej. https://www.youtube.com/embed/QeRVtNfF864" class="formulario-creation" minlength="4" value="<%= locals.oldData ? oldData.url : null %>">
+                    <input type="url" name="url" placeholder="Ej. https://www.youtube.com/embed/QeRVtNfF864" class="formulario-creation" value="<%= locals.oldData ? oldData.url : null %>">
                 </div>
                 <div>
                     <label class="titulos-formulario">Cantidad disponible: </label>
@@ -66,7 +66,7 @@
                 </div>
                 <div>
                     <label class="titulos-formulario">Colores Disponibles: </label>
-                    <input type="text" name="colors" placeholder="Ej. rojo, verde, azul" class="formulario-creation" minlength="4" value="<%= locals.oldData ? oldData.colors : null %>">
+                    <input type="text" name="colors" placeholder="Ej. rojo, verde, azul" class="formulario-creation" value="<%= locals.oldData ? oldData.colors : null %>">
                     <% if(locals.errors && errors.colors){ %>
                         <div class="text-danger">
                             <%= errors.colors.msg %>

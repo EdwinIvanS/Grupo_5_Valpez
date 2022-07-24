@@ -9,59 +9,93 @@
     <%- include('../partials/header') %>
     <main>
         <div class="form-creation">
-            <form class="formularios" action="/products/detail/<%= productoAEditar.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                <h1>Editando: <%= productoAEditar.title %></h1>
-                <div>
-                    <label class="titulos-formulario">Categoría: </label>
-                    <label class="formulario-creation"><input type="radio" name="category" value="Pesca" > Pesca </label>
-                    <label class="formulario-creation"><input type="radio" name="category" value="Camping" > Camping </label>
-                </div>
+            <form class="formularios" action="/products/edit/<%= productSelected.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <h1>Editando: <%= productSelected.title %></h1>
                 <div>
                     <label class="titulos-formulario">Titulo del Producto: </label>
-                    <input type="text" name="title" placeholder="Ej. Carrete Okuma Alaris" class="formulario-creation" minlength="4" value="<%= productoAEditar.title %>">
+                    <input type="text" name="title" placeholder="Ej. Carrete Okuma Alaris" class="formulario-creation" value="<%= productSelected.title %>">
+                    <% if(locals.errors && errors.title){ %>
+                        <div class="text-danger">
+                            <%= errors.title.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label class="titulos-formulario">Precio: </label>
-                    <input type="number" name="price" placeholder="Ej. 100.000" class="formulario-creation" minlength="4" value="<%= productoAEditar.price %>">
+                    <input type="number" name="price" placeholder="Ej. 100.000" class="formulario-creation" value="<%= productSelected.price %>">
+                    <% if(locals.errors && errors.price){ %>
+                        <div class="text-danger">
+                            <%= errors.price.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label class="titulos-formulario">Breve descripción del producto: </label>
-                    <textarea name="smallDescription" class="formulario-creation" placeholder="Máximo 250 caracteres" maxlength="250" ><%= productoAEditar.smallDescription %></textarea>
+                    <textarea name="smallDescription" class="formulario-creation" placeholder="Máximo 250 caracteres" ><%= productSelected.smallDescription %></textarea>
                 </div>
                 <div>
                     <label class="titulos-formulario">Descripción detallada del producto: </label>
-                    <textarea name="detailedDescription" class="formulario-creation" placeholder="Máximo 1000 caracteres" maxlength="1000"><%= productoAEditar.detailedDescription %></textarea>
+                    <textarea name="detailedDescription" class="formulario-creation" placeholder="Máximo 1000 caracteres" ><%= productSelected.detailedDescription %></textarea>
+                    <% if(locals.errors && errors.detailedDescription){ %>
+                        <div class="text-danger">
+                            <%= errors.detailedDescription.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label class="titulos-formulario">Imágenes del Producto: </label>
-                    <input type="file" name="images" class="formulario-creation" multiple>
+                    <input type="file" name="images" class="formulario-creation" multiple >
+                    <% if(locals.errors && errors.images){ %>
+                        <div class="text-danger">
+                            <%= errors.images.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label class="titulos-formulario">Link video descriptivo: </label>
-                    <input type="url" name="url" placeholder="Ej. https://www.youtube.com/embed/QeRVtNfF864" class="formulario-creation" minlength="4" value="<%= productoAEditar.url %>">
+                    <input type="url" name="url" placeholder="Ej. https://www.youtube.com/embed/QeRVtNfF864" class="formulario-creation" value="<%= productSelected.url %>">
                 </div>
                 <div>
                     <label class="titulos-formulario">Cantidad disponible: </label>
-                    <input type="number" name="units" placeholder="Ej. 10" class="formulario-creation" value="<%= productoAEditar.units %>">
+                    <input type="number" name="units" placeholder="Ej. 10" class="formulario-creation" value="<%= productSelected.units %>">
+                    <% if(locals.errors && errors.units){ %>
+                        <div class="text-danger">
+                            <%= errors.units.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label class="titulos-formulario">Colores Disponibles: </label>
-                    <input type="text" name="colors" placeholder="Ej. rojo, verde, azul" class="formulario-creation" minlength="4" value="<%= productoAEditar.colors%>">  <!--.join(", ")--> 
+                    <input type="text" name="colors" placeholder="Ej. rojo, verde, azul" class="formulario-creation" value="<%= productSelected.colors %>">
+                    <% if(locals.errors && errors.colors){ %>
+                        <div class="text-danger">
+                            <%= errors.colors.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label class="titulos-formulario">Tamaños Disponibles: </label>
-                    <input type="text" name="size" placeholder="Ej. 1000, 150cm, 15gr, único" class="formulario-creation" value="<%= productoAEditar.sizes%>"> <!--.join(", ")-->
+                    <input type="text" name="size" placeholder="Ej. 1000, 150cm, 15gr, único" class="formulario-creation" value="<%= productSelected.sizes %>">
+                    <% if(locals.errors && errors.size){ %>
+                        <div class="text-danger">
+                            <%= errors.size.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label class="titulos-formulario">Clasificación: </label>
-                    <input type="text" name="classification" placeholder="Ej. Agua salada" class="formulario-creation" value="<%= productoAEditar.classification %>">
+                    <select name="classification" class="formulario-creation">
+                        <% for (let i = 0; i < classes.length; i++) { %>
+                            <option value="<%=classes[i].id %>" <%= classes[i].id == productSelected.class_id ? "selected" : "" %>><%=classes[i].name %></option>                            
+                        <% } %>                         
+                    </select>
                 </div>
                 <div>
                     <label class="titulos-formulario">Referencia: </label>
-                    <input type="text" name="reference" placeholder="Ej. Ean13 4718947023353" class="formulario-creation" value="<%= productoAEditar.reference %>">
+                    <input type="text" name="reference" placeholder="Ej. Ean13 4718947023353" class="formulario-creation" value="<%= productSelected.reference %>">
                 </div>
-                <button type="submit">Guardar</button>
                 <button type="reset">Borrar</button>
+                <button type="submit">Guardar</button>
             </form>
         </div>
     </main>

@@ -74,7 +74,6 @@ const productsController={
             class_id: req.body.classification,
         })
         .then(result => {
-            console.log(result)
             let imagesUploaded = [];
             if (req.files){
                 for(let i = 0; i < req.files.length; i++){
@@ -117,100 +116,87 @@ const productsController={
     },
 
     productEdition: function(req,res){
-        let id = req.params.id;
-        let productoAEditar;
-
-        Productos.findByPk(id,
-            {
-                include : ['Image'],
-                include : ['OrderDetail']
-
-            })
-        .then(productoAEditar => {
-            console.log(productoAEditar);
-            res.render("Productos/productEdition", {productoAEditar: productoAEditar})
-        })
-        
-        /*
-        for (let i = 0; i < products.length; i++){
-            if (products[i].idProduct == id){
-				productoAEditar = products[i]
+        let productToEdit = db.Product.findOne({
+            include : [{association:'Images'}, {association:'Class'}],
+            where: {
+                id: req.params.id
             }
+        })
 
-        }
-        */
-       
-        
+        let classes = db.Class.findAll()
+
+        Promise.all([productToEdit, classes])
+        .then(([productToEdit, classes]) => {
+            return res.render("Productos/productEdition", {productSelected: productToEdit, classes})
+        })
     },
 
     update: function(req,res){
-        let idProduct = req.params.id;
-        
-        let imagesUploaded = req.files;
-        let productEdited = {
-			idProduct: req.params.id,
-            category: req.body.category,
+        let validResult = validationResult(req);
+        if(!validResult.isEmpty()){
+            let productToEdit = db.Product.findOne({
+                include : [{association:'Images'}, {association:'Class'}],
+                where: {
+                    id: req.params.id
+                }
+            })
+    
+            let classes = db.Class.findAll()
+    
+            Promise.all([productToEdit, classes])
+            .then(([productToEdit, classes]) => {
+                return res.render("Productos/productEdition", {errors: validResult.mapped(), productSelected: productToEdit, classes})
+            })
+        }
+
+        db.Product.update({
             title: req.body.title,
             price: req.body.price,
             smallDescription: req.body.smallDescription,
             detailedDescription: req.body.detailedDescription,
-            images: ["Default.jpg"],
             url: req.body.url,
             units: req.body.units,
-            colors: req.body.colors.split(','),
-            size: req.body.size.split(','),
-            classification: req.body.classification,
-            reference: req.body.reference
-		};
-		if (imagesUploaded){
-            productEdited.images = [];
-            for(let i = 0; i < imagesUploaded.length; i++){
-                productEdited.images.push(imagesUploaded[i].filename);
-            }			
-		}
-
-        let files = req.files;
-        console.log(files);
-        //UPDATE DE PRODUCTOS
-      
-        Productos.update(
-            {
-                id: req.params.id,
-                title:req.body.title,
-                price: req.body.price,
-                smallDescription:req.body.smallDescription,
-                detailedDescription: req.body.detailedDescription,
-                url: req.body.url,
-                units: req.body.units,
-                colors: req.body.colors,
-                sizes: req.body.size,
-                reference: req.body.reference,
-                class_id: (req.body.category == 'Pesca')? 1 : 2
-            },
-            {
-                where: {id: idProduct}
-            }
-            )
-            .then(confirm => {
-                if(confirm){
-                    console.log("Registro actualizado correctamente en la base de datos")
-                }            
-            })   
-
-        res.redirect("/products/detail/" + idProduct)
+            colors: req.body.colors,
+            sizes: req.body.size,
+            reference: req.body.reference,
+            class_id: req.body.classification,
+        },
+        {
+            where: {id: req.params.id}
+        })
+        .then(result => {
+            db.Image.destroy({
+                where: {product_num: req.params.id}
+            })
+            then(imagesDeleted => {
+                let imagesUploaded = [];
+                if (req.files){
+                for(let i = 0; i < req.files.length; i++){
+                    imagesUploaded.push(req.files[i].filename);
+                }
+                imagesUploaded.forEach(image => {
+                    db.Image.create({
+                        name: image,
+                        product_num: req.params.id
+                    })
+                    .then(result => {
+                        return res.redirect("/products/detail/" + req.params.id);
+                    })
+                })  
+                }
+                return res.redirect("/products/detail/" + req.params.id);
+            })
+        })
     },
 
     destroy : function(req, res) {
-        let id = req.params.id;
-
-        Productos.destroy({
-            where: {id: id},
-             force: true
-            })
-            .then(respuesta =>{
-                console.log("registro eliminado correctamente");
-                res.redirect("/")
-            })
+        db.Products.destroy({
+            where: {id: req.params.id},
+        })
+        .then(respuesta =>{
+            console.log("registro eliminado correctamente");
+            return res.redirect("/")
+        })
 	}
 }
 

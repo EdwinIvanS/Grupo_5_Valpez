@@ -28,11 +28,9 @@
 
             <div class="productSelected">
                 <div class="preview">
-                    <i class="fa-solid fa-angle-up"></i>
                     <% for (let i=1; i < productSelected.Images.length; i++) { %>
                         <img src="/img/products/<%= productSelected.Images[i].name%> " alt="preview">
                     <% }%>
-                    <i class="fa-solid fa-angle-down"></i>
                 </div>
                 <img class="photo" src="/img/products/<%= productSelected.Images[0].name%>" alt="photo">
 
