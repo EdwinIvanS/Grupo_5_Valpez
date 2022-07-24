@@ -73,9 +73,9 @@ const productsController={
             reference: req.body.reference,
             class_id: req.body.classification,
         })
-        .then(result => {
+        .then(productCreated => {
             let imagesUploaded = [];
-            if (req.files){
+            if (req.files.length > 0){
                 for(let i = 0; i < req.files.length; i++){
                     imagesUploaded.push(req.files[i].filename);
                 }  
@@ -86,13 +86,13 @@ const productsController={
             imagesUploaded.forEach(image => {
                 db.Image.create({
                     name: image,
-                    product_num: result.id
+                    product_num: productCreated.id
                 })
                 .then(result => {
                     console.log(result)
                     return res.redirect("/products");
                 })
-            });
+            })
 
         })
     },
@@ -167,18 +167,21 @@ const productsController={
         {
             where: {id: req.params.id}
         })
-        .then(result => {
+        .then(productUpdated => {
             db.Image.destroy({
                 where: {product_num: req.params.id}
             })
             .then(imagesDeleted => {
                 let imagesUploaded = [];
-                if (req.files){
+                
+                if (req.files.length > 0){
                     for(let i = 0; i < req.files.length; i++){
                         imagesUploaded.push(req.files[i].filename);
                     }
                 }else{
+                    
                     imagesUploaded.push('default.png')
+                    
                 }
 
                 imagesUploaded.forEach(image => {
