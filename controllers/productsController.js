@@ -78,19 +78,22 @@ const productsController={
             if (req.files){
                 for(let i = 0; i < req.files.length; i++){
                     imagesUploaded.push(req.files[i].filename);
-                }
-                imagesUploaded.forEach(image => {
-                    db.Image.create({
-                        name: image,
-                        product_num: result.id
-                    })
-                    .then(result => {
-                        console.log(result)
-                        return res.redirect("/products");
-                    })
-                });  
+                }  
+            }else{
+                imagesUploaded.push('default.png')
             }
-            return res.redirect("/products");
+
+            imagesUploaded.forEach(image => {
+                db.Image.create({
+                    name: image,
+                    product_num: result.id
+                })
+                .then(result => {
+                    console.log(result)
+                    return res.redirect("/products");
+                })
+            });
+
         })
     },
 
@@ -168,12 +171,16 @@ const productsController={
             db.Image.destroy({
                 where: {product_num: req.params.id}
             })
-            then(imagesDeleted => {
+            .then(imagesDeleted => {
                 let imagesUploaded = [];
                 if (req.files){
-                for(let i = 0; i < req.files.length; i++){
-                    imagesUploaded.push(req.files[i].filename);
+                    for(let i = 0; i < req.files.length; i++){
+                        imagesUploaded.push(req.files[i].filename);
+                    }
+                }else{
+                    imagesUploaded.push('default.png')
                 }
+
                 imagesUploaded.forEach(image => {
                     db.Image.create({
                         name: image,
@@ -182,9 +189,7 @@ const productsController={
                     .then(result => {
                         return res.redirect("/products/detail/" + req.params.id);
                     })
-                })  
-                }
-                return res.redirect("/products/detail/" + req.params.id);
+                }) 
             })
         })
     },
