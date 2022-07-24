@@ -6,28 +6,26 @@ const usersController  = require("../controllers/usersController"); // implement
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
-//validator
-const validateRegister = require('../middlewares/validations/registerMiddleware');
+const uploadFile = require('../middlewares/imageStorage/users');
 
-//Multer
-const uploadFile = require('../middlewares/imageStorage/userMiddleware')
+const usersValidations = require('../middlewares/validations/users');
 
 // Enrutador usuarios
-router.get("/login", guestMiddleware, usersController.login);
-router.post("/login", usersController.loginProcess);
+router.get("/login", guestMiddleware, usersController.userLogin);
+router.post("/login", usersController.login);
 
-router.get("/register", guestMiddleware, usersController.register);
-router.post("/register", uploadFile.single('photo'), validateRegister, usersController.userCreate);
+router.get("/register", guestMiddleware, usersController.userCreate);
+router.post("/register", uploadFile.single('photo'), usersValidations, usersController.store);
 
 // profile
 router.get("/profile", authMiddleware, usersController.profile);
 
 //edit profile
-router.get("/edit", authMiddleware, usersController.edition);
-router.put("/edit/:id", uploadFile.single('photo'), validateRegister, usersController.userEdit);
+router.get("/edit", authMiddleware, usersController.userEdition);
+router.put("/edit", uploadFile.single('photo'), usersValidations, usersController.update);
 
 //delete profile
-router.delete("/delete/:id", usersController.delete);
+router.delete("/delete", usersController.destroy);
 
 //Logout
 router.get("/logout", usersController.logout);

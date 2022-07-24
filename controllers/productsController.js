@@ -9,8 +9,7 @@ const productsController={
             include : ['Images']
         })
         .then((allProduct) => {
-            res.render("Productos/allProducts", {products: allProduct});
-            console.log(allProduct[0].Images)
+            return res.render("Productos/allProducts", {products: allProduct});
         });
         
     },
@@ -23,7 +22,7 @@ const productsController={
             let campingProducts = allProducts.filter(producto => {
                 return producto.Class.category == 'Camping'
             })
-            res.render("Productos/campingProducts", {products: campingProducts});
+            return res.render("Productos/campingProducts", {products: campingProducts});
         });
         
     },
@@ -36,19 +35,19 @@ const productsController={
             let fishingProducts = allProducts.filter(producto => {
                 return producto.Class.category == 'Pesca'
             })
-            res.render("Productos/fishingProducts", {products: fishingProducts});
+            return res.render("Productos/fishingProducts", {products: fishingProducts});
         });
         
     },
 
     productCart: function(req,res){
-        res.render("Productos/productCart");
+        return res.render("Productos/productCart");
     },
 
     productCreate: function(req,res){
         db.Class.findAll()
         .then(classes => {
-            res.render("Productos/productCreate", {classes});
+            return res.render("Productos/productCreate", {classes});
         });
 
         
@@ -60,7 +59,7 @@ const productsController={
             .then(classes => {
                 return res.render("Productos/productCreate", {errors: validResult.mapped(), oldData: req.body, classes});
             });
-        };
+        }
 
         db.Product.create({
             title: req.body.title,
@@ -97,46 +96,24 @@ const productsController={
     },
 
     productDetail: function(req,res){
-        let id = req.params.id;
-        let detalleProducto = null;
-
-        let consultarId = Productos.findByPk(id);
-        let consultarTodo = Productos.findAll({
-            where: {class_id: 1} 
-        });
-        let consultaImagenes = Images.findAll({
-            where: {product_num: id} 
-        });
-        let casificacion = Class.findAll({ 
-        });
-        
-        
-        Promise.all([consultarId , consultarTodo , consultaImagenes , casificacion])
-        .then(([consultarId , consultarTodo , consultaImagenes]) =>{
-            console.log(consultarId);
-            res.render("Productos/productDetail", {detalleProducto: consultarId, products: consultarTodo , imagenes : consultaImagenes});
+        db.Product.findOne({
+            include : [{association:'Images'}, {association:'Class'}],
+            where: {
+                id: req.params.id
+            }
         })
-
-        
-        
-        /*
-        /*
-        for (let i = 0; i < products.length; i++) {
-            if (products[i].idProduct == id ) {
-                detalleProducto = products[i];
-            }
-        }
-        
-        for(let i = 0; i <= 3 ; i++){
-            if(detalleProducto.images[i]== undefined){
-                detalleProducto.images[i] = "Default.jpg"
-            }
-        }
-            res.render("Productos/productDetail", {detalleProducto: detalleProducto, products: products});
-
-        */
-
-
+        .then(productSelected =>{
+            db.Product.findAll({
+                include : ['Images'],
+                where: {
+                    class_id: productSelected.class_id
+                },
+                limit: 3
+            })
+            .then(productsRelated => {
+                return res.render("Productos/productDetail", {products: productsRelated, productSelected});
+            })
+        })
     },
 
     productEdition: function(req,res){

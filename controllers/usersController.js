@@ -5,11 +5,11 @@ const {validationResult} = require('express-validator');
 
 const usersController={
 
-    login: function(req,res){
+    userLogin: function(req,res){
         return res.render("User/login");
     },
 
-    loginProcess: function(req,res){
+    login: function(req,res){
         db.User.findOne({where: {
             email: req.body.email
         }})
@@ -45,11 +45,11 @@ const usersController={
         
     },
 
-    register: function(req,res){
+    userCreate: function(req,res){
         return res.render("User/register");
     },
 
-    userCreate: function(req,res){
+    store: function(req,res){
         let validResult = validationResult(req);
         let profileImage = req.file;
         
@@ -94,13 +94,13 @@ const usersController={
         });
     },
 
-    edition: function(req,res){
+    userEdition: function(req,res){
         return res.render("User/edit",{
             user : req.session.usuarioLogueado
         });
     },
 
-    userEdit: function(req,res){
+    update: function(req,res){
         let validResult = validationResult(req);
         let profileImage = req.file;
         
@@ -118,7 +118,7 @@ const usersController={
             },
             {
                 where:{
-                    id: req.params.id
+                    id: req.session.usuarioLogueado.id
                 }
             })
             .then(result => {
@@ -127,9 +127,9 @@ const usersController={
         }
     },
 
-    delete: function(req,res){
+    destroy: function(req,res){
         db.User.destroy({
-            where: {id: req.params.id},
+            where: {id: req.session.usuarioLogueado.id},
         })
         .then(respuesta =>{
             console.log("registro eliminado correctamente");
