@@ -122,7 +122,7 @@ const usersController={
                 }
             })
             .then(result => {
-                return res.redirect("users/profile");
+                return res.redirect("/users/profile");
             })
         }
     },

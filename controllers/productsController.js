@@ -198,7 +198,7 @@ const productsController={
     },
 
     destroy : function(req, res) {
-        db.Products.destroy({
+        db.Product.destroy({
             where: {id: req.params.id},
         })
         .then(respuesta =>{

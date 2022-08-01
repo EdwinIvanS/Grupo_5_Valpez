@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-07-2022 a las 20:55:17
+-- Tiempo de generación: 01-08-2022 a las 01:21:32
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -209,7 +209,7 @@ ALTER TABLE `users`
 -- Filtros para la tabla `images`
 --
 ALTER TABLE `images`
-  ADD CONSTRAINT `product_num` FOREIGN KEY (`product_num`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `product_num` FOREIGN KEY (`product_num`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `orders`
