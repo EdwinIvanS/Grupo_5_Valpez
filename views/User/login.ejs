@@ -13,7 +13,7 @@
     <main>
         <div class="form-login">
             <h2>Iniciar sesión</h2>
-            <form action="/users/login" method="POST">
+            <form class="userLoginForm" action="/users/login" method="POST">
                 <% if(locals.errors && errors.credenciales){ %>
                     <div class="text-danger">
                         <%= errors.credenciales.msg %>

@@ -7,7 +7,7 @@ module.exports = [
     .isLength({min: 2}).withMessage("El nombre debe tener mínimo 2 caracteres"),
     body('user')
         .notEmpty().withMessage("Debes ingresar usuario").bail()
-        .isLength({min: 4, max: 10}).withMessage("El usuario debe contener entre 4 y 10 caracteres"),
+        .isLength({min: 4}).withMessage("El usuario debe contener al menos 4 caracteres"),
     body('email')
         .notEmpty().withMessage("Debes ingresar un correo electrónico").bail()
         .isEmail().withMessage("El correo es inválido"),

@@ -11,10 +11,11 @@
 
     <main>
         <div class="form-register">
-            <form class="formularios" action="/users/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="formularios userForm" action="/users/edit?_method=PUT" method="POST" enctype="multipart/form-data">
                 <h2>Editar cuenta</h2>
                 <div>
                     <input 
+                        id="name"
                         type="text" 
                         name="name" 
                         placeholder="Nombre y apellidos" 
@@ -22,7 +23,7 @@
                         value="<%= user.name %>"
                     >
                     <% if(locals.errors && errors.name){ %>
-                        <div class="text-danger">
+                        <div class="text-danger errorName">
                             <%= errors.name.msg %>
                         </div>
                     <% } %>
@@ -30,6 +31,7 @@
 
                 <div>
                     <input 
+                        id="user"
                         type="text" 
                         name="user" 
                         placeholder="Nombre de usuario" 
@@ -37,7 +39,7 @@
                         value="<%= user.user %>"
                     >
                     <% if(locals.errors && errors.user){ %>
-                        <div class="text-danger">
+                        <div class="text-danger errorUser">
                             <%= errors.user.msg %>
                         </div>
                     <% } %>
@@ -45,6 +47,7 @@
 
                 <div>
                     <input 
+                        id="email"
                         type="email" 
                         name="email" 
                         placeholder="Email" 
@@ -52,7 +55,7 @@
                         value="<%= user.email %>"
                     >
                     <% if(locals.errors && errors.email){ %>
-                        <div class="text-danger">
+                        <div class="text-danger errorEmail">
                             <%= errors.email.msg %>
                         </div>
                     <% } %>
@@ -61,20 +64,22 @@
                 <div>
                     <label class="titulos-formulario">Fecha de Nacimiento</label>
                     <input 
+                        id="dob"
                         type="date" 
                         name="dob" 
                         class="formulario-registro <%= (locals.errors && errors.dob) ? 'is-invalid' : null %>"
                         value="<%= user.dob %>"
                     >
                     <% if(locals.errors && errors.dob){ %>
-                        <div class="text-danger">
+                        <div class="text-danger errorDob">
                             <%= errors.dob.msg %>
                         </div>
                     <% } %>
                 </div>
 
                 <div>
-                    <input 
+                    <input
+                        id="address" 
                         type="text" 
                         name="address" 
                         placeholder="Dirección" 
@@ -90,41 +95,44 @@
 
                 <div>
                     <label class="titulos-formulario">Foto de usuario</label>
-                    <input 
+                    <input
+                        id="photo" 
                         type="file" 
                         name="photo" 
                         class="formulario-registro <%= (locals.errors && errors.photo) ? 'is-invalid' : null %>"
                     >
                     <% if(locals.errors && errors.photo){ %>
-                        <div class="text-danger">
+                        <div class="text-danger errorPhoto">
                             <%= errors.photo.msg %>
                         </div>
                     <% } %>
                 </div>
 
                 <div>
-                    <input 
+                    <input
+                        id="password" 
                         type="password" 
                         name="password" 
                         placeholder="Contraseña" 
                         class="formulario-registro <%= (locals.errors && errors.password) ? 'is-invalid' : null %>"
                     >
                     <% if(locals.errors && errors.password){ %>
-                        <div class="text-danger">
+                        <div class="text-danger errorPassword">
                             <%= errors.password.msg %>
                         </div>
                     <% } %>
                 </div>
 
                 <div>
-                    <input 
+                    <input
+                        id="confirmPassword" 
                         type="password" 
                         name="confirmPassword" 
                         placeholder="Confirmar contraseña" 
                         class="formulario-registro <%= (locals.errors && errors.confirmPassword) ? 'is-invalid' : null %>"
                     >
                     <% if(locals.errors && errors.confirmPassword){ %>
-                        <div class="text-danger">
+                        <div class="text-danger errorConfirmPassword">
                             <%= errors.confirmPassword.msg %>
                         </div>
                     <% } %>
@@ -136,6 +144,6 @@
     </main>
 
     <%- include('../partials/footer') %>
-
+    <script src=“/js/validator.js”></script>
 </body>
 </html>
