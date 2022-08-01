@@ -10,39 +10,43 @@ const usersController={
     },
 
     login: function(req,res){
-        db.User.findOne({where: {
-            email: req.body.email
-        }})
-        .then(userToLogin => {
-            if(userToLogin != null){
-                let verifyPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-                if(verifyPassword){
-                    delete userToLogin.password;
-    
-                    req.session.usuarioLogueado = userToLogin;
-    
-                    if(req.body.remember == 'on'){
-                        res.cookie('emailLogged', req.body.email, {maxAge: (1000 * 60) * 60})
+        let validResult = validationResult(req);
+        if(!validResult.isEmpty()){
+            return res.render("User/login", {errors: validResult.mapped()});
+        }else{
+            db.User.findOne({where: {
+                email: req.body.email
+            }})
+            .then(userToLogin => {
+                if(userToLogin != null){
+                    let verifyPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+                    if(verifyPassword){
+                        delete userToLogin.password;
+        
+                        req.session.usuarioLogueado = userToLogin;
+        
+                        if(req.body.remember == 'on'){
+                            res.cookie('emailLogged', req.body.email, {maxAge: (1000 * 60) * 60})
+                        }
+                        return res.redirect("profile");
                     }
-                    return res.redirect("profile");
+                    return res.render("User/login", {
+                        errors: {
+                            credenciales: {
+                                msg: "Las credenciales son inválidas"
+                            }
+                        }
+                    });
                 }
                 return res.render("User/login", {
                     errors: {
-                        email: {
-                            msg: "Las credenciales son inválidas"
+                        credenciales: {
+                            msg: "Email no está registrado"
                         }
                     }
                 });
-            }
-            return res.render("User/login", {
-                errors: {
-                    email: {
-                        msg: "Email no está registrado"
-                    }
-                }
-            });
-        })
-        
+            })
+        }        
     },
 
     userCreate: function(req,res){

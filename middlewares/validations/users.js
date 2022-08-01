@@ -2,7 +2,9 @@ const path = require('path');
 const {body} = require('express-validator');
 
 module.exports = [
-    body('name').notEmpty().withMessage("Debes ingresar nombre completo"),
+    body('name')
+    .notEmpty().withMessage("Debes ingresar nombre completo").bail()
+    .isLength({min: 2}).withMessage("El nombre debe tener mínimo 2 caracteres"),
     body('user')
         .notEmpty().withMessage("Debes ingresar usuario").bail()
         .isLength({min: 4, max: 10}).withMessage("El usuario debe contener entre 4 y 10 caracteres"),

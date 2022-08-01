@@ -14,16 +14,26 @@
         <div class="form-login">
             <h2>Iniciar sesión</h2>
             <form action="/users/login" method="POST">
-                <% if(locals.errors && errors.email){ %>
+                <% if(locals.errors && errors.credenciales){ %>
                     <div class="text-danger">
-                        <%= errors.email.msg %>
+                        <%= errors.credenciales.msg %>
                     </div>
                 <% } %>
                 <div>
-                    <input type="email" name="email" placeholder="Email" class="form-element">
+                    <input type="text" name="email" placeholder="Email" class="form-element">
+                    <% if(locals.errors && errors.email){ %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <input type="password" name="password" placeholder="Contraseña" class="form-element">
+                    <% if(locals.errors && errors.password){ %>
+                        <div class="text-danger">
+                            <%= errors.password.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div class="remember">
                     <label class="remember2"><input type="checkbox" name="remember">Recordar usuario</label>

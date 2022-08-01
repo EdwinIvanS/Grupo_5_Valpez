@@ -3,10 +3,14 @@ const {body} = require('express-validator');
 
 module.exports = [
     body('title')
-        .notEmpty().withMessage("Debes ingresar el título del producto"),
+        .notEmpty().withMessage("Debes ingresar el título del producto").bail()
+        .isLength({min: 5}).withMessage("El título debe contener al menos 5 caracteres"),
     body('price')
         .notEmpty().withMessage("Debes ingresar un valor").bail()
         .isNumeric().withMessage("El precio debe ser un número"),
+    body('smallDescription')
+        .notEmpty().withMessage("Debes ingresar una breve descripción del producto").bail()
+        .isLength({min: 20}).withMessage("La Descripción debe contener al menos 20 caracteres"),
     body('images').custom((value, {req})=>{
         let files = req.files;
         let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg", ".JPG", ".PNG", ".GIF", ".JPEG"];
