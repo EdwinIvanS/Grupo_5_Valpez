@@ -21,7 +21,7 @@ window.addEventListener("load", function () {
         let inputPhoto = document.querySelector("#photo").value;
         let inputPassword = document.querySelector("#password").value;
         let inputConfirmPassword = document.querySelector("#confirmPassword").value;
-        console.log(inputName)
+        
         if(inputName == "") {
             errors.name = "Debes ingresar nombre completo";
             errorName.innerHTML = errors.name;
@@ -96,28 +96,4 @@ window.addEventListener("load", function () {
         }   
 
     })
-
-    //let userLoginForm = document.querySelector("form.userLoginForm");
-    //let productForm = document.querySelector("form.productForm");
-/*
-    userLoginForm.addEventListener("submit", function (e) {
-        let errors = [];
-        let inputEmail = document.querySelector("#email");
-        let inputPassword = document.querySelector('#password');
-        e.preventDefault();
-
-    })
-
-    productForm.addEventListener("submit", (e) => {
-        let errors = [];
-        let inputTitle = document.querySelector('#title');
-        let inputPrice = document.querySelector('#price');
-        let inputSmallDescription = document.querySelector('#smallDescription');
-        let inputImages = document.querySelector('#images');
-        let inputUnits = document.querySelector('#units');
-        let inputColors = document.querySelector('#colors');
-        let inputSize = document.querySelector('#size');
-        e.preventDefault();
-
-    }) */
 }) 

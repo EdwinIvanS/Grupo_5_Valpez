@@ -20,7 +20,8 @@
                     </div>
                 <% } %>
                 <div>
-                    <input type="text" name="email" placeholder="Email" class="form-element">
+                    <input id="email" type="text" name="email" placeholder="Email" class="form-element">
+                    <span class="errorFront errorEmail"></span>
                     <% if(locals.errors && errors.email){ %>
                         <div class="text-danger">
                             <%= errors.email.msg %>
@@ -28,7 +29,8 @@
                     <% } %>
                 </div>
                 <div>
-                    <input type="password" name="password" placeholder="Contraseña" class="form-element">
+                    <input id="password" type="password" name="password" placeholder="Contraseña" class="form-element">
+                    <span class="errorFront errorPassword"></span>
                     <% if(locals.errors && errors.password){ %>
                         <div class="text-danger">
                             <%= errors.password.msg %>
@@ -38,7 +40,7 @@
                 <div class="remember">
                     <label class="remember2"><input type="checkbox" name="remember">Recordar usuario</label>
                 </div>                
-                <button class="bLogin" type="submit">Enviar</button>
+                <button id="btn" class="bLogin" type="submit">Enviar</button>
             </form> 
             <a href="#">¿Olvidaste tu contraseña?</a>
             <a href="/users/register">Crear tu cuenta Valpez</a>
@@ -46,6 +48,6 @@
     </main>
 
     <%- include('../partials/footer') %>
-    
+    <script src="/js/loginValidations.js"></script>
 </body>
 </html>
