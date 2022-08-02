@@ -20,7 +20,7 @@
                         name="name" 
                         placeholder="Nombre y apellidos" 
                         class="formulario-registro <%= (locals.errors && errors.name) ? 'is-invalid' : null %>"
-                        value="<%= locals.oldData ? oldData.name : null %>"
+                        value="<%= locals.oldData ? oldData.name : "" %>"
                     >
                     <span class="errorFront errorName"></span>
                     <% if(locals.errors && errors.name){ %>
@@ -37,7 +37,7 @@
                         name="user" 
                         placeholder="Nombre de usuario" 
                         class="formulario-registro <%= (locals.errors && errors.user) ? 'is-invalid' : null %>"
-                        value="<%= locals.oldData ? oldData.user : null %>"
+                        value="<%= locals.oldData ? oldData.user : "" %>"
                     >
                     <span class="errorFront errorUser"></span>
                     <% if(locals.errors && errors.user){ %>
@@ -54,7 +54,7 @@
                         name="email" 
                         placeholder="Email" 
                         class="formulario-registro <%= (locals.errors && errors.email) ? 'is-invalid' : null %>"
-                        value="<%= locals.oldData ? oldData.email : null %>"
+                        value="<%= locals.oldData ? oldData.email : "" %>"
                     >
                     <span class="errorFront errorEmail"></span>
                     <% if(locals.errors && errors.email){ %>
@@ -71,7 +71,7 @@
                         type="date" 
                         name="dob" 
                         class="formulario-registro <%= (locals.errors && errors.dob) ? 'is-invalid' : null %>"
-                        value="<%= locals.oldData ? oldData.dob : null %>"
+                        value="<%= locals.oldData ? oldData.dob : "" %>"
                     >
                     <span class="errorFront errorDob"></span>
                     <% if(locals.errors && errors.dob){ %>
@@ -88,7 +88,7 @@
                         name="address" 
                         placeholder="Dirección" 
                         class="formulario-registro <%= (locals.errors && errors.address) ? 'is-invalid' : null %>"
-                        value="<%= locals.oldData ? oldData.address : null %>"
+                        value="<%= locals.oldData ? oldData.address : "" %>"
                     >                     
                     <% if(locals.errors && errors.address){ %>
                         <div class="text-danger">
@@ -104,7 +104,7 @@
                         type="file" 
                         name="photo" 
                         class="formulario-registro <%= (locals.errors && errors.photo) ? 'is-invalid' : null %>"
-                        value="<%= locals.oldData ? oldData.photo : null %>"
+                        value="<%= locals.oldData ? oldData.photo : "" %>"
                     >
                     <span class="errorFront errorPhoto"></span>
                     <% if(locals.errors && errors.photo){ %>
@@ -121,7 +121,7 @@
                         name="password" 
                         placeholder="Contraseña" 
                         class="formulario-registro <%= (locals.errors && errors.password) ? 'is-invalid' : null %>"
-                        value="<%= locals.oldData ? oldData.password : null %>"
+                        value="<%= locals.oldData ? oldData.password : "" %>"
                     >
                     <span class="errorFront errorPassword"></span>
                     <% if(locals.errors && errors.password){ %>
@@ -138,7 +138,7 @@
                         name="confirmPassword" 
                         placeholder="Confirmar contraseña" 
                         class="formulario-registro <%= (locals.errors && errors.confirmPassword) ? 'is-invalid' : null %>"
-                        value="<%= locals.oldData ? oldData.confirmPassword : null %>"
+                        value="<%= locals.oldData ? oldData.confirmPassword : "" %>"
                     >
                     <span class="errorFront errorConfirmPassword"></span>
                     <% if(locals.errors && errors.confirmPassword){ %>
@@ -152,13 +152,13 @@
                     <input id="terminos" type="checkbox" name="terminos">
                     <p>Al continuar, aceptas las <a href="#">condiciones de uso</a> y la <a href="#">política de privacidad.</a></p>
                 </div>
-                <button type="submit">Enviar</button>
                 <button type="reset">Borrar</button>
+                <button id="btn" type="submit">Enviar</button>
             </form>
         </div>
     </main>
 
     <%- include('../partials/footer') %>
-    <script src="/js/validator.js"></script>
+    <script src="/js/userValidations.js"></script>
 </body>
 </html>
