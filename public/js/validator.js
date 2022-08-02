@@ -1,9 +1,6 @@
-//const validator = require("validator");
-
 window.addEventListener("load", function () {
     let userForm = document.querySelector("form.userForm");
-    //let userLoginForm = document.querySelector("form.userLoginForm");
-    //let productForm = document.querySelector("form.productForm");
+    let errors = {}
     let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
 
     let inputName = document.querySelector("#name").value;
@@ -14,75 +11,78 @@ window.addEventListener("load", function () {
     let inputPassword = document.querySelector("#password").value;
     let inputConfirmPassword = document.querySelector("#confirmPassword").value;
 
-    let errorName = document.querySelector("div.errorName");
-    let errorUser = document.querySelector("div.errorUser");
-    let errorEmail = document.querySelector("div.errorEmail");
-    let errorDob = document.querySelector("div.errorDob");
-    let errorPhoto = document.querySelector("div.errorPhoto");
-    let errorPassword = document.querySelector("div.errorPassword");
-    let errorConfirmPassword = document.querySelector("div.errorConfirmPassword");
+    let errorName = document.querySelector("span.errorName");
+    let errorUser = document.querySelector("span.errorUser");
+    let errorEmail = document.querySelector("span.errorEmail");
+    let errorDob = document.querySelector("span.errorDob");
+    let errorPhoto = document.querySelector("span.errorPhoto");
+    let errorPassword = document.querySelector("span.errorPassword");
+    let errorConfirmPassword = document.querySelector("span.errorConfirmPassword");
 
-    console.log(userForm)
     userForm.addEventListener("submit", function (e) {
         
 
-        if(validator.isEmpty(inputName)) {
+        if(inputName == "") {
             errors.name = "Debes ingresar nombre completo";
-            errorName.innerHTML += errors.name;
-        }else if (!validator.isLength(inputName, {min:2})){
+            errorName.innerHTML = errors.name;
+        }else if (inputName.length < 2){
             errors.name = "El nombre debe tener mínimo 2 caracteres";
-            errorName.innerHTML += errors.name;
+            errorName.innerHTML = errors.name;
         }
 
-        if(validator.isEmpty(inputUser)){
+        if(inputUser == ""){
             errors.user = "Debes ingresar usuario";
-            errorUser.innerHTML += errors.user;
-        }else if (!validator.isLength(inputUser, {min:4})){
+            errorUser.innerHTML = errors.user;
+        }else if (inputUser.length < 4){
             errors.user = "El usuario debe contener al menos 4 caracteres";
             errorUser.innerHTML += errors.user;
         }
 
-        if(validator.isEmpty(inputEmail)){
+        if(inputEmail == ""){
             errors.email = "Debes ingresar un correo electrónico";
-            errorEmail.innerHTML += errors.email;
-        }else if (!validator.isEmail(inputEmail)){
+            errorEmail.innerHTML = errors.email;
+        }else if(!(/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}.){1,125}[A-Z]{2,63}$/i.test(inputEmail))){ // .isEmail
             errors.email = "El correo es inválido";
-            errorEmail.innerHTML += errors.email;
+            errorEmail.innerHTML = errors.email;
         }
 
-        if(validator.isEmpty(inputDob)){
+        if(inputDob == ""){
             errors.dob = "Debes ingresar fecha de nacimiento";
-            errorDob.innerHTML += errors.dob;
+            errorDob.innerHTML = errors.dob;
         }
 
         if(!allowedExtensions.exec(inputPhoto)){
             errors.photo = 'Las extensiones del archivo permitidas son: ".jpg", ".png", ".gif", ".jpeg"';
-            errorPhoto.innerHTML += errors.photo;
+            errorPhoto.innerHTML = errors.photo;
         }
 
-        if(validator.isEmpty(inputPassword)){
+        if(inputPassword == ""){
             errors.password = "Debes ingresar una contraseña";
-            errorPassword.innerHTML += errors.password;
-        }else if (!validator.isAlphanumeric(inputPassword)){
+            errorPassword.innerHTML = errors.password;
+        }else if (inputPassword){ // .isAlphanumeric
             errors.password = "La contraseña debe combinar letras y números";
-            errorPassword.innerHTML += errors.password;
-        }else if (!validator.isLength(inputPassword, {min: 6, max: 10})){
+            errorPassword.innerHTML = errors.password;
+        }else if (inputPassword.length < 6 || inputPassword.length > 10){
             errors.password = "La contraseña debe contener entre 6 y 10 caracteres";
-            errorPassword.innerHTML += errors.password;
+            errorPassword.innerHTML = errors.password;
         }
 
         if(inputConfirmPassword != inputPassword){
             errors.confirmPassword = "Las contraseñas debe coincidir";
-            errorConfirmPassword.innerHTML += errors.confirmPassword;
+            errorConfirmPassword.innerHTML = errors.confirmPassword;
         }
+
+        console.log(inputEmail)
         
-        if(Object.keys(errors).length > 0){
+        if(Object.keys(errors).length > 1){
             e.preventDefault();
+            console.log('hola')
         }   
 
-        console.log('hola')
-
     })
+
+    //let userLoginForm = document.querySelector("form.userLoginForm");
+    //let productForm = document.querySelector("form.productForm");
 /*
     userLoginForm.addEventListener("submit", function (e) {
         let errors = [];

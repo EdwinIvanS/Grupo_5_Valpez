@@ -32,6 +32,12 @@ button {
     font-size: 1rem;
     font-weight: bold;
 }
+.errorFront{
+    color: var(--invalid);
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+}
 .is-invalid {
     box-shadow: 1px 1px 1px 1px var(--invalid);;
 }

@@ -22,8 +22,9 @@
                         class="formulario-registro <%= (locals.errors && errors.name) ? 'is-invalid' : null %>"
                         value="<%= locals.oldData ? oldData.name : null %>"
                     >
+                    <span class="errorFront errorName"></span>
                     <% if(locals.errors && errors.name){ %>
-                        <div class="text-danger errorName">
+                        <div class="text-danger">
                             <%= errors.name.msg %>
                         </div>
                     <% } %>
@@ -38,8 +39,9 @@
                         class="formulario-registro <%= (locals.errors && errors.user) ? 'is-invalid' : null %>"
                         value="<%= locals.oldData ? oldData.user : null %>"
                     >
+                    <span class="errorFront errorUser"></span>
                     <% if(locals.errors && errors.user){ %>
-                        <div class="text-danger errorUser">
+                        <div class="text-danger">
                             <%= errors.user.msg %>
                         </div>
                     <% } %>
@@ -48,14 +50,15 @@
                 <div>
                     <input 
                         id="email"
-                        type="email" 
+                        type="text" 
                         name="email" 
                         placeholder="Email" 
                         class="formulario-registro <%= (locals.errors && errors.email) ? 'is-invalid' : null %>"
                         value="<%= locals.oldData ? oldData.email : null %>"
                     >
+                    <span class="errorFront errorEmail"></span>
                     <% if(locals.errors && errors.email){ %>
-                        <div class="text-danger errorEmail">
+                        <div class="text-danger">
                             <%= errors.email.msg %>
                         </div>
                     <% } %>
@@ -70,8 +73,9 @@
                         class="formulario-registro <%= (locals.errors && errors.dob) ? 'is-invalid' : null %>"
                         value="<%= locals.oldData ? oldData.dob : null %>"
                     >
+                    <span class="errorFront errorDob"></span>
                     <% if(locals.errors && errors.dob){ %>
-                        <div class="text-danger errorDob">
+                        <div class="text-danger">
                             <%= errors.dob.msg %>
                         </div>
                     <% } %>
@@ -85,7 +89,7 @@
                         placeholder="Dirección" 
                         class="formulario-registro <%= (locals.errors && errors.address) ? 'is-invalid' : null %>"
                         value="<%= locals.oldData ? oldData.address : null %>"
-                    >                        
+                    >                     
                     <% if(locals.errors && errors.address){ %>
                         <div class="text-danger">
                             <%= errors.address.msg %>
@@ -102,8 +106,9 @@
                         class="formulario-registro <%= (locals.errors && errors.photo) ? 'is-invalid' : null %>"
                         value="<%= locals.oldData ? oldData.photo : null %>"
                     >
+                    <span class="errorFront errorPhoto"></span>
                     <% if(locals.errors && errors.photo){ %>
-                        <div class="text-danger errorPhoto">
+                        <div class="text-danger">
                             <%= errors.photo.msg %>
                         </div>
                     <% } %>
@@ -118,8 +123,9 @@
                         class="formulario-registro <%= (locals.errors && errors.password) ? 'is-invalid' : null %>"
                         value="<%= locals.oldData ? oldData.password : null %>"
                     >
+                    <span class="errorFront errorPassword"></span>
                     <% if(locals.errors && errors.password){ %>
-                        <div class="text-danger errorPassword">
+                        <div class="text-danger">
                             <%= errors.password.msg %>
                         </div>
                     <% } %>
@@ -134,8 +140,9 @@
                         class="formulario-registro <%= (locals.errors && errors.confirmPassword) ? 'is-invalid' : null %>"
                         value="<%= locals.oldData ? oldData.confirmPassword : null %>"
                     >
+                    <span class="errorFront errorConfirmPassword"></span>
                     <% if(locals.errors && errors.confirmPassword){ %>
-                        <div class="text-danger errorConfirmPassword">
+                        <div class="text-danger">
                             <%= errors.confirmPassword.msg %>
                         </div>
                     <% } %>
