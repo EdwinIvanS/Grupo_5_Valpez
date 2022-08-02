@@ -150,3 +150,27 @@ Se finalizan todas las tareas del sprint.
 
 ==============================//==============================//==============================
 
+## Reunión del 27-07-22
+
+- ¿Qué se hizo hasta Ayer?:
+
+Se generan los tableros de trabajo y se realiza el proceso de asignación a cada uno de los integrantes.
+Se realizan pequeñas adecuaciones al codigo usado anteriormente.
+- ¿Qué se hizo hoy?:
+
+Se recibe el feedback del sprint anterior y se llevan a cabo algunas de las correcciones que se mencionan en este ultimo sprint.
+Se da inicio al proceso de validaciones del back-end solicitado para el actual sprint.
+
+
+## Reunión del 01-08-22
+
+- ¿Qué se hizo hasta Ayer?:
+
+Se culminan las validaciones del back-end cumpliendo con la consignas solicitadas en el sprint.
+Se incluyen nuevos productos a la base de datos.
+Se corrigen inconsistencias en el script de la BD.
+
+- ¿Qué se hizo hoy?:
+
+Se da inicio, se configuran, prueba y finalizan todas las validaciones del front-end.
+Se optimizan recursos y se corrigen algunos errores en el codigo.
