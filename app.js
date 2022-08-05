@@ -20,6 +20,8 @@ app.use (express.static(publicPath));
 const mainRouter = require('./routers/main');
 const productsRouter = require('./routers/products');
 const usersRouter = require('./routers/users');
+const apiRouterProducts = require('./routers/api/apiRouterProducts');
+const apiRouterUsers = require('./routers/api/apiRouterUsers');
 
 
 //Usar ejs templates
@@ -40,6 +42,10 @@ app.use(userLoguinMiddleware);
 app.use("/", mainRouter);
 app.use("/products", productsRouter);
 app.use("/users", usersRouter);
+
+//Recurso (APIs)
+app.use("/api/products", apiRouterProducts);
+app.use("/api/users", apiRouterUsers);
 
 // Llamado al servidor
 app.listen(3000, () => {
