@@ -48,7 +48,7 @@ app.use("/api/products", apiRouterProducts);
 app.use("/api/users", apiRouterUsers);
 
 // Llamado al servidor
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log("Server running 3000")
 });
 

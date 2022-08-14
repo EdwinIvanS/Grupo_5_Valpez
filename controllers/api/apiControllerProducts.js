@@ -2,7 +2,6 @@ const db = require('../../database/models');
 
 const apiControllerProducts = {
     consultaProduct : function(req,res){ 
-        let coun 
         db.Product.findAll({
             attributes : ['id', 'title' , 'smallDescription', 'detailedDescription'],        
             include : [{association:'Class'}]
