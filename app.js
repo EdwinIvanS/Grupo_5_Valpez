@@ -23,10 +23,8 @@ const usersRouter = require('./routers/users');
 const apiRouterProducts = require('./routers/api/apiRouterProducts');
 const apiRouterUsers = require('./routers/api/apiRouterUsers');
 
-
 //Usar ejs templates
 app.set('view engine', 'ejs');
-
 
 app.use(session({
     secret:'valor',
@@ -51,6 +49,3 @@ app.use("/api/users", apiRouterUsers);
 app.listen(3001, () => {
     console.log("Server running 3000")
 });
-
-
-

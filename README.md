@@ -5,7 +5,6 @@ Proyecto integrador Valpez
 - Edwin Saboya
 - Maria Camila Caicedo
 - Sebastian Vallejo
-- Lorena Escobar
 
 ## Temática del sitio: 
 E-commerce B2C que se especializa en la venta de gran variedad de artículos de camping e implementos de pesca deportiva y artesanal; desde accesorios, anzuelos, cañas, carretes, indumentaria, sedales, señuelos y mucho más.
@@ -37,5 +36,4 @@ https://www.basspro.com/shop/en
  - Sprint 5: https://trello.com/b/aV5iMhmh/sprint-5
  - Sprint 6: https://trello.com/b/XeZtRkCL/sprint-6
  - Sprint 7: https://trello.com/b/Nufq5nxP/sprint-7
- 
- 
+ - Srpint 8: https://trello.com/b/shGMnM8W/sprint-8

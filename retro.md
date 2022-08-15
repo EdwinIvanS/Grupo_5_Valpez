@@ -105,6 +105,3 @@
 
 5-Dejar de hacer:
     Nuevamente presentamos algunas falencias dado a que continuamos atrasados en algunos contenidos de Playground, esperamos para el nuevo módulo estar al día y poder desenvolvernos mas fácil.
-
-
-    

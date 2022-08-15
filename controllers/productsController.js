@@ -205,7 +205,18 @@ const productsController={
             console.log("registro eliminado correctamente");
             return res.redirect("/")
         })
-	}
+	},
+
+    offers: function(req, res) {
+        db.Product.findAll({
+            include : ['Images'],
+            order: [['id', 'DESC']],
+            limit: 8
+        })
+        .then((allProduct) => {
+            return res.render("Productos/offers", {products: allProduct});
+        });
+    }
 }
 
 module.exports = productsController;

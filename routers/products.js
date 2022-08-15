@@ -33,5 +33,7 @@ router.put("/edit/:id", uploadFile.array("images", 4), productsValidations, prod
 //Eliminación de producto
 router.delete("/delete/:id", productsController.destroy);
 
+//Ofertas
+router.get("/offers", productsController.offers);
 
 module.exports=router;
