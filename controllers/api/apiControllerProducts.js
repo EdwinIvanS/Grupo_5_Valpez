@@ -1,20 +1,24 @@
 const db = require('../../database/models');
+const { sequelize } = require("sequelize");
 
 const apiControllerProducts = {
     consultaProduct : function(req,res){ 
         db.Product.findAll({
-            attributes : ['id', 'title' , 'smallDescription', 'detailedDescription'],        
-            include : [{association:'Class'}]
+            attributes : ['id', 'title' , 'smallDescription'],        
+            include : [{association:'Class'}],
+
         })
         .then(consultaProductos => { 
-            let TotalProductosBase = consultaProductos.length
+            let camping = consultaProductos.filter(producto => producto.Class.category == "Camping");
+            let pesca = consultaProductos.filter(producto => producto.Class.category == "Pesca");
+
             let respuesta = {
-                meta: {
-                    status : 200,
-                    total: consultaProductos.length,
-                    url: 'api/users'
+                count: consultaProductos.length,
+                countByCategory: {
+                    Pesca: pesca.length,
+                    Camping: camping.length
                 },
-                data: {TotalProductosBase, consultaProductos}
+                products: consultaProductos
             }
                 res.json(respuesta);
         })
@@ -27,15 +31,7 @@ const apiControllerProducts = {
             }
         })
         .then(consultaUsuarioId => {
-            let respuesta = {
-                meta: {
-                    status : 200,
-                    total: consultaUsuarioId.length,
-                    url: 'api/users/:id'
-                },
-                data: consultaUsuarioId
-            }
-                res.json(respuesta);
+                res.json(consultaUsuarioId);
         })
     }
 }
