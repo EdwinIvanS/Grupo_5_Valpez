@@ -36,13 +36,23 @@ const productsController={
                 return producto.Class.category == 'Pesca'
             })
             return res.render("Productos/fishingProducts", {products: fishingProducts});
-        });
-        
+        });   
     },
 
     productCart: function(req,res){
         return res.render("Productos/productCart");
     },
+
+    /*addProductCart: function(req,res){
+        let orders = db.Order.create({
+            user_id: 
+            ammount: 
+            shipping_address:
+            order_date:
+            order_status:
+        })
+        return res.redirect("/products/cart");
+    },*/
 
     productCreate: function(req,res){
         db.Class.findAll()
@@ -205,7 +215,18 @@ const productsController={
             console.log("registro eliminado correctamente");
             return res.redirect("/")
         })
-	}
+	},
+
+    offers: function(req, res) {
+        db.Product.findAll({
+            include : ['Images'],
+            order: [['id', 'DESC']],
+            limit: 8
+        })
+        .then((allProduct) => {
+            return res.render("Productos/offers", {products: allProduct});
+        });
+    }
 }
 
 module.exports = productsController;

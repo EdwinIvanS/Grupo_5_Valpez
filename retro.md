@@ -107,4 +107,18 @@
     Nuevamente presentamos algunas falencias dado a que continuamos atrasados en algunos contenidos de Playground, esperamos para el nuevo módulo estar al día y poder desenvolvernos mas fácil.
 
 
-    
+## Sprint 7:
+1-Comenzar a hacer:
+    El trabajo en equipo se ha desarrollado efecientemente, podemos seguir mejorando, asimismo esperamos contar con el apoyo de cada uno de los integrantes para que la ejecución de las tareas sea más rápida.
+
+2-Hacer mas:
+    Llevar a cabo reuniones con todo el equipo de trabajo de forma mas seguida para dialogar todos los avances que llevamos y poder dar continuidad al proyecto.
+
+3-Continuar haciendo:
+    Hasta ahora seguimos resaltando el esfuerzo y la dedicación que cada uno de nosotros ha entregado en este trabajo, agradecemos el buen equipo que tenemos ya que gracias a esto hemos crecido en nuestro proceso de aprendizaje, podemos seguir adelante y presentar un grandioso proyeceto.
+
+4- Hacer menos:
+    Los cambios sin notificar al equipo, los procesos solicitados en el sprint y las conversaciones presentadas entre todo el equipo de trabajo son el fin de optimizar nuestras funciones y dar un buen resultado, si cada uno tiene ideas en mente se deben dialogar en equipo para evitar inconformidades.
+
+5-Dejar de hacer:
+    Evitar dejar algunas cosas para ultima hora, tenemos el tiempo para la ejecución del trabajo y podemos entregarlo con tiempo de sobra.
