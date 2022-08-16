@@ -71,13 +71,13 @@ button {
 }
 
 .slide1 img{
-    animation: slide1 20s infinite alternate;
+    animation: slide1 15s infinite alternate;
 }
 .slide2 img{
-    animation: slide2 20s infinite alternate;
+    animation: slide2 15s infinite alternate;
 }
 .slide3 img{
-    animation: slide3 20s infinite alternate;
+    animation: slide3 15s infinite alternate;
 }
 
 .AddProducts {

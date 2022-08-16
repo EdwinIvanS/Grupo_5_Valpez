@@ -17,7 +17,8 @@ router.get("/camping", productsController.camping);
 router.get("/pesca", productsController.fishing);
 
 //Carrito
-router.get("/cart", productsController.productCart); 
+router.get("/cart", productsController.productCart);
+/*router.post("/cart", productsController.addProductCart);*/
 
 //Creación de producto  
 router.get("/create", rootMiddleware, productsController.productCreate);  //OKKK

@@ -36,13 +36,23 @@ const productsController={
                 return producto.Class.category == 'Pesca'
             })
             return res.render("Productos/fishingProducts", {products: fishingProducts});
-        });
-        
+        });   
     },
 
     productCart: function(req,res){
         return res.render("Productos/productCart");
     },
+
+    /*addProductCart: function(req,res){
+        let orders = db.Order.create({
+            user_id: 
+            ammount: 
+            shipping_address:
+            order_date:
+            order_status:
+        })
+        return res.redirect("/products/cart");
+    },*/
 
     productCreate: function(req,res){
         db.Class.findAll()

@@ -12,7 +12,7 @@
             <p>
                 <%= products[i].price%>
             </p>
-            <form class="selection1" action="/products/orderDetail" method="post">
+            <form class="selection1" action="/products/cart" method="post">
                 <div>
                     <select name="color" id="color">
                         <% let arrayColors = products[i].colors.split(',')
