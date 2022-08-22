@@ -59,5 +59,5 @@ app.use("/api/users", apiRouterUsers);
 
 // Llamado al servidor
 app.listen(3001, () => {
-    console.log("Server running 3000")
+    console.log("Server running 3001")
 });
