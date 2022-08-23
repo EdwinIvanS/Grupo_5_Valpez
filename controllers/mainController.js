@@ -1,4 +1,5 @@
 const db = require("../database/models");
+const { Op } = require("sequelize");
 
 const mainController={
     home: function(req,res){
@@ -13,6 +14,19 @@ const mainController={
     },
 
     search: function(req,res){
+        db.Product.findAll({
+            include : [
+                {model: db.Image, as:'Images'}, 
+                {model: db.Class, as:'Class', where:{ name:{[Op.like]: "%" + req.query.searchBar + "%"}}}
+            ],
+            /*where: {
+                [Op.or]: [
+                  { title: { [Op.like]: "%" + req.query.searchBar + "%"}}
+                ]
+        }*/})
+            .then((filterProducts) => {
+                res.render("Productos/allProducts", {products: filterProducts});
+            });
 
     },
     
