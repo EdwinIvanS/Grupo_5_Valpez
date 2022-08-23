@@ -22,6 +22,7 @@ const productsRouter = require('./routers/products');
 const usersRouter = require('./routers/users');
 const apiRouterProducts = require('./routers/api/apiRouterProducts');
 const apiRouterUsers = require('./routers/api/apiRouterUsers');
+const apiRouterClasses = require('./routers/api/apiRouterClasses');
 
 //Usar ejs templates
 app.set('view engine', 'ejs');
@@ -56,6 +57,7 @@ app.use("/users", usersRouter);
 //Recurso (APIs)
 app.use("/api/products", apiRouterProducts);
 app.use("/api/users", apiRouterUsers);
+app.use("/api/classes", apiRouterClasses);
 
 // Llamado al servidor
 app.listen(3001, () => {

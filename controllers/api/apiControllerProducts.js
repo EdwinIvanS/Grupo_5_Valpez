@@ -30,8 +30,8 @@ const apiControllerProducts = {
                 id: req.params.id
             }
         })
-        .then(consultaUsuarioId => {
-                res.json(consultaUsuarioId);
+        .then(consultaProductId => {
+                res.json(consultaProductId);
         })
     }
 }

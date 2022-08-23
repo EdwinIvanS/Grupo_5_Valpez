@@ -1,40 +1,27 @@
 const db = require('../../database/models');
 
 const apiControllerUsers = {
-    consulta : function(req,res){ 
+    consultaUser : function(req,res){ 
         db.User.findAll({
             attributes : ['id', 'name' , 'email']
         })
         .then(consultaUsuarios => {
-            let TotalUsuarios= consultaUsuarios.length
             let respuesta = {
-                meta: {
-                    status : 200,
-                    total: consultaUsuarios.length,
-                    url: 'api/users'
-                },
-                data: {TotalUsuarios,consultaUsuarios}
+                count: consultaUsuarios.length,
+                users: consultaUsuarios
             }
                 res.json(respuesta);
         })
     },
-    consultaId : function(req,res){ 
+
+    consultaUserId : function(req,res){ 
         db.User.findOne({
-            attributes : ['id', 'name', 'user', 'photo'],
             where: {
                 id: req.params.id
             }
         })
         .then(consultaUsuarioId => {
-            let respuesta = {
-                meta: {
-                    status : 200,
-                    total: consultaUsuarioId.length,
-                    url: 'api/users/:id'
-                },
-                data: consultaUsuarioId
-            }
-                res.json(respuesta);
+                res.json(consultaUsuarioId);
         })
     }
 }
