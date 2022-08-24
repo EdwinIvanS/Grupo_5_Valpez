@@ -1,3 +1,5 @@
+## Sprint 2
+
 ## Reunión del 04-05-22
 
 - ¿Qué se hizo hasta Ayer?:
@@ -30,6 +32,8 @@ Al momento de segmentar las vista parciales se generaba error con las views lo c
 
 ==============================//==============================//==============================
 
+## Sprint 4
+
 ## Reunión del 23-05-22
 - ¿Qué se hizo hasta Ayer?:
 
@@ -56,6 +60,8 @@ Se culmina el Weekly del sprint.
 Se verifica que todos los puntos del sprint esten completados y en funcionamiento.
 
 ==============================//==============================//==============================
+
+## Sprint 5
 
 ## Reunión del 01-06-22
 
@@ -91,6 +97,8 @@ Verificamos que todas las opciones y funcionalidades se esten ejecutando correct
 
 ==============================//==============================//==============================
 
+## Sprint 6
+
 ## Reunión del 22-06-22
 
 - ¿Qué se hizo hasta Ayer?:
@@ -100,6 +108,7 @@ Se realiza todas las actividades propuestas en el cronograma del programa.
 - ¿Qué se hizo hoy?:
 
 Se crea el tablero de trabajo para el Sprint 6. Se definen las actividades a desarrollar y la repartición de deberes de cada integrante.
+
 
 ## Reunión del 29-06-22
 
@@ -150,6 +159,8 @@ Se finalizan todas las tareas del sprint.
 
 ==============================//==============================//==============================
 
+## Sprint 7
+
 ## Reunión del 27-07-22
 
 - ¿Qué se hizo hasta Ayer?:
@@ -174,3 +185,29 @@ Se corrigen inconsistencias en el script de la BD.
 
 Se da inicio, se configuran, prueba y finalizan todas las validaciones del front-end.
 Se optimizan recursos y se corrigen algunos errores en el codigo.
+
+==============================//==============================//==============================
+
+## Sprint 8
+
+## Reunión del 15-08-22
+
+- ¿Qué se hizo hasta Ayer?:
+
+Se crean las API's de Usuarios y Productos.
+Se crea el proyecto en React para el Dashboard.
+
+- ¿Qué se hizo hoy?:
+
+Se prueban el correcto funcionamiento de las API's para posterior implementación al dashboard.
+
+
+## Reunión del 22-08-22
+
+- ¿Qué se hizo hasta Ayer?:
+
+Se crean los componentes principales del dashboard.
+
+- ¿Qué se hizo hoy?:
+
+Se implementa la conexión del dashboard con las API's y se deja dinámico todos los valores.

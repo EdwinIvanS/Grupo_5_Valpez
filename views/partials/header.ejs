@@ -8,6 +8,9 @@
                 <input type="search" name="searchBar" placeholder="Buscar artículos">
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
+                <% if(locals.rootUser) { %>
+                    <a class="login" href="http://localhost:3000/">Dashboard</a>
+                <% } %>
                 <% if(locals.isLogged) { %> 
                     <a class="login" href="/users/profile">Perfil</a>
                     <a class="login" href="/users/logout">Logout</a>
